@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "dependencies": {
+    "tailwindcss": "^2.0.2",
     "vuepress": "^2.0.0-alpha.9"
   },
   "devDependencies": {},
@@ -15,10 +16,13 @@
     "type": "git",
     "url": "git+https://github.com/bovenland/website.git"
   },
-  "author": "",
+  "author": "Bert Spaan",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/bovenland/website/issues"
+  },
+  "engines": {
+    "node": ">=10.x"
   },
   "homepage": "https://github.com/bovenland/website#readme"
 }
