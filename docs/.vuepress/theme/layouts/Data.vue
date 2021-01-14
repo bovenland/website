@@ -7,6 +7,7 @@
     </main>
     <Nav prev="imagination" prevText="Verbeelding" prevHref="../verbeelding"
       next="story" nextText="Reisverslag" nextHref="../reisverslag" />
+    <Footer />
   </div>
 </template>
 

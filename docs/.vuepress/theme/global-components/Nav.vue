@@ -1,10 +1,10 @@
 <template>
   <nav>
     <a :href="prevHref" class="prev">
-      <Point :className="`fill-${prev}`" :text="prevText" />
+      <Point :className="`fill-${prev}`" :text="'← ' + prevText" />
     </a>
     <a :href="nextHref" class="next">
-      <Point :className="`fill-${next}`" :text="nextText" />
+      <Point :className="`fill-${next}`" :text="nextText + ' →'" />
     </a>
   </nav>
 </template>
@@ -24,6 +24,12 @@ export default {
 </script>
 
 <style lang="stylus">
+point-size = 300px
+visible-percentage = 0.30
+segmentAngle = 360 / 13
+transition-duration = 0.5s
+rotation = 120deg
+
 nav {
   position: fixed;
   top: 0;
@@ -36,19 +42,24 @@ nav {
 }
 
 nav a {
-  width: 250px;
-  height: 250px;
+  width: point-size;
+  height: point-size;
   padding: 2em;
-  transition: all .5s
+  transition: all transition-duration
 }
 
 nav a.prev {
-  margin-left: -180px;
+  margin-left: -(point-size * (1 - visible-percentage));
 }
 
-nav a.prev svg {
-  transition: all .5s
-  transform: rotate(-150deg);
+nav a svg {
+  transition: all transition-duration
+  transform: rotate(0);
+}
+
+nav a .text {
+  transition: all transition-duration
+  opacity: 0;
 }
 
 nav a.prev:hover {
@@ -56,16 +67,15 @@ nav a.prev:hover {
 }
 
 nav a.prev:hover svg {
-  transform: rotate(0);
+  transform: rotate(rotation);
+}
+
+nav a:hover .text {
+  opacity: 1;
 }
 
 nav a.next {
-  margin-right: -180px;
-}
-
-nav a.next svg {
-  transition: all .5s
-  transform: rotate(150deg);
+  margin-right: -(point-size * (1 - visible-percentage));
 }
 
 nav a.next:hover {
@@ -73,6 +83,6 @@ nav a.next:hover {
 }
 
 nav a.next:hover svg {
-  transform: rotate(0);
+  transform: rotate(-(rotation));
 }
 </style>

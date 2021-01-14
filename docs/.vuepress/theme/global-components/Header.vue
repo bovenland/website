@@ -10,7 +10,7 @@
 
 <script>
 export default {
-  name: 'Sections'
+  name: 'Header'
 }
 </script>
 

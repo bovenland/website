@@ -1,4 +1,5 @@
 module.exports = {
+  title: 'Boven.land',
   themeConfig: {
     tiles: {
       baseUrl: (process.env.NODE_ENV === 'production') ?

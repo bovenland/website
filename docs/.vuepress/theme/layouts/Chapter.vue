@@ -18,6 +18,7 @@
 
       <Sections />
     </main>
+    <Footer />
   </div>
 </template>
 
@@ -30,7 +31,7 @@ export default {
 <style lang="stylus" scoped>
 .title {
   position: relative;
-  width: 100vw;
+  width: 100%;
   height: 100vh;
 }
 

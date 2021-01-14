@@ -2,20 +2,16 @@
   <ul class="sections">
     <!-- TODO: Doe bollen! -->
     <li><a href="reisverslag">
-        <Point className="fill-story" />
-        <span>Reisverslag</span>
+        <Point className="fill-story" text="Reisverslag" />
       </a></li>
     <li><a href="kaart">
-        <Point className="fill-map" />
-        <span>Kaart</span>
+        <Point className="fill-map" text="Kaart" />
       </a></li>
     <li><a href="verbeelding">
-      <Point className="fill-imagination" />
-      <span>Verbeelding</span>
+      <Point className="fill-imagination" text="Verbeelding" />
       </a></li>
     <li><a href="data">
-      <Point className="fill-data" />
-      <span>Data</span>
+      <Point className="fill-data" text="Data" />
       </a></li>
   </ul>
 
@@ -48,10 +44,8 @@ ul.sections li a {
 
 ul.sections li a {
   text-decoration: none;
-}
-
-ul.sections li svg {
-  width: 4em;
+  width: 130px;
+  height: 130px;
   margin: 1em;
 }
 

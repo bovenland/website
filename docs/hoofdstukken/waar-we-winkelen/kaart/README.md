@@ -1,5 +1,5 @@
 ---
 layout: Map
 name: waar-we-winkelen
-title: Waar we winkelen
+title: Kaart | Waar we winkelen
 ---
