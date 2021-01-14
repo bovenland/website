@@ -1,3 +1,1 @@
-# Boven.land
-
-- [Koopgedrag](/hoofdstukken/koopgedrag/)
+- [Waar we winkelen](/hoofdstukken/waar-we-winkelen/)
