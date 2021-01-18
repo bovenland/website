@@ -32,7 +32,7 @@ export default {
 
 <style lang="stylus">
 point-size = 300px
-visible-percentage = 0.30
+visible-percentage = 0.20
 segmentAngle = 360 / 13
 transition-duration = 0.5s
 rotation = 120deg

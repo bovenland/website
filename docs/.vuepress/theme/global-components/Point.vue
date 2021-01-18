@@ -41,4 +41,9 @@ export default {
 .point .text {
 	pointer-events: none;
 }
+
+.point polygon {
+	stroke: white;
+	stroke-width: 2px;
+}
 </style>
