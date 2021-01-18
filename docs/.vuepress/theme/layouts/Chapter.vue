@@ -4,10 +4,10 @@
     <main>
       <section class="title">
         <video muted loop autoplay>
-          <source src="../../../assets/video/waar-we-winkelen.mp4"
+          <source src="https://files.boven.land/waar-we-winkelen/video/waar-we-winkelen.mp4"
             type="video/mp4">
         </video>
-        <h1>
+        <h1 class="content">
           <span>Hoofdstuk {{ $frontmatter.chapter }}:</span>
           <span>{{ $frontmatter.title }}</span>
         </h1>
@@ -33,6 +33,10 @@ export default {
   position: relative;
   width: 100%;
   height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
 }
 
 h1 {
@@ -40,8 +44,7 @@ h1 {
   border-left-style: solid;
   border-left-width: 5px;
   border-left-color: $logoColor;
-  width: $contentWidth;
-  margin: 0 auto;
+  margin-top: 2em;
 }
 
 h1 span {
@@ -59,6 +62,7 @@ video {
 }
 
 .header-background {
+  z-index: 1;
   height: calc(1em + 2em);
   background: white;
   position: sticky;

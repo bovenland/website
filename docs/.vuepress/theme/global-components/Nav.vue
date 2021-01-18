@@ -1,9 +1,15 @@
 <template>
   <nav>
-    <a :href="prevHref" class="prev">
+    <a :href="prevHref" :class="{
+      prev: true,
+      invisible
+    }">
       <Point :className="`fill-${prev}`" :text="'← ' + prevText" />
     </a>
-    <a :href="nextHref" class="next">
+    <a :href="nextHref" :class="{
+      next: true,
+      invisible
+    }">
       <Point :className="`fill-${next}`" :text="nextText + ' →'" />
     </a>
   </nav>
@@ -13,6 +19,7 @@
 export default {
   name: 'Nav',
   props: {
+    invisible: Boolean,
     prev: String,
     prevText: String,
     prevHref: String,
@@ -39,17 +46,23 @@ nav {
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
+  pointer-events: none;
 }
 
 nav a {
   width: point-size;
   height: point-size;
   padding: 2em;
-  transition: all transition-duration
+  transition: all transition-duration;
+  pointer-events: all;
 }
 
 nav a.prev {
   margin-left: -(point-size * (1 - visible-percentage));
+}
+
+nav a.prev.invisible {
+  margin-left: -(point-size);
 }
 
 nav a svg {
@@ -76,6 +89,10 @@ nav a:hover .text {
 
 nav a.next {
   margin-right: -(point-size * (1 - visible-percentage));
+}
+
+nav a.next.invisible {
+  margin-right: -(point-size);
 }
 
 nav a.next:hover {

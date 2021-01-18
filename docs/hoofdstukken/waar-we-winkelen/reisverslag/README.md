@@ -2,7 +2,11 @@
 layout: Story
 name: waar-we-winkelen
 title: Reisverslag | Waar we winkelen
+# image
+# andere title
 ---
+
+## Reisverslag
 
 Het Boven.land-team Bert en Jenny reist in het stormachtige najaar van 2020 door het Nederlandse landschap op zoek naar residuen die de drang tot kopen van Nederlanders in het landschap nalaten. Het is de tijd van de coronapandemie en de aanloop naar de tweede (semi) lockdown van het jaar. Al ingezette trends in ons koopgedrag zetten door: meer online kopen, hogere verwachtingen van service als snelle levering en gratis retourneren, leegloop van winkelcentra en schaalvergroting. Nederland is na de wederopbouw van de jaren vijftig uitgegroeid tot een verzorgingsstaat met gestegen overheidsuitgaven aan sociale zekerheid. De economische groei en de toenemende welvaart zorgt voor een toename in consumptie die tot op de dag van vandaag zijn grens niet heeft bereikt. Waar en hoe zien we de consequenties van deze consumptiemaatschappij terug in de kaart van Nederland en in het landschap? We laten ons informeren door deskundigen, verzamelen data en bepalen onze koers.
 

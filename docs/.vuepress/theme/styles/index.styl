@@ -24,6 +24,10 @@
   box-sizing: border-box;
 }
 
+.header-anchor {
+  display: none;
+}
+
 body {
   padding: 0;
   margin: 0;
@@ -38,10 +42,7 @@ a, a:visited {
   color: #222429;
 }
 
-.content__default {
-  margin: 0 auto;
-  max-width: $contentWidth;
-}
+@import 'classes.styl'
 
 h1 {
   font-family: "Space Grotesk";
@@ -75,7 +76,8 @@ h1 {
 
 
 h2 {
-  font-family: SpaceGrotesk-Bold;
+  font-family: "Space Grotesk";
+  font-weight: bold;
   font-size: 32px;
   color: #222429;
   letter-spacing: 0.27px;
