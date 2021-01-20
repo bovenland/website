@@ -34,20 +34,29 @@ export default {
     const domain = [0, 174]
 
     const colors = [
-      '#ca0020',
-      '#f4a582',
-      '#bababa',
-      '#404040'
+      '#3F7A50',
+      '#61B479',
+      '#85ECA3',
+      '#B3F7C6',
+      '#E5FDEB',
     ]
+
+    const colorSteps = colors.map((color, index) => {
+      if (index < colors.length - 1) {
+        const domainDiff = domain[1] - domain[0]
+        return [color, domainDiff / colors.length * (index + 1) + domain[0]]
+      } else {
+        return color
+      }
+    }).flat()
+
+    // console.log(colorSteps)÷
+
 
     const fillColor = [
       'step',
       ['get', 'nearbyShops'],
-      colors[0], domain[1] / 5,
-      colors[1], domain[1] / 5 * 2,
-      colors[2], domain[1] / 5 * 3,
-      // colors[3], domain[1] / 5 * 4,
-      colors[3]
+      ...colorSteps
     ]
 
     const map = new Map({
@@ -68,7 +77,6 @@ export default {
     map.on('load', () => {
       map.addSource('bovenland', {
         type: 'vector',
-        // tiles: ['http://localhost:7777/{z}/{x}/{y}.pbf'],
         tiles: [`${this.$themeConfig.tiles.baseUrl}/{z}/{x}/{y}.pbf`],
         maxzoom: 16
       })
@@ -111,7 +119,6 @@ export default {
       //   // })
       // }, 4000)
 
-
       map.addLayer({
         id: 'water',
         type: 'fill',
@@ -143,7 +150,7 @@ export default {
           'line-width': {
             'stops': [
               [14, 0],
-              [17, 16]
+              [19, 16]
             ]
           },
         }
@@ -164,7 +171,7 @@ export default {
           'line-width': {
             'stops': [
               [14, 0],
-              [17, 12]
+              [19, 40]
             ]
           },
         }
@@ -187,9 +194,9 @@ export default {
         }
       })
 
-      map.on('moveend', () => {
-        console.log('moveend', map.getZoom(), map.getCenter())
-      })
+      // map.on('moveend', () => {
+      //   console.log('moveend', map.getZoom(), map.getCenter())
+      // })
 
       map.on('click', 'circles', (event) => {
         const {lng: centerLon, lat: centerLat} = map.getCenter()
@@ -206,7 +213,9 @@ export default {
           const [lon, lat] = JSON.parse(feature.properties.center)
           const view = `${zoom}/${lat + diffLat}/${lon + diffLon}`
 
-          this.$router.push({ path: 'map', query: { view }})
+          console.log('to map', view)
+
+          // this.$router.push({ path: 'map', query: { view }})
         }
       })
     })

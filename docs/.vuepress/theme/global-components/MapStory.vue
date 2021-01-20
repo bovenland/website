@@ -3,6 +3,7 @@
     <div class="item">
       <VNode :node="item" @updated="updated" />
       <div class="buttons">
+        <span>{{ index + 1 }} / {{ count }}</span>
         <Button @click="previous" :disabled="index === 0">Vorige</Button>
         <Button @click="next" :disabled="index === count - 1">Volgende</Button>
       </div>
@@ -114,6 +115,10 @@ export default {
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
+}
+
+.buttons > *:not(:last-child) {
+  margin-right: 0.5rem;
 }
 </style>
 

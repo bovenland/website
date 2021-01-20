@@ -8,7 +8,7 @@ title: Kaart | Waar we winkelen
 
 ::: slot story1
 <div class="story-location" data-layer="hoi1" data-zoom="10.145" data-center="5.409483,52.330209"></div>
-Stap één
+Er zijn meer dan 80.000 winkels in Nederland.
 :::
 
 ::: slot story2
