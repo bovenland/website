@@ -45,5 +45,6 @@ export default {
 .point polygon {
 	stroke: white;
 	stroke-width: 2px;
+	// filter: drop-shadow(0 0 8px rgba(0, 0, 0, .2));
 }
 </style>

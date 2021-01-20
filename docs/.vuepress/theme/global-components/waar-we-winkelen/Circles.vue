@@ -1,5 +1,12 @@
 <template>
-   <div class="map" id="gl-circles"></div>
+  <div class="container">
+    <div class="map" id="gl-circles"></div>
+    <CreateMapStory :map="map">
+      <Content slot-key="story1" />
+      <Content slot-key="story2" />
+      <Content slot-key="story3" />
+    </CreateMapStory>
+  </div>
 </template>
 
 <script>
@@ -13,6 +20,7 @@ export default {
     }
   },
   mounted: function () {
+    // console.log(this.$route)
     const defaultCenter = [5.38721, 52.15519]
 
     let zoom = 10
@@ -27,9 +35,9 @@ export default {
 
     const colors = [
       '#ca0020',
-'#f4a582',
-'#bababa',
-'#404040'
+      '#f4a582',
+      '#bababa',
+      '#404040'
     ]
 
     const fillColor = [
@@ -49,7 +57,7 @@ export default {
         sources: {},
         layers: []
       },
-      minZoom: 8,
+      minZoom: 9,
       maxZoom: 19,
       center: [lon, lat],
       zoom
@@ -131,7 +139,7 @@ export default {
         },
         paint: {
           'line-color': fillColor,
-          'line-opacity': 0.9,
+          'line-opacity': 1,
           'line-width': {
             'stops': [
               [14, 0],
@@ -151,8 +159,8 @@ export default {
           'line-join': 'round',
         },
         paint: {
-          'line-color': '#fff',
-          'line-opacity': 0.5,
+          'line-color': '#aaa',
+          'line-opacity': 1,
           'line-width': {
             'stops': [
               [14, 0],
@@ -177,6 +185,10 @@ export default {
           'fill-color': fillColor,
           'fill-outline-color': 'white'
         }
+      })
+
+      map.on('moveend', () => {
+        console.log('moveend', map.getZoom(), map.getCenter())
       })
 
       map.on('click', 'circles', (event) => {
@@ -208,11 +220,16 @@ export default {
 </script>
 
 <style scoped>
-.map {
+.container {
   top: 0;
   left: 0;
   height: 100%;
   width: 100%;
   position: fixed;
+}
+
+.map {
+  height: 100%;
+  width: 100%;
 }
 </style>
