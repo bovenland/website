@@ -31,7 +31,7 @@ header .line {
   width: 50%;
   border-bottom-width: 1px;
   border-bottom-style: solid;
-  border-bottom-color: black;
+  border-bottom-color: rgba(0, 0, 0, 0.33);
   height: 1px;
 }
 
