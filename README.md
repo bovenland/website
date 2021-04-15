@@ -12,17 +12,17 @@ Currently, the website is not indexed by search engines:
 
 Install dependencies:
 
-     npm install
+    npm install
 
 To start, run
 
-     npm run docs:dev
+    npm run docs:dev
 
 Or:
 
-     yarn docs:dev
+    yarn docs:dev
 
 To serve the map vector tiles, run:
 
-     ../map-reorder/serve-tiles.sh
-     ../map-reorder/serve-map.sh
+    ../map-reorder/serve-tiles.sh
+    ../map-reorder/serve-map.sh
