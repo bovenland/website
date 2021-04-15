@@ -13,6 +13,9 @@
     "docs:build": "vuepress build docs"
   },
   "dependencies": {
+    "d3-scale-chromatic": "^2.0.0",
+    "fuse.js": "^6.4.6",
+    "lodash": "^4.17.20",
     "maplibre-gl": "^1.13.0-rc.4"
   }
 }
