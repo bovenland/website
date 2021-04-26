@@ -1,1 +1,0 @@
-- [Waar we winkelen](/hoofdstukken/waar-we-winkelen/)

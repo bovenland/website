@@ -1,28 +1,20 @@
-# Boven.land website, made with Vuepress
+# Boven.land
 
-URL:
+## Build Setup
 
-- https://bovenland.netlify.app/
+```bash
+# install dependencies
+$ yarn install
 
-Currently, the website is not indexed by search engines:
+# serve with hot reload at localhost:3000
+$ yarn dev
 
-- https://bovenland.netlify.app/robots.txt
+# build for production and launch server
+$ yarn build
+$ yarn start
 
-## Running locally
+# generate static project
+$ yarn generate
+```
 
-Install dependencies:
-
-    npm install
-
-To start, run
-
-    npm run docs:dev
-
-Or:
-
-    yarn docs:dev
-
-To serve the map vector tiles, run:
-
-    ../map-reorder/serve-tiles.sh
-    ../map-reorder/serve-map.sh
+For detailed explanation on how things work, check out [Nuxt.js docs](https://nuxtjs.org).

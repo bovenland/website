@@ -1,21 +1,21 @@
 {
-  "name": "Boven.land",
+  "name": "website",
   "version": "1.0.0",
-  "main": "index.js",
-  "repository": "https://github.com/bovenland/website.git",
-  "author": "Bert Spaan <bert.spaan@gmail.com>",
-  "license": "MIT",
-  "devDependencies": {
-    "vuepress": "^1.7.1"
-  },
+  "private": true,
   "scripts": {
-    "docs:dev": "vuepress dev docs",
-    "docs:build": "vuepress build docs"
+    "dev": "nuxt",
+    "build": "nuxt build",
+    "start": "nuxt start",
+    "generate": "nuxt generate"
   },
   "dependencies": {
-    "d3-scale-chromatic": "^2.0.0",
-    "fuse.js": "^6.4.6",
-    "lodash": "^4.17.20",
-    "maplibre-gl": "^1.13.0-rc.4"
+    "core-js": "^3.9.1",
+    "nuxt": "^2.15.3",
+    "nuxt-buefy": "^0.4.4"
+  },
+  "devDependencies": {
+    "eslint-config-prettier": "^8.1.0",
+    "eslint-plugin-prettier": "^3.3.1",
+    "prettier": "^2.2.1"
   }
 }
