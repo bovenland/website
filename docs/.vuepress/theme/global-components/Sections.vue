@@ -19,11 +19,14 @@
 
 <script>
 export default {
-  name: 'Sections'
+  name: 'Sections',
+  mounted: function () {
+    console.log('harrrrrm!!!')
+  }
 }
 </script>
 
-<style>
+<style scoped>
 ul.sections {
   list-style-type: none;
   display: flex;

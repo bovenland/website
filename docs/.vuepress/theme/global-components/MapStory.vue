@@ -1,14 +1,12 @@
 <template>
-  <div class="container">
-    <div class="item">
-      <VNode :node="item" @updated="updated" />
-      <div class="buttons">
-        <span>{{ index + 1 }} / {{ count }}</span>
-        <Button @click="previous" :disabled="index === 0">Vorige</Button>
-        <Button @click="next" :disabled="index === count - 1">Volgende</Button>
-      </div>
+  <Box class="item story">
+    <VNode :node="item" @updated="updated" />
+    <div class="buttons">
+      <Button @click="previous" :disabled="index === 0">◄ Vorige</Button>
+      <span>{{ index + 1 }} / {{ count }}</span>
+      <Button @click="next" :disabled="index === count - 1">Volgende ►</Button>
     </div>
-  </div>
+  </Box>
 </template>
 
 <script>
@@ -21,11 +19,15 @@ export default {
   },
   props: {
     map: Object,
-    items: Array
+    items: Array,
+    startIndex: {
+      type: Number,
+      default: 0
+    }
   },
   data: function () {
     return {
-      index: 0
+      index: this.startIndex || 0
     }
   },
   computed: {
@@ -36,6 +38,11 @@ export default {
       return this.items.length
     }
   },
+  watch: {
+    index: function () {
+      this.$emit('updated', this.index)
+    }
+  },
   methods: {
     updated: function () {
       this.flyTo(this.index)
@@ -44,11 +51,21 @@ export default {
       if (this.map) {
         const location = this.getLocation(index)
 
+        const padding = 10
+
+        const storyBox = document.querySelector('.story')
+        const leftPadding = storyBox.getBoundingClientRect().right + padding
+
         // https://docs.mapbox.com/mapbox-gl-js/api/properties/#paddingoptions
-        this.map.flyTo({
-          zoom: location.zoom,
-          center: location.center,
-          essential: true
+        this.map.fitBounds(location.bounds, {
+          linear: false,
+          essential: true,
+          padding: {
+            top: padding,
+            bottom: padding,
+            left: leftPadding,
+            right: padding
+          }
         })
       }
     },
@@ -60,8 +77,7 @@ export default {
         if (locationElement) {
           return {
             layer: locationElement.dataset.layer,
-            zoom: parseFloat(locationElement.dataset.zoom),
-            center: locationElement.dataset.center.split(',').map((parseFloat))
+            bounds: JSON.parse(locationElement.dataset.bounds)
           }
         }
       }
@@ -77,25 +93,13 @@ export default {
 </script>
 
 <style scoped>
-.container {
-  pointer-events: none;
-  display: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  padding: 100px;
-
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-}
-
 .story-location {
   display: none;
 }
 
 .item {
+  grid-area: left;
+
   padding: 1em;
   border-color: black;
   border-width: 1px;
@@ -103,7 +107,7 @@ export default {
   background-color: white;
   pointer-events: all;
   border-radius: 5px;
-  width: 400px;
+  width: 300px;
   height: 400px;
 
   display: flex;
@@ -114,7 +118,7 @@ export default {
 .buttons {
   display: flex;
   flex-direction: row;
-  justify-content: flex-end;
+  justify-content: space-between;
 }
 
 .buttons > *:not(:last-child) {

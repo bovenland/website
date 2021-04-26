@@ -1,22 +1,129 @@
 <template>
   <div class="container">
     <div class="map" id="gl-circles"></div>
-    <CreateMapStory :map="map">
-      <Content slot-key="story1" />
-      <Content slot-key="story2" />
-      <Content slot-key="story3" />
-    </CreateMapStory>
+    <MapControls>
+      <div class="left">
+        <template v-if="!selectedFeatureProperties">
+          <CreateMapStory :map="map"
+            :startIndex="lastMapStoryIndex"
+            @updated="mapStoryUpdated">
+            <Content slot-key="all-shops" />
+            <Content slot-key="all-xxl-boxes" />
+            <Content slot-key="all-service-points" />
+            <Content slot-key="single-shop" />
+            <Content slot-key="story4" />
+          </CreateMapStory>
+        </template>
+        <template v-else-if="selectedFeatureProperties">
+          <FeatureInfo :featureProperties="selectedFeatureProperties"
+            @close="closeInfo" @toggleView="toggleView" />
+        </template>
+      </div>
+      <div class="bottom">
+        <MapFilters :fields="summary"
+          :selectedField.sync="selectedField"
+          :textQuery.sync="textQuery" />
+      </div>
+    </MapControls>
   </div>
 </template>
 
 <script>
 import { Map } from 'maplibre-gl'
+import { throttle } from 'lodash'
+import Fuse from 'fuse.js'
+
+import FeatureInfo from './FeatureInfo.vue'
+import MapFilters from './MapFilters.vue'
+
+import { createMapSources, createCircleLayers, createMapLayers,
+  toggleCircleView, toggleMapView,
+  setCircleLayersColor } from './lib/map'
+import { fetchFeatureData } from './lib/data'
+import { getColor } from './lib/colors'
 
 export default {
   name: 'Circles',
+  components: {
+    FeatureInfo,
+    MapFilters
+  },
   data () {
     return {
-      map: undefined
+      map: undefined,
+      featureData: undefined,
+
+      mapLoaded: false,
+      featureDataLoaded: false,
+
+      selectedField: undefined,
+      currentView: 'circles',
+      textQuery: '',
+      selectedFeatureProperties: undefined,
+      lastMapStoryIndex: 0
+    }
+  },
+  methods: {
+    loadFeatureData: async function () {
+      this.featureData = await fetchFeatureData()
+
+      const firstField = Object.keys(this.featureData.summary)[0]
+      this.selectedField = firstField
+
+      this.featureDataLoaded = true
+    },
+    createLayers: function () {
+      const color = getColor(this.selectedField, this.fieldExtent)
+
+      createCircleLayers(this.map, color, true)
+      createMapLayers(this.map, color, false)
+    },
+    closeInfo: function () {
+      this.selectedFeatureProperties = undefined
+    },
+    toggleView: function () {
+      if (this.currentView === 'circles') {
+        toggleMapView(this.map, this.selectedFeatureProperties)
+        this.currentView = 'map'
+      } else {
+        toggleCircleView(this.map, this.selectedFeatureProperties)
+        this.currentView = 'circles'
+      }
+    },
+    mapStoryUpdated: function (index) {
+      this.lastMapStoryIndex = index
+    },
+    throttledTextSearch: throttle(function (query) {
+      // this.textSearch(query)
+    }, 500),
+  },
+  watch: {
+    textQuery: function () {
+      // this.throttledTextSearch(this.textQuery)
+    },
+    readyToCreateLayers: function () {
+      if (this.readyToCreateLayers) {
+        this.createLayers()
+      }
+    },
+    selectedField: function () {
+      console.log(this.selectedField, this.fieldExtent)
+      const color = getColor(this.selectedField, this.fieldExtent)
+      setCircleLayersColor(this.map, color)
+    }
+  },
+  computed: {
+    readyToCreateLayers: function () {
+      return this.featureDataLoaded && this.mapLoaded
+    },
+    summary: function () {
+      return this.featureData && this.featureData.summary
+    },
+    fieldStats: function () {
+      return this.summary[this.selectedField]
+    },
+    fieldExtent: function () {
+      return this.fieldStats.extent
     }
   },
   mounted: function () {
@@ -31,34 +138,6 @@ export default {
       [zoom, lat, lon] = this.$route.query.view.split('/')
     }
 
-    const domain = [0, 174]
-
-    const colors = [
-      '#3F7A50',
-      '#61B479',
-      '#85ECA3',
-      '#B3F7C6',
-      '#E5FDEB',
-    ]
-
-    const colorSteps = colors.map((color, index) => {
-      if (index < colors.length - 1) {
-        const domainDiff = domain[1] - domain[0]
-        return [color, domainDiff / colors.length * (index + 1) + domain[0]]
-      } else {
-        return color
-      }
-    }).flat()
-
-    // console.log(colorSteps)÷
-
-
-    const fillColor = [
-      'step',
-      ['get', 'nearbyShops'],
-      ...colorSteps
-    ]
-
     const map = new Map({
       container: 'gl-circles',
       style: {
@@ -66,159 +145,36 @@ export default {
         sources: {},
         layers: []
       },
-      minZoom: 9,
+      minZoom: 7,
       maxZoom: 19,
       center: [lon, lat],
-      zoom
+      zoom,
+      dragRotate: false
     })
 
     this.map = map
 
     map.on('load', () => {
-      map.addSource('bovenland', {
-        type: 'vector',
-        tiles: [`${this.$themeConfig.tiles.baseUrl}/{z}/{x}/{y}.pbf`],
-        maxzoom: 16
+      this.mapLoaded = true
+      createMapSources(map, this.$themeConfig)
+
+      map.on('moveend', () => {
+        console.log('moveend', JSON.stringify(map.getBounds().toArray()), map.getZoom())
       })
-
-      map.addLayer({
-        id: 'circles',
-        type: 'fill',
-        source: 'bovenland',
-         'source-layer': 'circles',
-        paint: {
-          'fill-opacity': {
-            'stops': [
-              [12, 1],
-              [13, 0.1]
-            ]
-          },
-          'fill-opacity-transition': {duration: 300},
-          'fill-color': fillColor
-        }
-      })
-
-      // window.setTimeout(() => {
-      //   const domain = [0, 2986]
-
-      //   const color = d3.scaleLinear().domain(domain)
-      //     .interpolate(d3.interpolateHcl)
-      //     .range([d3.rgb(colorFrom), d3.rgb(colorTo)])
-
-      //   // map.setPaintProperty('circles', 'fill-opacity', 0)
-
-      //   // map.setPaintProperty('circles', 'fill-color', {
-      //   //   property: 'nearbyPeople',
-      //   //   stops: [
-      //   //     [domain[0], color(domain[0])],
-      //   //     [domain[1] / 4, color(domain[1] / 4)],
-      //   //     [domain[1] / 2, color(domain[1] / 2)],
-      //   //     [domain[1] / (4 / 3), color(domain[1] / (4 / 3))],
-      //   //     [domain[1], color(domain[1])]
-      //   //   ]
-      //   // })
-      // }, 4000)
-
-      map.addLayer({
-        id: 'water',
-        type: 'fill',
-        source: 'bovenland',
-        'source-layer': 'water',
-        paint: {
-          'fill-opacity': {
-            'stops': [
-              [13, 0],
-              [13.5, 0.6]
-            ]
-          },
-          'fill-color': '#fff'
-        }
-      })
-
-      map.addLayer({
-        id: 'roads-case',
-        type: 'line',
-        source: 'bovenland',
-        'source-layer': 'roads',
-        'layout': {
-          'line-cap': 'round',
-          'line-join': 'round',
-        },
-        paint: {
-          'line-color': fillColor,
-          'line-opacity': 1,
-          'line-width': {
-            'stops': [
-              [14, 0],
-              [19, 16]
-            ]
-          },
-        }
-      })
-
-      map.addLayer({
-        id: 'roads',
-        type: 'line',
-        source: 'bovenland',
-        'source-layer': 'roads',
-        'layout': {
-          'line-cap': 'round',
-          'line-join': 'round',
-        },
-        paint: {
-          'line-color': '#aaa',
-          'line-opacity': 1,
-          'line-width': {
-            'stops': [
-              [14, 0],
-              [19, 40]
-            ]
-          },
-        }
-      })
-
-      map.addLayer({
-        id: 'buildings',
-        type: 'fill',
-        source: 'bovenland',
-        'source-layer': 'buildings',
-        paint: {
-          'fill-opacity': {
-            'stops': [
-              [12, 0],
-              [12.5, 1]
-            ]
-          },
-          'fill-color': fillColor,
-          'fill-outline-color': 'white'
-        }
-      })
-
-      // map.on('moveend', () => {
-      //   console.log('moveend', map.getZoom(), map.getCenter())
-      // })
 
       map.on('click', 'circles', (event) => {
-        const {lng: centerLon, lat: centerLat} = map.getCenter()
+        if (event.features && event.features.length) {
+          this.selectedFeatureProperties = event.features[0].properties
+          console.log(this.selectedFeatureProperties)
 
-        if (event.features.length) {
-          const zoom = map.getZoom()
-          const feature = event.features[0]
-
-          const [packedLon, packedLat] = JSON.parse(feature.properties.centerPacked)
-
-          const diffLon = centerLon - packedLon
-          const diffLat = centerLat - packedLat
-
-          const [lon, lat] = JSON.parse(feature.properties.center)
-          const view = `${zoom}/${lat + diffLat}/${lon + diffLon}`
-
-          console.log('to map', view)
-
-          // this.$router.push({ path: 'map', query: { view }})
+          if (event.originalEvent.metaKey) {
+            this.toggleView()
+          }
         }
       })
     })
+
+    this.loadFeatureData()
   },
   beforeUnmount: function () {
     if (this.map) {
