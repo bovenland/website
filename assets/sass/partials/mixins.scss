@@ -1,0 +1,67 @@
+@mixin calc($prop, $val) {
+  @each $pre in -webkit-, -moz- {
+    #{$prop}: $pre + calc(#{$val});
+  }
+  #{$prop}: calc(#{$val});
+}
+
+@mixin opacity($opacity) {
+  opacity: $opacity;
+  $opacity-ie: $opacity * 100;
+  filter: alpha(opacity=$opacity-ie); //IE8
+}
+
+@mixin font-size($size) {
+  font-size: $size;
+}
+
+@mixin line-height($line-height) {
+  line-height: $line-height;
+}
+
+@mixin center($elementColumns) {
+  $margin: (susy-get(columns) - $elementColumns)/2;
+  margin-left: span($margin wide of susy-get(columns));
+}
+
+@mixin rotate($degrees) {
+  -webkit-transform: rotate($degrees);
+  -moz-transform: rotate($degrees);
+  -ms-transform: rotate($degrees);
+  -o-transform: rotate($degrees);
+  transform: rotate($degrees);
+  //  -ms-filter: "progid:DXImageTransform.Microsoft.Matrix(sizingMethod='auto expand', M11=#{cos($degrees)}, M12=#{-1*sin($degrees)}, M21=#{sin($degrees)}, M22=#{cos($degrees)})";
+  //  filter:  progid:DXImageTransform.Microsoft.Matrix(sizingMethod='auto expand', M11=#{cos($degrees)}, M12=#{-1*sin($degrees)}, M21=#{sin($degrees)}, M22=#{cos($degrees)});
+}
+
+@mixin aspect-ratio($width, $height) {
+  position: relative;
+  &:before {
+    display: block;
+    content: "";
+    width: 100%;
+    padding-top: ($height / $width) * 100%;
+  }
+  > .content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
+}
+
+@mixin transform-z() {
+  -webkit-transform: translateZ(0);
+  -moz-transform: translateZ(0);
+  -o-transform: translateZ(0);
+  transform: translateZ(0);
+}
+
+@mixin vertical-align($position: relative) {
+  position: $position;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
