@@ -44,6 +44,7 @@ export default {
   modules: [
     // https://go.nuxtjs.dev/buefy
     'nuxt-buefy',
+    '@nuxtjs/markdownit',
   ],
 
   // Build Configuration: https://go.nuxtjs.dev/config-build

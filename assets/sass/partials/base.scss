@@ -7,9 +7,10 @@ a,
 a:link,
 a:visited {
   color: inherit;
+  text-decoration: underline;
 }
 a:hover {
-  text-decoration: underline;
+  text-decoration: line-through;
 }
 
 a.nuxt-link-active,
@@ -17,4 +18,3 @@ a.nuxt-link-active:link,
 a.nuxt-link-active:visited {
   text-decoration: underline;
 }
-
