@@ -1,8 +1,20 @@
+// Colors
+$pink: #f749a8;
+$blue: #4861ed;
+$aqua: #42bdc6;
+$green: #70d08c;
+$red: #fc796b;
+$yellow: #f0f462;
+$black: #222429;
+$white: #ffffff;
+
+// Body
 body {
-  color: black;
-  background-color: pink;
+  color: $black;
+  background-color: $red;
 }
 
+// Links
 a,
 a:link,
 a:visited {
