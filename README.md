@@ -1,5 +1,7 @@
 # Boven.land
 
+You can use https://buefy.org/ and https://bulma.io/ to style the website.
+
 ## Build Setup
 
 ```bash

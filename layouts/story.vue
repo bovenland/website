@@ -12,7 +12,7 @@
       </aside>
 
       <div class="container column is-10">
-        <nuxt />
+        <Nuxt />
       </div>
     </section>
   </div>

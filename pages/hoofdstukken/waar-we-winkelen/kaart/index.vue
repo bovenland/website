@@ -7,6 +7,6 @@
 <script>
 
 export default {
-  layout: 'story'
+  layout: 'map'
 }
 </script>

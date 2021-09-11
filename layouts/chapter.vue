@@ -10,7 +10,7 @@
       </ul>
     </nav>
     <main class="container column is-10">
-      <nuxt />
+      <Nuxt />
     </main>
   </div>
 </template>

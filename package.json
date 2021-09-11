@@ -11,10 +11,18 @@
   "dependencies": {
     "@nuxtjs/markdownit": "^2.0.0",
     "core-js": "^3.9.1",
+<<<<<<< HEAD
     "node-sass": "^6.0.1",
     "nuxt": "^2.15.8",
     "nuxt-buefy": "^0.4.4",
     "sass-loader": "^10.1.1"
+=======
+    "d3-scale-chromatic": "^2.0.0",
+    "lodash": "^4.17.21",
+    "maplibre-gl": "^1.14.0",
+    "nuxt": "^2.15.3",
+    "nuxt-buefy": "^0.4.4"
+>>>>>>> 318685b... halfway implementing map circle view in nuxt
   },
   "devDependencies": {
     "eslint-config-prettier": "^8.1.0",
