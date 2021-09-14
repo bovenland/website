@@ -1,6 +1,6 @@
-@import "partials/normalize";
-@import "partials/mixins";
+@import "partials/normalize.scss";
+@import "partials/mixins.scss";
 
-@import "partials/base";
-@import "partials/fonts";
-@import "partials/markup";
+@import "partials/base.scss";
+@import "partials/markup.scss";
+@import "partials/header.scss";
