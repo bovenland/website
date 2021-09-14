@@ -1,18 +1,19 @@
 <template>
   <header>
     <NuxtLink to="/">
-      <Logo></Logo>
+      <Logo />
     </NuxtLink>
-    <Menu></Menu>
+    <Menu />
   </header>
 </template>
 
 <script>
-import Menu from "./Menu";
 import Logo from "./Logo";
+import Menu from "./Menu";
 export default {
   name: "Header",
   components: {
+    Logo,
     Menu,
   },
 };
