@@ -1,8 +1,37 @@
 <template lang="md">
-# Hello Markdown
+  <div class="homepage">
+    
+    <div class="intro">
+      Een visuele en cartografische ontdekkingsreis waarin we onderzoeken wat Nederland tot Nederland maakt.
+    </div>
+    
+    <!-- Intro afbeelding -->
+    
+    <!-- Hoofdstukken -->
 
-@Bert, je kunt nu gewoon Markdown schrijven als je `lang="md"` aan te template toevoegt.
-@Bert, we zullen `Server Side Rendering` (SSR) nodig hebben voor het snelle boot-en + indexering door Google en zo. Zie hier: <a href="https://nuxtjs.org/docs/2.x/concepts/server-side-rendering" target="_blank">nuxtjs.org over SSR</a>.
+    <!-- Wat is boven.land? -->
+    #### Het project
+    ## Wat is boven.land?
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam euismod turpis quis felis ultricies, eu vehicula purus mattis. Donec auctor neque eu dolor molestie sollicitudin. Curabitur in enim ornare, viverra risus ac, convallis eros. Morbi ac enim sit amet mauris convallis cursus. Etiam in ipsum et mauris faucibus bibendum eu quis elit. Aliquam molestie lacus quam, ac rhoncus risus rutrum ac. Integer vehicula pulvinar odio, sed cursus nisl.
+
+    <!-- Wie maken boven.land? -->
+    ## Wie maken boven.land?
+
+    <!-- Profielen -->
+    <ul class="profiles">
+      <li>
+        <h2>Jenny Smets</h2>
+        <p>Visuele verhalen &amp; verbeelding</p>
+      </li>
+      <li>
+        <h2>Bert Spaan</h2>
+        <p>Cartografie, data &amp; technologie</p>
+      </li>
+    </ul>
+
+    Nullam in dui metus. Praesent vestibulum ex sed quam dapibus porta. Praesent consectetur nunc at diam porttitor, et maximus velit vulputate. Sed ultricies risus lorem, tristique vehicula dui posuere eu. Praesent quam risus, egestas nec tempus ac, rhoncus et ligula. Nam vestibulum lorem in dignissim malesuada.
+
+  </div>
 </template>
 
 <script>
