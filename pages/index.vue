@@ -1,5 +1,5 @@
 <template lang="md">
-  <div class="homepage">
+  <div>
     
     <div class="intro">
       Een visuele en cartografische ontdekkingsreis waarin we onderzoeken wat Nederland tot Nederland maakt.
@@ -42,6 +42,27 @@
 
   </div>
 </template>
+
+<style lang="scss" scoped>
+@import "@/assets/sass/partials/base.scss";
+@import "@/assets/sass/partials/mixins.scss";
+
+div.intro {
+  text-align: center;
+}
+.header-image {
+  border-top: 4px solid $pink;
+  width: 100%;
+}
+
+ul.profiles {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  margin: 0;
+  padding: 0;
+}
+</style>
 
 <script>
 export default {
