@@ -32,3 +32,9 @@ export default {
   },
 };
 </script>
+
+<style lang="scss" scoped>
+section.section {
+  padding: 0;
+}
+</style>

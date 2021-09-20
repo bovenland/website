@@ -3,18 +3,26 @@
     <NuxtLink to="/">
       <Logo />
     </NuxtLink>
-    <Menu />
+    <Burger />
+
+    <TopMenu>
+      <MainMenu />
+    </TopMenu>
   </header>
 </template>
 
 <script>
 import Logo from "./Logo";
-import Menu from "./Menu";
+import Burger from "./menu/Burger";
+import MainMenu from "./menu/MainMenu";
+import TopMenu from "./menu/TopMenu";
 export default {
   name: "Header",
   components: {
     Logo,
-    Menu,
+    Burger,
+    MainMenu,
+    TopMenu,
   },
 };
 </script>
