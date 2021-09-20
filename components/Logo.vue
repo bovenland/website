@@ -10,3 +10,12 @@
     />
   </svg>
 </template>
+
+<style lang="scss" scoped>
+@import "@/assets/sass/partials/base.scss";
+svg {
+  path.dot {
+    fill: $pink;
+  }
+}
+</style>
