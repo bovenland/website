@@ -1,7 +1,7 @@
 <template>
   <header>
     <NuxtLink to="/">
-      <Logo />
+      <Logo dot="pink" letters="black" />
     </NuxtLink>
     <Burger />
 

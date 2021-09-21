@@ -44,6 +44,7 @@ export default {
 
   &.slide-enter,
   &.slide-leave-to {
+    transition: max-height 0.8s ease-out 0s top 1.0s ease-in 0s;
     top: -60px;
     max-height: 0px;
     overflow: hidden;

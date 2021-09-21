@@ -30,3 +30,31 @@ a.nuxt-link-active:link,
 a.nuxt-link-active:visited {
   text-decoration: underline;
 }
+
+// Svg fills
+svg {
+  path.pink {
+    fill: $pink;
+  }
+  path.blue {
+    fill: $blue;
+  }
+  path.aqua {
+    fill: $aqua;
+  }
+  path.green {
+    fill: $green;
+  }
+  path.red {
+    fill: $red;
+  }
+  path.yellow {
+    fill: $yellow;
+  }
+  path.black {
+    fill: $black;
+  }
+  path.white {
+    fill: $white;
+  }
+}

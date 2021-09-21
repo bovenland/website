@@ -11,6 +11,24 @@
     </div>
 
     <!-- Hoofdstukken -->
+    <ul>
+      <li>
+        <ul>
+          <li>
+            <SquareButton small="1.1" label="Reisverslag" icon="Reisverslag" class="red" iconColor="white" />
+          </li>
+          <li>
+            <SquareButton small="1.2" label="Cartografie" icon="Cartografie" class="green" iconColor="white" />
+          </li>
+          <li>
+            <SquareButton small="1.3" label="Verbeelding" icon="Verbeelding" class="aqua" iconColor="white" />
+          </li>
+          <li>
+            <SquareButton small="1.4" label="Data" icon="Data" class="blue" iconColor="white" />
+          </li>
+        </ul>
+      </li>
+    </ul>
 
     <!-- Wat is boven.land? -->
     #### Het project
@@ -65,8 +83,14 @@ ul.profiles {
 </style>
 
 <script>
+import DotMask from "./../components/svg/icons/DotMask";
+import SquareButton from "./../components/buttons/Square";
+
 export default {
   name: "Home",
-  components: {},
+  components: {
+    DotMask,
+    SquareButton,
+  },
 };
 </script>
