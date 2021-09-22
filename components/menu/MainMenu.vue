@@ -7,6 +7,14 @@
         <nuxt-link :to="{ name: `hoofdstukken-${chapter.to.name}` }">
           {{ chapter.title }}
         </nuxt-link>
+        <br>
+        <ul>
+          <li v-for="(segment, segmentIndex) of chapter.segments" :key="segmentIndex">
+            <nuxt-link :to="{ name: `hoofdstukken-${chapter.to.name}-${segment.to.name}` }">
+              {{index+1}}.{{segmentIndex+1}}: {{ segment.title }}
+            </nuxt-link>
+          </li>
+        </ul>
       </li>
     </ol>
   </section>

@@ -11,24 +11,18 @@
     </div>
 
     <!-- Hoofdstukken -->
-    <ul>
-      <li>
+    <ol class="chapters">
+      <li v-for="(chapter, index) of chapters" :key="index">
         <ul>
-          <li>
-            <SquareButton small="1.1" label="Reisverslag" icon="Reisverslag" class="red" iconColor="white" />
-          </li>
-          <li>
-            <SquareButton small="1.2" label="Cartografie" icon="Cartografie" class="green" iconColor="white" />
-          </li>
-          <li>
-            <SquareButton small="1.3" label="Verbeelding" icon="Verbeelding" class="aqua" iconColor="white" />
-          </li>
-          <li>
-            <SquareButton small="1.4" label="Data" icon="Data" class="blue" iconColor="white" />
+          <h2>{{ chapter.title }}</h2>
+          <li v-for="(segment, segmentIndex) of chapter.segments" :key="segmentIndex">
+            <nuxt-link :to="{ name: `hoofdstukken-${chapter.to.name}-${segment.to.name}` }">
+              <SquareButton v-bind:small="(index+1)+'.'+(segmentIndex+1)" v-bind:label="segment.title" v-bind:icon="segment.title" v-bind:class="segment.color" iconColor="white" />
+            </nuxt-link>
           </li>
         </ul>
       </li>
-    </ul>
+    </ol>
 
     <!-- Wat is boven.land? -->
     #### Het project
@@ -83,11 +77,16 @@ ul.profiles {
 </style>
 
 <script>
+import structure from "/structure.js";
+
 import DotMask from "./../components/svg/icons/DotMask";
 import SquareButton from "./../components/buttons/Square";
 
 export default {
   name: "Home",
+  data() {
+    return structure;
+  },
   components: {
     DotMask,
     SquareButton,

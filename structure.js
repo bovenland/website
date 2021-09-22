@@ -25,5 +25,30 @@ export default {
     to: {
       name: "waar-we-winkelen"
     },
+    segments: [{
+      title: "Reisverslag",
+      color: "red",
+      to: {
+        name: "reisverslag"
+      }
+    }, {
+      title: "Cartografie",
+      color: "green",
+      to: {
+        name: "cartografie"
+      }
+    }, {
+      title: "Verbeelding",
+      color: "aqua",
+      to: {
+        name: "verbeelding"
+      }
+    }, {
+      title: "Data",
+      color: "blue",
+      to: {
+        name: "data"
+      }
+    }]
   }, ]
 }
