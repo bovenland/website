@@ -5,13 +5,13 @@
     <ol>
       <li v-for="(chapter, index) of chapters" :key="index">
         <nuxt-link :to="{ name: `hoofdstukken-${chapter.to.name}` }">
-          {{ chapter.title }}
+          {{ chapter.index }}: {{ chapter.title }}
         </nuxt-link>
         <br>
         <ul>
           <li v-for="(segment, segmentIndex) of chapter.segments" :key="segmentIndex">
             <nuxt-link :to="{ name: `hoofdstukken-${chapter.to.name}-${segment.to.name}` }">
-              {{index+1}}.{{segmentIndex+1}}: {{ segment.title }}
+              {{chapter.index}}.{{segmentIndex+1}}: {{ segment.title }}
             </nuxt-link>
           </li>
         </ul>
@@ -44,5 +44,8 @@ export default {
 <style lang="scss" scoped>
 section.section {
   padding: 0;
+  ol {
+    list-style: none;
+  }
 }
 </style>

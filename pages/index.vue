@@ -14,11 +14,12 @@
     <ol class="chapters">
       <li v-for="(chapter, index) of chapters" :key="index">
         <ul>
+          <h4>{{ chapter.index}} </h4>
           <h2>{{ chapter.title }}</h2>
           <li v-for="(segment, segmentIndex) of chapter.segments" :key="segmentIndex">
               <SquareButton
                 v-bind:to="'hoofdstukken-' + chapter.to.name+ '-' +segment.to.name"
-                v-bind:small="(index+1)+'.'+(segmentIndex+1)"
+                v-bind:small="chapter.index+'.'+(segmentIndex+1)"
                 v-bind:label="segment.title"
                 v-bind:icon="segment.title"
                 v-bind:class="segment.color"
@@ -70,6 +71,10 @@ div.intro {
 .header-image {
   border-top: 4px solid $pink;
   width: 100%;
+}
+
+ol.chapters {
+  list-style: none;
 }
 
 ul.profiles {

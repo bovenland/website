@@ -21,6 +21,7 @@ export default {
 
   // The Chapters
   chapters: [{
+    index: 1,
     title: "Waar we winkelen",
     to: {
       name: "waar-we-winkelen"
@@ -51,9 +52,10 @@ export default {
       }
     }]
   }, {
-    title: "Nog een hoofdstuk",
+    index: 2,
+    title: "Het meest afgelegen punt",
     to: {
-      name: "nog-een-hoofdstuk"
+      name: "het-meest-afgelegen-punt"
     },
     segments: [{
       title: "Reisverslag",
