@@ -4,9 +4,9 @@
     <!-- <h1>{{ page.title }}</h1> -->
     <nav>
       <ul>
-        <li v-for="link of chapterLinks" :key="link.name">
-          <NuxtLink :to="{ name: `${$route.name}-${link.name}` }">{{
-            link.title
+        <li v-for="(segment, segmentIndex) of segments" :key="segmentIndex">
+          <NuxtLink :to="{ name: `${$route.name}-${segment.to.name}` }">{{
+            segment.title
           }}</NuxtLink>
         </li>
       </ul>
@@ -19,23 +19,20 @@
 </template>
 
 <script>
+import structure from "/structure.js";
 export default {
   data() {
+    var chapter = null;
+    structure.chapters.forEach((c) => {
+      if ("hoofdstukken-" + c.to.name == this.$route.name) {
+        chapter = c;
+      }
+    });
+    if (chapter == null) {
+      return this.$nuxt.error({ statusCode: 404, message: "Page not found" });
+    }
     return {
-      chapterLinks: [
-        {
-          name: "reisverslag",
-          title: "Reisverslag",
-        },
-        {
-          name: "kaart",
-          title: "Kaart",
-        },
-        {
-          name: "data",
-          title: "Data",
-        },
-      ],
+      segments: chapter.segments,
     };
   },
 };
