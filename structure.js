@@ -50,5 +50,29 @@ export default {
         name: "data"
       }
     }]
+  }, {
+    title: "Nog een hoofdstuk",
+    to: {
+      name: "nog-een-hoofdstuk"
+    },
+    segments: [{
+      title: "Reisverslag",
+      color: "red",
+      to: {
+        name: "reisverslag"
+      }
+    }, {
+      title: "Cartografie",
+      color: "green",
+      to: {
+        name: "cartografie"
+      }
+    }, {
+      title: "Data",
+      color: "blue",
+      to: {
+        name: "data"
+      }
+    }]
   }, ]
 }
