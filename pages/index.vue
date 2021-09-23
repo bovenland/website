@@ -16,9 +16,14 @@
         <ul>
           <h2>{{ chapter.title }}</h2>
           <li v-for="(segment, segmentIndex) of chapter.segments" :key="segmentIndex">
-            <nuxt-link :to="{ name: `hoofdstukken-${chapter.to.name}-${segment.to.name}` }">
-              <SquareButton v-bind:small="(index+1)+'.'+(segmentIndex+1)" v-bind:label="segment.title" v-bind:icon="segment.title" v-bind:class="segment.color" iconColor="white" />
-            </nuxt-link>
+              <SquareButton
+                v-bind:to="'hoofdstukken-' + chapter.to.name+ '-' +segment.to.name"
+                v-bind:small="(index+1)+'.'+(segmentIndex+1)"
+                v-bind:label="segment.title"
+                v-bind:icon="segment.title"
+                v-bind:class="segment.color"
+                iconColor="white"
+              />
           </li>
         </ul>
       </li>

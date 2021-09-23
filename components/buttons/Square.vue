@@ -1,8 +1,10 @@
 <template>
   <div>
-    <small>{{ small }}</small>
-    <label>{{ label }}</label>
-    <component v-bind:is="icon" v-bind:color="iconColor" />
+    <nuxt-link :to="{ name: to }">
+      <small>{{ small }}</small>
+      <label>{{ label }}</label>
+      <component v-bind:is="icon" v-bind:color="iconColor" />
+    </nuxt-link>
   </div>
 </template>
 
@@ -13,7 +15,7 @@ import Reisverslag from "./../svg/icons/Reisverslag";
 import Verbeelding from "./../svg/icons/Verbeelding";
 
 export default {
-  props: ["small", "label", "icon", "iconColor"],
+  props: ["to", "small", "label", "icon", "iconColor"],
   components: {
     Cartografie,
     Data,
@@ -31,8 +33,18 @@ div {
   width: 128px;
   height: 128px;
   position: relative;
-
   color: $white;
+
+  a,
+  a:link,
+  a:visited,
+  a.nuxt-link-active,
+  a.nuxt-link-active:link,
+  a.nuxt-link-active:visited {
+    color: inherit;
+    text-decoration: none;
+  }
+
   &.pink {
     background-color: $pink;
   }
