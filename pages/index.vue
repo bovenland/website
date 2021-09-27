@@ -11,24 +11,7 @@
     </div>
 
     <!-- Hoofdstukken -->
-    <ol class="chapters">
-      <li v-for="(chapter, index) of chapters" :key="index">
-        <ul>
-          <h4>{{ chapter.index}} </h4>
-          <h2>{{ chapter.title }}</h2>
-          <li v-for="(segment, segmentIndex) of chapter.segments" :key="segmentIndex">
-              <SquareButton
-                v-bind:to="'hoofdstukken-' + chapter.to.name+ '-' +segment.to.name"
-                v-bind:small="chapter.index+'.'+(segmentIndex+1)"
-                v-bind:label="segment.title"
-                v-bind:icon="segment.title"
-                v-bind:class="segment.color"
-                iconColor="white"
-              />
-          </li>
-        </ul>
-      </li>
-    </ol>
+    <FoldDownMenu v-bind:children=chapters />
 
     <!-- Wat is boven.land? -->
     #### Het project
@@ -73,10 +56,6 @@ div.intro {
   width: 100%;
 }
 
-ol.chapters {
-  list-style: none;
-}
-
 ul.profiles {
   display: flex;
   align-items: center;
@@ -89,8 +68,8 @@ ul.profiles {
 <script>
 import structure from "/structure.js";
 
+import FoldDownMenu from "./../components/menu/FoldDownMenu";
 import DotMask from "./../components/svg/icons/DotMask";
-import SquareButton from "./../components/buttons/Square";
 
 export default {
   name: "Home",
@@ -99,7 +78,7 @@ export default {
   },
   components: {
     DotMask,
-    SquareButton,
+    FoldDownMenu,
   },
 };
 </script>

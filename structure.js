@@ -23,6 +23,7 @@ export default {
   chapters: [{
     index: 1,
     title: "Waar we winkelen",
+    foldDown: "visible",
     to: {
       name: "waar-we-winkelen"
     },
@@ -54,6 +55,7 @@ export default {
   }, {
     index: 2,
     title: "Het meest afgelegen punt",
+    foldDown: false,
     to: {
       name: "het-meest-afgelegen-punt"
     },
