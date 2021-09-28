@@ -24,3 +24,11 @@ export default {
   },
 };
 </script>
+
+<style lang="scss">
+div.story {
+  p {
+    margin: 1.0rem 0;
+  }
+}
+</style>

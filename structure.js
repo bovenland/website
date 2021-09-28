@@ -55,11 +55,11 @@ export default {
     }]
   }, {
     index: 2,
-    title: "Het meest afgelegen punt",
+    title: "Meest afgelegen punt van Nederland",
     description: "Donec eleifend mollis consequat. Suspendisse vitae posuere ipsum. Curabitur lacinia sem lectus, vitae dictum elit aliquet nec. Quisque posuere augue ac ligula bibendum dapibus. Phasellus blandit dictum mi, nec mattis ante efficitur ut. Nullam id commodo tortor.",
     foldDown: false,
     to: {
-      name: "het-meest-afgelegen-punt"
+      name: "meest-afgelegen-punt-van-nederland"
     },
     segments: [{
       title: "Reisverslag",
