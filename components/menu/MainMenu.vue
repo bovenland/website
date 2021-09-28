@@ -4,11 +4,14 @@
   <section class="section">
     <ol>
       <li v-for="(chapter, index) of chapters" :key="index">
-        <nuxt-link :to="{ name: `hoofdstukken-${chapter.to.name}` }">
+        <nuxt-link v-if="chapter.to" :to="{ name: `hoofdstukken-${chapter.to.name}` }">
           {{ chapter.index }}: {{ chapter.title }}
         </nuxt-link>
+        <div v-else>
+          {{ chapter.index }}: {{ chapter.title }}
+        </div>
         <br>
-        <ul>
+        <ul v-if="chapter.to">
           <li v-for="(segment, segmentIndex) of chapter.segments" :key="segmentIndex">
             <nuxt-link :to="{ name: `hoofdstukken-${chapter.to.name}-${segment.to.name}` }">
               {{chapter.index}}.{{segmentIndex+1}}: {{ segment.title }}

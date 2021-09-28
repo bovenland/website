@@ -23,6 +23,7 @@ export default {
   chapters: [{
     index: 1,
     title: "Waar we winkelen",
+    description: "Donec eleifend mollis consequat. Suspendisse vitae posuere ipsum. Curabitur lacinia sem lectus, vitae dictum elit aliquet nec. Quisque posuere augue ac ligula bibendum dapibus. Phasellus blandit dictum mi, nec mattis ante efficitur ut. Nullam id commodo tortor.",
     foldDown: "visible",
     to: {
       name: "waar-we-winkelen"
@@ -55,6 +56,7 @@ export default {
   }, {
     index: 2,
     title: "Het meest afgelegen punt",
+    description: "Donec eleifend mollis consequat. Suspendisse vitae posuere ipsum. Curabitur lacinia sem lectus, vitae dictum elit aliquet nec. Quisque posuere augue ac ligula bibendum dapibus. Phasellus blandit dictum mi, nec mattis ante efficitur ut. Nullam id commodo tortor.",
     foldDown: false,
     to: {
       name: "het-meest-afgelegen-punt"
@@ -78,5 +80,9 @@ export default {
         name: "data"
       }
     }]
-  }, ]
+  }, {
+    index: 3,
+    title: "Dictum nec mattis ante",
+    foldDown: false,
+  }]
 }
