@@ -29,8 +29,16 @@ export default {
       {
         rel: 'stylesheet',
         href: 'https://fonts.googleapis.com/css2?family=Merriweather:wght@300&family=Space+Grotesk:wght@400;600;700&family=Space+Mono:wght@700&display=swap'
-      }
-    ]
+      },
+      {
+        rel: 'stylesheet',
+        href: 'https://unpkg.com/swiper@7/swiper-bundle.min.css'
+      },
+    ],
+    script: [{
+      src: 'https://unpkg.com/swiper@7/swiper-bundle.min.js',
+      body: true,
+    }]
   },
 
   // Global CSS: https://go.nuxtjs.dev/config-css
