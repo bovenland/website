@@ -13,9 +13,9 @@
 
 <script>
 import Logo from "./Logo";
-import Burger from "./menu/Burger";
-import MainMenu from "./menu/MainMenu";
-import TopMenu from "./menu/TopMenu";
+import Burger from "./../menu/Burger";
+import MainMenu from "./../menu/MainMenu";
+import TopMenu from "./../menu/TopMenu";
 export default {
   name: "Header",
   components: {

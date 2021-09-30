@@ -9,5 +9,10 @@
 </template>
 
 <script>
-export default {};
+import Header from "./../components/elements/Header";
+import Footer from "./../components/elements/Footer";
+
+export default {
+  components: { Header, Footer },
+};
 </script>

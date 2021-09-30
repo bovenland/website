@@ -18,9 +18,16 @@
 </template>
 
 <script>
+import Header from "./../components/elements/Header";
+import Footer from "./../components/elements/Footer";
+
 export default {
   data() {
     return {};
+  },
+  components: {
+    Header,
+    Footer,
   },
 };
 </script>
@@ -28,7 +35,7 @@ export default {
 <style lang="scss">
 div.story {
   p {
-    margin: 1.0rem 0;
+    margin: 1rem 0;
   }
 }
 </style>
