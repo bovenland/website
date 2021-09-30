@@ -57,7 +57,30 @@
       winkelgebieden en passanten. En nu dus Teun Koek van Westfield Mall of the
       Netherlands.
     </p>
-    <p>[slideshow met fotos van jan dirk in Westfield mall]</p>
+
+    <!-- Slider main container -->
+    <div class="swiper">
+      <!-- Additional required wrapper -->
+      <div class="swiper-wrapper">
+        <!-- Slides -->
+        <div class="swiper-slide">
+          <nuxt-img src="/img/hoofdstukken/waar-we-winkelen/8Y0A1013.JPG" />
+        </div>
+        <div class="swiper-slide">
+          <nuxt-img src="/img/hoofdstukken/waar-we-winkelen/8Y0A3454.JPG" />
+        </div>
+      </div>
+      <!-- If we need pagination -->
+      <div class="swiper-pagination"></div>
+
+      <!-- If we need navigation buttons -->
+      <div class="swiper-button-prev"></div>
+      <div class="swiper-button-next"></div>
+
+      <!-- If we need scrollbar -->
+      <div class="swiper-scrollbar"></div>
+    </div>
+
     <p>
       Een winkelcentrum van Westfield is als een arena vol ervaringen. Hier is
       winkelen geen noodzakelijke bezigheid waarbij transacties plaatsvinden,
@@ -442,5 +465,35 @@
 <script>
 export default {
   layout: "story",
+
+  mounted: function () {
+    this.swiper = new Swiper(".swiper", {
+      // Optional parameters
+      direction: "horizontal",
+      loop: false,
+
+      // If we need pagination
+      pagination: {
+        el: ".swiper-pagination",
+      },
+
+      // Navigation arrows
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      },
+
+      // And if we need scrollbar
+      scrollbar: {
+        el: ".swiper-scrollbar",
+      },
+    });
+  },
+
+  beforeDestroy() {
+    if (this.swiper) {
+      this.swiper.destroy();
+    }
+  },
 };
 </script>
