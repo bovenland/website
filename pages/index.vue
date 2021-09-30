@@ -7,7 +7,7 @@
 
     <!-- Intro afbeelding -->
     <div class="header-image">
-      <img src="@/assets/img/wadden.jpg" />
+      <nuxt-img src="/img/homepage/wadden.jpg" />
     </div>
 
     <!-- Hoofdstukken -->
@@ -25,14 +25,14 @@
     <ul class="profiles">
       <li>
         <DotMask>
-          <img src="@/assets/img/jenny-smets.jpg" />
+          <nuxt-img src="/img/jenny-smets.jpg" />
         </DotMask>
         <h2>Jenny Smets</h2>
         <p>Visuele verhalen &amp; verbeelding</p>
       </li>
       <li>
         <DotMask>
-          <img src="@/assets/img/bert-spaan.jpg" />
+          <nuxt-img src="/img/bert-spaan.jpg" />
         </DotMask>
         <h2>Bert Spaan</h2>
         <p>Cartografie, data &amp; technologie</p>
