@@ -1,19 +1,14 @@
 <template>
   <div class="chapter">
-    <Header />
-    <!-- <h1>{{ page.title }}</h1> -->
-    <nav>
-      <ul>
-        <li v-for="(segment, segmentIndex) of segments" :key="segmentIndex">
-          <NuxtLink :to="{ name: `${$route.name}-${segment.to.name}` }">{{
-            segment.title
-          }}</NuxtLink>
-        </li>
-      </ul>
-    </nav>
-    <main class="container column is-10">
+    <Header color="pink" />
+
+    <!-- Andere segmenten -->
+    <SegmentsMenu v-bind:chapter="chapter" v-bind:segments="segments" />
+
+    <div class="container columnr chapter">
       <nuxt />
-    </main>
+    </div>
+
     <Footer />
   </div>
 </template>
@@ -23,6 +18,7 @@ import structure from "/structure.js";
 
 import Header from "./../components/elements/Header";
 import Footer from "./../components/elements/Footer";
+import SegmentsMenu from "./../components/menu/SegmentsMenu";
 
 export default {
   data() {
@@ -38,12 +34,14 @@ export default {
       return this.$nuxt.error({ statusCode: 404, message: "Page not found" });
     }
     return {
+      chapter: chapter,
       segments: chapter.segments,
     };
   },
   components: {
     Header,
     Footer,
+    SegmentsMenu,
   },
 };
 </script>

@@ -1,16 +1,16 @@
 <template>
   <div>
-    <Header color="red" />
+    <Header color="blue" />
 
     <!-- Intro afbeelding -->
-    <div class="header-image story-header-image">
+    <div class="header-image data-header-image">
       <nuxt-img src="/img/homepage/wadden.jpg" />
     </div>
 
     <!-- Andere segmenten -->
     <SegmentsMenu v-bind:chapter="chapter" v-bind:segments="segments" />
 
-    <div class="container column story">
+    <div class="container column data">
       <nuxt />
     </div>
     <Footer />
@@ -67,16 +67,16 @@ export default {
 @import "@/assets/sass/partials/base.scss";
 @import "@/assets/sass/partials/mixins.scss";
 
-.story-header-image {
-  border-top: 4px solid $red;
+.data-header-image {
+  border-top: 4px solid $blue;
   width: 100%;
   margin: 0 -0.75rem;
   @include calc("width", "100% + 1.5rem");
 }
 
-div.story {
+div.data {
   h1 {
-    color: $red;
+    color: $blue;
   }
   p {
     margin: 1rem 0;
