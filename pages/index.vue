@@ -54,6 +54,8 @@ div.intro {
 .header-image {
   border-top: 4px solid $pink;
   width: 100%;
+  margin: 3rem -0.75rem;
+  @include calc("width", "100% + 1.5rem");
 }
 
 ul.profiles {
