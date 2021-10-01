@@ -1,6 +1,6 @@
 <template>
   <div class="default">
-    <Header />
+    <Header color="pink" />
     <main class="container column is-10">
       <nuxt />
     </main>

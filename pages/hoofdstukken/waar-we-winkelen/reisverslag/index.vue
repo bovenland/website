@@ -1,8 +1,9 @@
 <template>
-  <section class="section">
+  <section>
+    <label>Hoofdstuk 1</label>
     <h1>Waar we winkelen</h1>
 
-    <p>
+    <p class="intro">
       Het najaar van 2020 is stormachtig in Nederland. En dat geldt niet alleen
       voor het weer. Vanwege de coronopandemie gaan we richting de tweede
       lockdown van het jaar. Deze gedwongen terugtrekking in onze huizen doet al
