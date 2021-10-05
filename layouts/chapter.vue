@@ -2,8 +2,12 @@
   <div class="chapter">
     <Header color="pink" />
 
-    <!-- Andere segmenten -->
-    <SegmentsMenu v-bind:chapter="chapter" v-bind:segments="segments" />
+    <!-- Segmenten menu -->
+    <SegmentsMenu
+      v-bind:chapter="chapter"
+      v-bind:segment="segment"
+      v-bind:segments="segments"
+    />
 
     <div class="container columnr chapter">
       <nuxt />
