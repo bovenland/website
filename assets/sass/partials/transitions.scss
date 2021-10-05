@@ -1,0 +1,23 @@
+.page-enter-active,
+.page-leave-active,
+.home-enter-active,
+.home-leave-active,
+.story-enter-active,
+.story-leave-active {
+  transition: opacity 0.33s;
+}
+
+.story-enter,
+.story-leave-active {
+  opacity: 0;
+}
+
+.page-enter,
+.page-leave-active {
+  opacity: 0;
+}
+
+.home-enter,
+.home-leave-active {
+  opacity: 0;
+}
