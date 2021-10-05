@@ -143,7 +143,6 @@ export default {
   },
   methods: {
     foldDown: function (child) {
-      console.log(child.foldDown);
       if (child.foldDown == "visible") {
         child.foldDown = "hidden";
       } else {
