@@ -36,7 +36,10 @@ import Reisverslag from "./../svg/icons/Reisverslag";
 import Verbeelding from "./../svg/icons/Verbeelding";
 
 export default {
-  props: ["visible", "chapter", "segment", "segments"],
+  data: function () {
+    return { visible: false };
+  },
+  props: ["chapter", "segment", "segments"],
   components: {
     Cartografie,
     Data,
@@ -65,6 +68,7 @@ export default {
 .segments-menu {
   position: relative;
   .current {
+    cursor: pointer;
     position: relative;
     border-bottom: 2px solid $white;
     &.red {
