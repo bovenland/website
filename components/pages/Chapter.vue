@@ -1,28 +1,17 @@
 <template>
   <div class="chapter">
-    <Header color="pink" />
-
     <!-- Segmenten menu -->
-    <SegmentsMenu
-      v-bind:chapter="chapter"
-      v-bind:segment="segment"
-      v-bind:segments="segments"
-    />
+    <SegmentsMenu v-bind:chapter="chapter" v-bind:segments="segments" />
 
-    <div class="container columnr chapter">
-      <nuxt />
+    <div class="container column chapter">
+      <slot />
     </div>
-
-    <Footer />
   </div>
 </template>
 
 <script>
 import structure from "/structure.js";
-
-import Header from "./../components/elements/Header";
-import Footer from "./../components/elements/Footer";
-import SegmentsMenu from "./../components/menu/SegmentsMenu";
+import SegmentsMenu from "./../menu/SegmentsMenu";
 
 export default {
   data() {
@@ -43,8 +32,6 @@ export default {
     };
   },
   components: {
-    Header,
-    Footer,
     SegmentsMenu,
   },
 };

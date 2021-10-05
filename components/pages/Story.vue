@@ -1,12 +1,5 @@
 <template>
-  <div>
-    <Header color="red" />
-
-    <!-- Intro afbeelding -->
-    <div class="header-image story-header-image">
-      <nuxt-img src="/img/homepage/wadden.jpg" />
-    </div>
-
+  <div class="story-page">
     <!-- Segmenten menu -->
     <SegmentsMenu
       v-bind:chapter="chapter"
@@ -14,19 +7,29 @@
       v-bind:segments="segments"
     />
 
-    <div class="container column story">
-      <nuxt />
+    <div class="container column chapter">
+      <slot />
     </div>
-    <Footer />
   </div>
 </template>
 
+<style lang="scss">
+@import "@/assets/sass/partials/base.scss";
+@import "@/assets/sass/partials/mixins.scss";
+
+div.story-page .container {
+  h1 {
+    color: $red;
+  }
+  p {
+    margin: 1rem 0;
+  }
+}
+</style>
+
 <script>
 import structure from "/structure.js";
-
-import Header from "./../components/elements/Header";
-import Footer from "./../components/elements/Footer";
-import SegmentsMenu from "./../components/menu/SegmentsMenu";
+import SegmentsMenu from "./../menu/SegmentsMenu";
 
 export default {
   data() {
@@ -59,31 +62,9 @@ export default {
       segments: chapter.segments,
     };
   },
+
   components: {
-    Header,
-    Footer,
     SegmentsMenu,
   },
 };
 </script>
-
-<style lang="scss">
-@import "@/assets/sass/partials/base.scss";
-@import "@/assets/sass/partials/mixins.scss";
-
-.story-header-image {
-  border-top: 4px solid $red;
-  width: 100%;
-  margin: 0 -0.75rem;
-  @include calc("width", "100% + 1.5rem");
-}
-
-div.story {
-  h1 {
-    color: $red;
-  }
-  p {
-    margin: 1rem 0;
-  }
-}
-</style>
