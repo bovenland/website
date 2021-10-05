@@ -25,7 +25,11 @@
         <!-- Additional required wrapper -->
         <div
           class="swiper-wrapper"
-          :style="'min-width: ' + child.segments.length * 128 + 'px;'"
+          :style="
+            'min-width: ' +
+            (child.segments.length * 128 + (child.segments.length - 1) * 12) +
+            'px;'
+          "
         >
           <!-- Slides -->
           <div class="swiper-slide">
@@ -96,6 +100,10 @@ ol {
   .folddown-swiper .swiper-slide {
     > div {
       float: left;
+      margin-right: 12px;
+      &:last-child {
+        margin-right: 0;
+      }
     }
     &:after {
       content: "";
