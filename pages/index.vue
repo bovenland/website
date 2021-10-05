@@ -60,10 +60,13 @@ div.intro {
 
 ul.profiles {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: space-evenly;
   margin: 0;
   padding: 0;
+  li {
+    flex-basis: 400px;
+  }
 }
 </style>
 
