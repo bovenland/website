@@ -51,12 +51,6 @@
 div.intro {
   text-align: center;
 }
-.header-image {
-  border-top: 4px solid $pink;
-  width: 100%;
-  margin: 3rem -0.75rem;
-  @include calc("width", "100% + 1.5rem");
-}
 
 ul.profiles {
   display: flex;
@@ -77,7 +71,7 @@ import FoldDownMenu from "./../components/menu/FoldDownMenu";
 import DotMask from "./../components/svg/icons/DotMask";
 
 export default {
-  name: "Home",
+  transition: "home",
   data() {
     return structure;
   },

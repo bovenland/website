@@ -7,7 +7,5 @@
 </template>
 
 <script>
-export default {
-  layout: "data",
-};
+export default {};
 </script>
