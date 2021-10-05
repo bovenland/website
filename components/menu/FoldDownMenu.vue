@@ -16,21 +16,37 @@
         {{ child.description }}
       </div>
 
-      <ul>
-        <li
-          v-for="(segment, segmentIndex) of child.segments"
-          :key="segmentIndex"
+      <!-- Slider main container -->
+      <div
+        v-if="child.segments"
+        :id="'folddown-swiper-' + child.index"
+        class="swiper folddown-swiper"
+      >
+        <!-- Additional required wrapper -->
+        <div
+          class="swiper-wrapper"
+          :style="'min-width: ' + child.segments.length * 128 + 'px;'"
         >
-          <SquareButton
-            v-bind:to="'hoofdstukken-' + child.to.name + '-' + segment.to.name"
-            v-bind:small="child.index + '.' + (segmentIndex + 1)"
-            v-bind:label="segment.title"
-            v-bind:icon="segment.title"
-            v-bind:class="segment.color"
-            iconColor="white"
-          />
-        </li>
-      </ul>
+          <!-- Slides -->
+          <div class="swiper-slide">
+            <div
+              v-for="(segment, segmentIndex) of child.segments"
+              :key="segmentIndex"
+            >
+              <SquareButton
+                v-bind:to="
+                  'hoofdstukken-' + child.to.name + '-' + segment.to.name
+                "
+                v-bind:small="child.index + '.' + (segmentIndex + 1)"
+                v-bind:label="segment.title"
+                v-bind:icon="segment.title"
+                v-bind:class="segment.color"
+                iconColor="white"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
     </li>
   </ol>
 </template>
@@ -52,8 +68,8 @@ ol {
 
     background-color: $white;
     transition: background-color 0.6s linear;
-    ul {
-      max-height: 100vh;
+    .swiper-slide {
+      max-height: 128px;
       transition: max-height 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
     }
     div.description {
@@ -62,7 +78,7 @@ ol {
     }
     &:not(.folddown-visible) {
       background-color: $light-gray;
-      ul {
+      .swiper-slide {
         overflow: hidden;
         max-height: 0px;
       }
@@ -75,6 +91,17 @@ ol {
 
   > li:not(.folddown-visible) + li:not(.folddown-visible) {
     border-top: 1px solid $border-color;
+  }
+
+  .folddown-swiper .swiper-slide {
+    > div {
+      float: left;
+    }
+    &:after {
+      content: "";
+      display: table;
+      clear: both;
+    }
   }
 }
 </style>
@@ -115,6 +142,25 @@ export default {
         child.foldDown = "visible";
       }
     },
+  },
+  mounted: function () {
+    this.swiper = new Swiper(".swiper", {
+      // Optional parameters
+      direction: "horizontal",
+      slidesPerView: "auto",
+      freeMode: true,
+    });
+  },
+
+  beforeDestroy() {
+    // Destory the swipers
+    if (!this.children) return;
+    this.children.forEach((child) => {
+      var elem = document.querySelector("#folddown-swiper-" + child.index);
+      if (elem && elem.swiper) {
+        elem.swiper.destroy();
+      }
+    });
   },
 };
 </script>

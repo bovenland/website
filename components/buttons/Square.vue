@@ -79,6 +79,8 @@ div {
     width: 100%;
     height: 100%;
     padding: 16px;
+    @include calc("width", "100% - 32px");
+    @include calc("height", "100% - 32px");
   }
 }
 </style>
