@@ -7,8 +7,12 @@
       <nuxt-img src="/img/homepage/wadden.jpg" />
     </div>
 
-    <!-- Andere segmenten -->
-    <SegmentsMenu v-bind:chapter="chapter" v-bind:segments="segments" />
+    <!-- Segmenten menu -->
+    <SegmentsMenu
+      v-bind:chapter="chapter"
+      v-bind:segment="segment"
+      v-bind:segments="segments"
+    />
 
     <div class="container column data">
       <nuxt />
@@ -51,7 +55,7 @@ export default {
     }
     return {
       chapter: chapter,
-      segement: segment,
+      segment: segment,
       segments: chapter.segments,
     };
   },
