@@ -41,12 +41,6 @@ export default {
         name: "cartografie"
       }
     }, {
-      title: "Verbeelding",
-      color: "aqua",
-      to: {
-        name: "verbeelding"
-      }
-    }, {
       title: "Data",
       color: "blue",
       to: {
@@ -55,11 +49,11 @@ export default {
     }]
   }, {
     index: 2,
-    title: "Meest afgelegen punt van Nederland",
+    title: "Vijftien minuten verderop",
     description: "Donec eleifend mollis consequat. Suspendisse vitae posuere ipsum. Curabitur lacinia sem lectus, vitae dictum elit aliquet nec. Quisque posuere augue ac ligula bibendum dapibus. Phasellus blandit dictum mi, nec mattis ante efficitur ut. Nullam id commodo tortor.",
     foldDown: false,
     to: {
-      name: "meest-afgelegen-punt-van-nederland"
+      name: "vijftien-minuten-verderop"
     },
     segments: [{
       title: "Reisverslag",
@@ -80,9 +74,5 @@ export default {
         name: "data"
       }
     }]
-  }, {
-    index: 3,
-    title: "Dictum nec mattis ante",
-    foldDown: false,
   }]
 }
