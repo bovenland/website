@@ -6,7 +6,7 @@ export default {
   head: {
     title: 'Boven.land',
     htmlAttrs: {
-      lang: 'en'
+      lang: 'nl'
     },
     meta: [{
         charset: 'utf-8'
