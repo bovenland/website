@@ -2,7 +2,7 @@
   <div>
     <!-- Intro afbeelding -->
     <div class="header-image story-header-image">
-      <nuxt-img src="/img/homepage/wadden.jpg" />
+      <video src="https://files.boven.land/vijftien-minuten-verderop/video/oosterwold.mp4" autoplay muted loop />
     </div>
 
     <StoryPage>
