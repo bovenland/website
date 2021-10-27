@@ -1,7 +1,7 @@
 <template>
   <div class="default">
     <Header color="pink" />
-    <main class="container column">
+    <main>
       <nuxt />
     </main>
     <Footer />
