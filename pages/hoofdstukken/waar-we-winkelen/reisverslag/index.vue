@@ -107,7 +107,7 @@
           Store, Lego, Nike. Dit zijn allemaal zogenaamde mono-brands. De oude
           multibrand winkels hebben het moeilijk.
         </p>
-        <p>[Kadertje met kaart en wat extra achtergrond/uitleg]</p>
+        <MiniMap />
         <p>
           Online verkoop is relatief nieuw en neemt een steeds groter segment
           van de markt in maar volgens Koek heeft de huidige consument behoefte
@@ -497,13 +497,14 @@
 
 <script>
 import StoryPage from "./../../../../components/pages/Story";
+import MiniMap from "./../../../../components/elements/MiniMap";
 
 export default {
   transition: "story",
   components: {
     StoryPage,
+    MiniMap
   },
-
   mounted: function () {
     this.swiper = new Swiper(".swiper", {
       // Optional parameters
