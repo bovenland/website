@@ -20,14 +20,6 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped>
-div {
-  position: absolute;
-  z-index: 0;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  background-color: pink;
-}
+<style scoped>
+
 </style>
