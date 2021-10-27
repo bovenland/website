@@ -55,11 +55,22 @@ export default {
   mounted: function () {
     mapboxgl.accessToken = 'pk.eyJ1IjoiYmVydHNwYWFuIiwiYSI6ImR3dERiQk0ifQ.DLbScmbRohc3Sqv7prfhqw'
 
+    let zoom = 9
+    let center = [-74.5, 40]
+
+    if (this.$route.query.zoom && this.$route.query.center) {
+      // TODO: check for errors
+      zoom = parseFloat(this.$route.query.zoom)
+      center = this.$route.query.center
+        .split(',')
+        .map((coordinate) => parseFloat(coordinate))
+    }
+
     const map = new mapboxgl.Map({
       container: this.$refs.map,
       style: 'mapbox://styles/mapbox/streets-v11',
-      center: [-74.5, 40],
-      zoom: 9
+      center,
+      zoom
     })
   }
 };
