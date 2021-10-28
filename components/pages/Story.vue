@@ -7,7 +7,7 @@
       v-bind:segments="segments"
     />
 
-    <div class="container column chapter">
+    <div class="container column story">
       <slot />
     </div>
   </div>
