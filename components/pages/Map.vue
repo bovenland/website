@@ -1,14 +1,14 @@
 <template>
   <div class="map-page">
-    <div ref="map" class="map">
-    </div>
-    <!-- Segmenten menu -->
-    <SegmentsMenu
-      v-bind:chapter="chapter"
-      v-bind:segment="segment"
-      v-bind:segments="segments"
-    />
-    <div class="container column chapter">
+    <div ref="map" class="map"></div>
+
+    <div class="container column map">
+      <!-- Segmenten menu -->
+      <SegmentsMenu
+        v-bind:chapter="chapter"
+        v-bind:segment="segment"
+        v-bind:segments="segments"
+      />
       <slot />
     </div>
   </div>

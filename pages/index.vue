@@ -10,6 +10,8 @@
       <nuxt-img src="/img/homepage/wadden.jpg" />
     </div>
 
+    <div class="container column">
+
     <!-- Hoofdstukken -->
     <FoldDownMenu v-bind:children=chapters />
 
@@ -40,6 +42,8 @@
     </ul>
 
     Nullam in dui metus. Praesent vestibulum ex sed quam dapibus porta. Praesent consectetur nunc at diam porttitor, et maximus velit vulputate. Sed ultricies risus lorem, tristique vehicula dui posuere eu. Praesent quam risus, egestas nec tempus ac, rhoncus et ligula. Nam vestibulum lorem in dignissim malesuada.
+
+    </div>
 
   </div>
 </template>

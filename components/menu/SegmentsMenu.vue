@@ -66,6 +66,7 @@ export default {
 @import "@/assets/sass/partials/mixins.scss";
 
 .segments-menu {
+  background-color: $white;
   position: relative;
   .current {
     cursor: pointer;
