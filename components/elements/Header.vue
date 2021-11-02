@@ -32,7 +32,6 @@ export default {
 @import "@/assets/sass/partials/base.scss";
 
 header {
-  // background-color: $white;
   width: 100%;
   padding: 16px;
   position: relative;
