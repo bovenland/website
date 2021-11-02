@@ -112,7 +112,7 @@
           Store, Lego, Nike. Dit zijn allemaal zogenaamde mono-brands. De oude
           multibrand winkels hebben het moeilijk.
         </p>
-        <MiniMap />
+        <MiniMap :view="[16, 52.30333, 5.79303]" />
         <p>
           Online verkoop is relatief nieuw en neemt een steeds groter segment
           van de markt in maar volgens Koek heeft de huidige consument behoefte

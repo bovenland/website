@@ -2,9 +2,14 @@
   <Box class="item story">
     <VNode :node="item" @updated="updated" />
     <div class="buttons">
-      <Button @click="previous" :disabled="index === 0">◄ Vorige</Button>
-      <span>{{ index + 1 }} / {{ count }}</span>
-      <Button @click="next" :disabled="index === count - 1">Volgende ►</Button>
+      <template v-if="index === undefined">
+        <Button @click="start">Start</Button>
+      </template>
+      <template v-else>
+        <Button @click="previous" :disabled="index === 0">◄ Vorige</Button>
+        <span>{{ index + 1 }} / {{ count }}</span>
+        <Button @click="next" :disabled="index === count - 1">Volgende ►</Button>
+      </template>
     </div>
   </Box>
 </template>
@@ -24,33 +29,32 @@ export default {
     items: Array,
     startIndex: {
       type: Number,
-      default: 0
+      default: undefined
     }
   },
   data: function () {
     return {
-      index: this.startIndex || 0
+      index: this.startIndex
     }
   },
   computed: {
     item: function () {
-      return this.items[this.index]
+      return this.items[this.index || 0]
     },
     count: function () {
       return this.items.length
     }
   },
-  watch: {
-    index: function () {
-      this.$emit('updated', this.index)
-    }
-  },
   methods: {
+    start: function () {
+      this.index = 0
+      this.flyTo(this.index)
+    },
     updated: function () {
       this.flyTo(this.index)
     },
     flyTo: function (index) {
-      if (this.map) {
+      if (this.map && index >= 0) {
         const location = this.getLocation(index)
 
         const padding = 10
