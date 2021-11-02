@@ -7,7 +7,7 @@ export default {
     map: Object,
     startIndex: {
       type: Number,
-      default: 0
+      default: undefined
     }
   },
   render: function (createElement, context) {

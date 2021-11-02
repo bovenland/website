@@ -93,15 +93,21 @@ export default {
     }
   },
   mounted: function () {
+    // TODO: move all code in this function to lib
     mapboxgl.accessToken = 'pk.eyJ1IjoiYmVydHNwYWFuIiwiYSI6ImR3dERiQk0ifQ.DLbScmbRohc3Sqv7prfhqw'
 
-    const defaultCenter = [5.38721, 52.15519]
-    let zoom = 10
+    const defaultCenter = [5.608302, 52.303667]
+    let zoom = 15
     let lon = defaultCenter[0]
     let lat = defaultCenter[1]
 
     if (this.$route.query.view) {
-      [zoom, lat, lon] = this.$route.query.view.split('/')
+      [zoom, lat, lon] = this.$route.query.view
+        .split('/')
+        .map((n) => parseFloat(n))
+
+      // TODO: check numbers!
+      console.log('from view', [zoom, lat, lon])
     }
 
     const map = new mapboxgl.Map({
