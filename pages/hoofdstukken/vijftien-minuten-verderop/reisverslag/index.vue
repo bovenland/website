@@ -2,7 +2,12 @@
   <div>
     <!-- Intro afbeelding -->
     <div class="header-image story-header-image">
-      <video src="https://files.boven.land/vijftien-minuten-verderop/video/oosterwold.mp4" autoplay muted loop />
+      <video
+        src="https://files.boven.land/vijftien-minuten-verderop/video/oosterwold.mp4"
+        autoplay
+        muted
+        loop
+      />
     </div>
 
     <StoryPage>
@@ -35,6 +40,7 @@ export default {
   },
 
   mounted: function () {
+    if (this.$el.querySelectorAll(".swiper").length < 1) return;
     this.swiper = new Swiper(".swiper", {
       // Optional parameters
       direction: "horizontal",

@@ -151,6 +151,7 @@ export default {
     },
   },
   mounted: function () {
+    if (this.$el.querySelectorAll(".swiper").length < 1) return;
     this.swiper = new Swiper(".swiper", {
       // Optional parameters
       direction: "horizontal",
