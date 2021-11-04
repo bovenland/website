@@ -10,6 +10,7 @@
     <div class="container column story">
       <slot />
     </div>
+    <Footer />
   </div>
 </template>
 
@@ -28,11 +29,13 @@ div.story-page .container {
 </style>
 
 <script>
+import Footer from "../elements/Footer";
+
 import structure from "/structure.js";
 import SegmentsMenu from "./../menu/SegmentsMenu";
 
 export default {
-  data() {
+  data () {
     var chapter = null;
     var segment = null;
     structure.chapters.forEach((c) => {
@@ -65,6 +68,7 @@ export default {
 
   components: {
     SegmentsMenu,
+    Footer
   },
 };
 </script>
