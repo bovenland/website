@@ -3,10 +3,8 @@
     <!-- Intro afbeelding -->
     <div class="header-image story-header-image">
       <video
-        src="https://files.boven.land/waar-we-winkelen/video/waalwijk.mp4"
-        autoplay
-        muted
-        loop
+        src="https://files.boven.land/video/waalwijk-1080.mp4"
+        autoplay muted loop
       />
     </div>
 
