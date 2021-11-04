@@ -44,7 +44,7 @@
     Nullam in dui metus. Praesent vestibulum ex sed quam dapibus porta. Praesent consectetur nunc at diam porttitor, et maximus velit vulputate. Sed ultricies risus lorem, tristique vehicula dui posuere eu. Praesent quam risus, egestas nec tempus ac, rhoncus et ligula. Nam vestibulum lorem in dignissim malesuada.
 
     </div>
-
+    <Footer />
   </div>
 </template>
 
@@ -71,6 +71,7 @@ ul.profiles {
 <script>
 import structure from "/structure.js";
 
+import Footer from "./../components/elements/Footer";
 import FoldDownMenu from "./../components/menu/FoldDownMenu";
 import DotMask from "./../components/svg/icons/DotMask";
 
@@ -82,6 +83,7 @@ export default {
   components: {
     DotMask,
     FoldDownMenu,
+    Footer
   },
 };
 </script>
