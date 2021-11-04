@@ -6,10 +6,12 @@
     <div class="container column chapter">
       <slot />
     </div>
+    <Footer />
   </div>
 </template>
 
 <script>
+import Footer from "../elements/Footer";
 import structure from "/structure.js";
 import SegmentsMenu from "./../menu/SegmentsMenu";
 
@@ -33,6 +35,7 @@ export default {
   },
   components: {
     SegmentsMenu,
+    Footer
   },
 };
 </script>
