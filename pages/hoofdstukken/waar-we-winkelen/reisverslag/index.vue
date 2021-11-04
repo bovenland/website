@@ -81,6 +81,7 @@
             <!-- Slides -->
             <div class="swiper-slide">
               <nuxt-img src="/img/hoofdstukken/waar-we-winkelen/8Y0A1013.JPG" />
+              <p>Mooie caption</p>
             </div>
             <div class="swiper-slide">
               <nuxt-img src="/img/hoofdstukken/waar-we-winkelen/8Y0A3454.JPG" />
@@ -95,6 +96,11 @@
 
           <!-- If we need scrollbar -->
           <div class="swiper-scrollbar"></div>
+        </div>
+
+        <div class="swiper-caption">
+          <h1>Het winkelcentrum van Westfield, een arena vol ervaringen.</h1>
+          <p>Fotoserie door Jan Dirk van der Burg</p>
         </div>
 
         <p>
