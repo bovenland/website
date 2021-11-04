@@ -3,10 +3,8 @@
     <!-- Intro afbeelding -->
     <div class="header-image story-header-image">
       <video
-        src="https://files.boven.land/vijftien-minuten-verderop/video/oosterwold.mp4"
-        autoplay
-        muted
-        loop
+        src="https://files.boven.land/video/oosterwold-1080.mp4"
+        autoplay muted loop
       />
     </div>
 
