@@ -77,12 +77,17 @@
           <!-- Additional required wrapper -->
           <div class="swiper-wrapper">
             <!-- Slides -->
+            <!-- This collection contains 11 images, from 1-1920.jpg to 11-1920.jpg  -->
+            <!-- Images are available in 2 resolutions, 1920 and 1280 px wide -->
             <div class="swiper-slide">
-              <nuxt-img src="/img/hoofdstukken/waar-we-winkelen/8Y0A1013.JPG" />
+              <img src="https://files.boven.land/foto/kartonnen-dozen/1-1920.jpg" />
               <p>Mooie caption</p>
             </div>
             <div class="swiper-slide">
-              <nuxt-img src="/img/hoofdstukken/waar-we-winkelen/8Y0A3454.JPG" />
+              <img src="https://files.boven.land/foto/kartonnen-dozen/2-1920.jpg" />
+            </div>
+            <div class="swiper-slide">
+              <img src="https://files.boven.land/foto/kartonnen-dozen/3-1920.jpg" />
             </div>
           </div>
           <!-- If we need pagination -->
