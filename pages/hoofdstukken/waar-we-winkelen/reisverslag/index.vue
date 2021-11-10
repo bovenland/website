@@ -72,39 +72,11 @@
           Koek van Westfield Mall of the Netherlands.
         </p>
 
-        <!-- Slider main container -->
-        <div class="swiper">
-          <!-- Additional required wrapper -->
-          <div class="swiper-wrapper">
-            <!-- Slides -->
-            <!-- This collection contains 11 images, from 1-1920.jpg to 11-1920.jpg  -->
-            <!-- Images are available in 2 resolutions, 1920 and 1280 px wide -->
-            <div class="swiper-slide">
-              <img src="https://files.boven.land/foto/kartonnen-dozen/1-1920.jpg" />
-              <p>Mooie caption</p>
-            </div>
-            <div class="swiper-slide">
-              <img src="https://files.boven.land/foto/kartonnen-dozen/2-1920.jpg" />
-            </div>
-            <div class="swiper-slide">
-              <img src="https://files.boven.land/foto/kartonnen-dozen/3-1920.jpg" />
-            </div>
-          </div>
-          <!-- If we need pagination -->
-          <div class="swiper-pagination"></div>
-
-          <!-- If we need navigation buttons -->
-          <div class="swiper-button-prev"></div>
-          <div class="swiper-button-next"></div>
-
-          <!-- If we need scrollbar -->
-          <div class="swiper-scrollbar"></div>
-        </div>
-
-        <div class="swiper-caption">
+        <Photos series="kartonnen-dozen" :count="11"
+          :captions="['Mooie caption', null, 'hallo']">
           <h1>Het winkelcentrum van Westfield, een arena vol ervaringen.</h1>
           <p>Fotoserie door Jan Dirk van der Burg</p>
-        </div>
+        </Photos>
 
         <p>
           Een winkelcentrum van Westfield is als een arena vol ervaringen. Hier
@@ -255,11 +227,11 @@
           parkeerplaats staat vol met auto’s met Belgische nummerplaten. De
           producten zijn hier beter en goedkoper, aldus een winkelmedewerkster
           op als we hier naar vragen. Ons oog valt bij binnenkomst direct op een
-          affiche met de tekst:”Breaking News: Jan & Tiny van supermarkt Plus
+          affiche met de tekst:”Breaking News: Jan &amp; Tiny van supermarkt Plus
           Buysse in IJzendijke geven het “stokje” door.”
         </p>
         <p>
-          Bijna zestig jaar na de oprichting stoppen de eigenaren Jan&amp;Tiny
+          Bijna zestig jaar na de oprichting stoppen de eigenaren Jan &amp; Tiny
           Poisonnier met de kruidenierszaak, Het portret van het echtpaar prijkt
           nu nog op de gevel. Ze namen de zaak over in 2004 van de ouders van
           Tiny. Moeder Annie Buysse startte in 1963 op een andere locatie met
@@ -510,44 +482,16 @@
 </template>
 
 <script>
-import StoryPage from "./../../../../components/pages/Story";
-import MiniMap from "./../../../../components/elements/MiniMap";
+import StoryPage from "./../../../../components/pages/Story"
+import MiniMap from "./../../../../components/elements/MiniMap"
+import Photos from "./../../../../components/elements/Photos"
 
 export default {
   transition: "story",
   components: {
     StoryPage,
     MiniMap,
-  },
-  mounted: function () {
-    if (this.$el.querySelectorAll(".swiper").length < 1) return;
-    this.swiper = new Swiper(".swiper", {
-      // Optional parameters
-      direction: "horizontal",
-      loop: false,
-
-      // If we need pagination
-      pagination: {
-        el: ".swiper-pagination",
-      },
-
-      // Navigation arrows
-      navigation: {
-        nextEl: ".swiper-button-next",
-        prevEl: ".swiper-button-prev",
-      },
-
-      // And if we need scrollbar
-      scrollbar: {
-        el: ".swiper-scrollbar",
-      },
-    });
-  },
-
-  beforeDestroy() {
-    if (this.swiper) {
-      this.swiper.destroy();
-    }
-  },
-};
+    Photos
+  }
+}
 </script>
