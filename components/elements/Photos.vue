@@ -2,8 +2,8 @@
   <div>
     <div ref="swiper" class="swiper">
       <div class="swiper-wrapper">
-        <!-- Images are available in 2 resolutions, 1920 and 1280 px wide -->
         <div v-for="(_, index) in Array.from({length: count})" :key="index" class="swiper-slide">
+          <!-- TODO: sizes attribute is still incorrect -->
           <img :alt="captions[index]"
             :srcset="createSrcset(index)"
             sizes="(min-width: 1344px) 1344px,
@@ -34,14 +34,15 @@ export default {
   data: function () {
     return {
       swiper: null,
+      baseUrl: 'https://files.boven.land/foto',
       photoWidths: [1280, 1920]
     }
   },
   methods: {
     createSrcset: function (index) {
-      const baseUrl = `https://files.boven.land/foto/${this.series}`
+      const path = `${this.baseUrl}/${this.series}`
       const srcset = this.photoWidths
-        .map((width) => `${baseUrl}/${index + 1}-${width}.jpg ${width}w`)
+        .map((width) => `${path}/${index + 1}-${width}.jpg ${width}w`)
 
       return srcset.join(',\n')
     }
