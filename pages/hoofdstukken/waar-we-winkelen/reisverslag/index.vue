@@ -230,6 +230,11 @@
           affiche met de tekst:”Breaking News: Jan &amp; Tiny van supermarkt Plus
           Buysse in IJzendijke geven het “stokje” door.”
         </p>
+
+        <Photos series="westfield-mall-of-the-netherlands" :count="6"
+          :captions="[]">
+        </Photos>
+
         <p>
           Bijna zestig jaar na de oprichting stoppen de eigenaren Jan &amp; Tiny
           Poisonnier met de kruidenierszaak, Het portret van het echtpaar prijkt
@@ -381,6 +386,11 @@
           lijkt ons. Waarom we dan toch niet welkom zijn met onze boven.land
           punt is onduidelijk.
         </p>
+
+        <Photos series="distributiecentra" :count="6"
+          :captions="[]">
+        </Photos>
+
         <p>
           Nog een plek waar we niet welkom zijn ligt in Bleiswijk. De Duitse
           online mode en lifestyle gigant Zalando bouwt hier op het
