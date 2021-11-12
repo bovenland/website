@@ -2,6 +2,8 @@
   <div>
     <!-- Intro afbeelding -->
     <div class="header-image story-header-image">
+      <!-- Deze bestaat ook:
+        https://files.boven.land/video/waalwijk-720.mp4 -->
       <video
         src="https://files.boven.land/video/waalwijk-1080.mp4"
         autoplay muted loop
