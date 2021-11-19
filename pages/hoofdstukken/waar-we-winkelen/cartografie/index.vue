@@ -1,10 +1,10 @@
 <template>
   <MapPage>
-    <div>
+    <!-- <div>
       <label>Hoofdstuk 1</label>
       <h1>Waar we winkelen</h1>
       <p>Cartografie</p>
-    </div>
+    </div> -->
 
     <template v-slot:map>
       <div ref="map" class="map">
@@ -40,8 +40,9 @@
 import MapPage from '../../../../components/pages/Map.vue'
 import CreateMapStory from '../../../../components/map/CreateMapStory.vue'
 
-import { createMapSources, createCircleLayers, createMapLayers,
-  toggleCircleView, toggleMapView,
+import { toggleCircleView, toggleWorldView,
+  circleMapStyle, setCircleMapStyle,
+  setCircleMapSourceAndLayers, setWorldMapSourceAndLayers,
   setCircleLayersColor } from './../../../../lib/map.js'
 
 // TODO: use app config
@@ -61,6 +62,8 @@ export default {
       featureData: undefined,
       mapLoaded: false,
       featureDataLoaded: false,
+      currentView: 'circles',
+      sourceAndLayersAdded: false
     }
   },
   computed: {
@@ -77,6 +80,27 @@ export default {
     }
   },
   methods: {
+    circleClick: function (event) {
+      if (event.features && event.features.length) {
+        this.selectedFeatureProperties = event.features[0].properties
+        console.log(this.selectedFeatureProperties)
+        if (event.originalEvent.metaKey) {
+          this.toggleView()
+        }
+      }
+    },
+    toggleView: function () {
+      const color = 'green'
+      this.sourceAndLayersAdded = false
+
+      if (this.currentView === 'circles') {
+        toggleWorldView(this.map, config, color, this.selectedFeatureProperties)
+        this.currentView = 'world'
+      } else {
+        toggleCircleView(this.map, config, color, this.selectedFeatureProperties)
+        this.currentView = 'circles'
+      }
+    },
     // loadFeatureData: async function () {
     //   this.featureData = await fetchFeatureData()
     //   const firstField = Object.keys(this.featureData.summary)[0]
@@ -85,8 +109,9 @@ export default {
     // },
     createLayers: function () {
       const color = 'red' // getColor(this.selectedField, this.fieldExtent)
-      createCircleLayers(this.map, color, true)
+      // createCircleLayers(this.map, color, true)
       // createMapLayers(this.map, color, false)
+      setCircleMapStyle(this.map, config, color)
     },
     mapStoryUpdated: function () {
       console.log('mapStoryUpdated')
@@ -97,7 +122,7 @@ export default {
     mapboxgl.accessToken = 'pk.eyJ1IjoiYmVydHNwYWFuIiwiYSI6ImR3dERiQk0ifQ.DLbScmbRohc3Sqv7prfhqw'
 
     const defaultCenter = [5.608302, 52.303667]
-    let zoom = 15
+    let zoom = 8
     let lon = defaultCenter[0]
     let lat = defaultCenter[1]
 
@@ -112,11 +137,7 @@ export default {
 
     const map = new mapboxgl.Map({
       container: this.$refs.map,
-      style: {
-        version: 8,
-        sources: {},
-        layers: []
-      },
+      style: circleMapStyle,
       minZoom: 7,
       maxZoom: 19,
       center: [lon, lat],
@@ -128,21 +149,27 @@ export default {
 
     map.on('load', () => {
       this.mapLoaded = true
-      createMapSources(map, config)
+      setCircleMapSourceAndLayers(this.map, config, 'orange')
 
       // map.on('moveend', () => {
       //   console.log('moveend', JSON.stringify(map.getBounds().toArray().map((c) => c.map((n) => parseFloat(n.toFixed(6))))), map.getZoom())
       // })
 
-      // map.on('click', 'circles', (event) => {
-      //   if (event.features && event.features.length) {
-      //     this.selectedFeatureProperties = event.features[0].properties
-      //     console.log(this.selectedFeatureProperties)
-      //     if (event.originalEvent.metaKey) {
-      //       this.toggleView()
-      //     }
-      //   }
-      // })
+      map.on('click', 'bovenland-circles-circles', this.circleClick)
+      map.on('click', 'bovenland-world-circles', this.circleClick)
+    })
+
+    map.on('styledata', (event) => {
+      if (this.mapLoaded && !this.sourceAndLayersAdded) {
+        const color = 'green'
+        if (this.currentView === 'circles') {
+          setCircleMapSourceAndLayers(this.map, config, color)
+        } else {
+          setWorldMapSourceAndLayers(this.map, config, color)
+        }
+
+        this.sourceAndLayersAdded = true
+      }
     })
     // this.loadFeatureData()
   }
@@ -150,5 +177,4 @@ export default {
 </script>
 
 <style scoped>
-
 </style>
