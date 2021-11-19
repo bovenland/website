@@ -95,7 +95,11 @@
           Store, Lego, Nike. Dit zijn allemaal zogenaamde mono-brands. De oude
           multibrand winkels hebben het moeilijk.
         </p>
-        <MiniMap :view="[16, 52.30333, 5.79303]" />
+
+        <!-- Misschien hier nog een component toevoegen waar MiniMap inzit? -->
+         <!-- Met titel, tekst, etc? -->
+        <MiniMap chapter="waar-we-winkelen" id="2721236614" />
+
         <p>
           Online verkoop is relatief nieuw en neemt een steeds groter segment
           van de markt in maar volgens Koek heeft de huidige consument behoefte
@@ -157,6 +161,9 @@
           winkelen. Teun Koek krijgt hier gelijk: wil je klanten houden, zorg
           dan altijd dat mensen gratis hun auto kwijt kunnen.
         </p>
+
+        <MiniMap chapter="waar-we-winkelen" id="8118681024" />
+
         <p>
           Er zijn ongeveer 185 winkelpanden van verschillende eigenaren in het
           winkelcentrum In De Bogaard waarvan velen leegstaan. De gemeente
@@ -255,6 +262,9 @@
           editions set speelkaarten van Supermarkt Buysse. Let op! Op=Op. En weg
           is weg is de buurtwinkel.
         </p>
+
+        <MiniMap chapter="waar-we-winkelen" id="2848641358" />
+
         <p>
           Vanuit Zeeland rijden we met hoge verwachtingen naar een factory
           outlet center in Brabant. Een factory outlet is een winkelplek waar
