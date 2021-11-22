@@ -76,7 +76,7 @@
 
         <Photos series="kartonnen-dozen" :count="11"
           :captions="['Mooie caption', null, 'hallo']">
-          <h1>Het winkelcentrum van Westfield, een arena vol ervaringen.</h1>
+          <h3>Het winkelcentrum van Westfield, een arena vol ervaringen.</h3>
           <p>Fotoserie door Jan Dirk van der Burg</p>
         </Photos>
 
@@ -96,9 +96,10 @@
           multibrand winkels hebben het moeilijk.
         </p>
 
-        <!-- Misschien hier nog een component toevoegen waar MiniMap inzit? -->
-         <!-- Met titel, tekst, etc? -->
-        <MiniMap chapter="waar-we-winkelen" id="2721236614" />
+        <MiniMapContainer chapter="waar-we-winkelen" id="2721236614">
+          <h3>Hier titel van MiniMap</h3>
+          <p>En hier wat tekst over deze plek. En hier wat tekst over deze plek. En hier wat tekst over deze plek. En hier wat tekst over deze plek. En hier wat tekst over deze plek. En hier wat tekst over deze plek. </p>
+        </MiniMapContainer>
 
         <p>
           Online verkoop is relatief nieuw en neemt een steeds groter segment
@@ -162,7 +163,10 @@
           dan altijd dat mensen gratis hun auto kwijt kunnen.
         </p>
 
-        <MiniMap chapter="waar-we-winkelen" id="8118681024" />
+        <MiniMapContainer chapter="waar-we-winkelen" id="8118681024">
+          <h3>Hier titel van MiniMap</h3>
+          <p>En hier wat tekst over deze plek. En hier wat tekst over deze plek. En hier wat tekst over deze plek. En hier wat tekst over deze plek. En hier wat tekst over deze plek. En hier wat tekst over deze plek. </p>
+        </MiniMapContainer>
 
         <p>
           Er zijn ongeveer 185 winkelpanden van verschillende eigenaren in het
@@ -242,6 +246,8 @@
 
         <Photos series="westfield-mall-of-the-netherlands" :count="6"
           :captions="[]">
+          <h2>Titel.</h2>
+          <p>Omschrijving!</p>
         </Photos>
 
         <p>
@@ -263,7 +269,10 @@
           is weg is de buurtwinkel.
         </p>
 
-        <MiniMap chapter="waar-we-winkelen" id="2848641358" />
+        <MiniMapContainer chapter="waar-we-winkelen" id="2848641358">
+          <h3>Hier titel van MiniMap</h3>
+          <p>En hier wat tekst over deze plek. En hier wat tekst over deze plek. En hier wat tekst over deze plek. En hier wat tekst over deze plek. En hier wat tekst over deze plek. En hier wat tekst over deze plek. </p>
+        </MiniMapContainer>
 
         <p>
           Vanuit Zeeland rijden we met hoge verwachtingen naar een factory
@@ -505,14 +514,14 @@
 
 <script>
 import StoryPage from "./../../../../components/pages/Story"
-import MiniMap from "./../../../../components/elements/MiniMap"
+import MiniMapContainer from "./../../../../components/elements/MiniMapContainer.vue"
 import Photos from "./../../../../components/elements/Photos"
 
 export default {
   transition: "story",
   components: {
     StoryPage,
-    MiniMap,
+    MiniMapContainer,
     Photos
   }
 }
