@@ -1,3 +1,5 @@
+@use 'sass:math';
+
 @mixin calc($prop, $val) {
   @each $pre in -webkit-, -moz- {
     #{$prop}: $pre + calc(#{$val});
@@ -40,7 +42,7 @@
     display: block;
     content: "";
     width: 100%;
-    padding-top: ($height / $width) * 100%;
+    padding-top: math.div($height, $width) * 100%;
   }
   > .content {
     position: absolute;
