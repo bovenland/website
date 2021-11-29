@@ -17,7 +17,11 @@
     </div>
 
     <ul class="segments-menu-options">
-      <li v-for="(segment, index) of segments" :key="index">
+      <li
+        v-for="(segment, index) of segments"
+        :key="index"
+        v-bind:class="segment.color"
+      >
         <nuxt-link
           :to="{ name: `hoofdstukken-${chapter.to.name}-${segment.to.name}` }"
         >
@@ -122,13 +126,31 @@ export default {
     }
   }
   .segments-menu-options {
-    background-color: $white;
+    background-color: $light-gray;
     position: absolute;
     width: 100%;
     z-index: 2;
     max-height: 0px;
     transition: max-height 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
     overflow: hidden;
+    li {
+      margin: 0 0.75rem;
+      &:first-child {
+        margin-top: 0.75rem;
+      }
+      &:last-child {
+        margin-bottom: 0.75rem;
+      }
+      a,
+      a.nuxt-link {
+        display: inline-block;
+        width: 100%;
+        margin-left: -0.75rem;
+        padding: 0.25rem 0 0.25rem 0.75rem ;
+        @include calc("width", "100% + 1.5rem");
+        text-decoration: none;
+      }
+    }
   }
   &.segments-menu-visible {
     .segments-menu-options {
@@ -144,11 +166,58 @@ export default {
 </style>
 
 <style lang="scss">
+@import "@/assets/sass/partials/base.scss";
+@import "@/assets/sass/partials/mixins.scss";
 .segments-menu {
-  .current svg,
-  ul.segments-menu-options li svg {
+  .current svg {
     width: 26px;
     height: 26px;
+  }
+  ul.segments-menu-options li svg {
+    width: 18px;
+    height: 18px;
+    margin-right: 6px;
+  }
+  .segments-menu-options {
+    a:hover,
+    a.nuxt-link-active {
+      color: $white;
+      svg path,
+      svg path.red,
+      svg path.green,
+      svg path.blue,
+      svg path.aqua {
+        fill: $white;
+      }
+    }
+    li.red {
+      color: $red;
+      a:hover,
+      a.nuxt-link-active {
+        background-color: $red;
+      }
+    }
+    li.green {
+      color: $green;
+      a:hover,
+      a.nuxt-link-active {
+        background-color: $green;
+      }
+    }
+    li.blue {
+      color: $blue;
+      a:hover,
+      a.nuxt-link-active {
+        background-color: $blue;
+      }
+    }
+    li.aqua {
+      color: $aqua;
+      a:hover,
+      a.nuxt-link-active {
+        background-color: $aqua;
+      }
+    }
   }
 }
 </style>
