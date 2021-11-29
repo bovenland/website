@@ -68,12 +68,13 @@ export default {
 .segments-menu {
   background-color: $white;
   position: relative;
+  padding: 0.5rem 0 1.6rem 0;
   .current {
     cursor: pointer;
     position: relative;
     border-bottom: 2px solid $white;
     h3 {
-      padding-bottom: 10px;
+      padding-bottom: 8px;
       padding-left: 36px;
     }
     svg.icon {
