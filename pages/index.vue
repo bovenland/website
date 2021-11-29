@@ -1,5 +1,5 @@
 <template lang="md">
-  <div>
+  <div class="page home-page">
 
     <div class="intro">
       Een visuele en cartografische ontdekkingsreis waarin we onderzoeken wat Nederland tot Nederland maakt.
@@ -45,6 +45,7 @@
 
     </div>
     <Footer />
+
   </div>
 </template>
 
@@ -54,6 +55,7 @@
 
 div.intro {
   text-align: center;
+  padding: 20px 25px 8px 25px;
 }
 
 ul.profiles {
@@ -83,7 +85,7 @@ export default {
   components: {
     DotMask,
     FoldDownMenu,
-    Footer
+    Footer,
   },
 };
 </script>

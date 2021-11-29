@@ -1,5 +1,5 @@
 <template>
-  <div class="story-page">
+  <div class="page story-page">
     <!-- Segmenten menu -->
     <SegmentsMenu
       v-bind:chapter="chapter"
@@ -18,12 +18,18 @@
 @import "@/assets/sass/partials/base.scss";
 @import "@/assets/sass/partials/mixins.scss";
 
-div.story-page .container {
-  h1 {
-    color: $red;
+div.story-page {
+  padding: 0 18px 0 75px;
+  label {
+    color: $label-color;
   }
-  p {
-    margin: 1rem 0;
+  .container {
+    h1 {
+      color: $red;
+    }
+    p {
+      margin: 1rem 0;
+    }
   }
 }
 </style>
@@ -35,7 +41,7 @@ import structure from "/structure.js";
 import SegmentsMenu from "./../menu/SegmentsMenu";
 
 export default {
-  data () {
+  data() {
     var chapter = null;
     var segment = null;
     structure.chapters.forEach((c) => {
@@ -68,7 +74,7 @@ export default {
 
   components: {
     SegmentsMenu,
-    Footer
+    Footer,
   },
 };
 </script>

@@ -39,7 +39,7 @@ header {
 }
 
 svg {
-  padding: 14px 55px;
+  padding: 20px 76px;
   width: 100%;
   max-width: 384px;
   display: block;

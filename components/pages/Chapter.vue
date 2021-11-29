@@ -1,5 +1,5 @@
 <template>
-  <div class="chapter">
+  <div class="page chapter-page">
     <!-- Segmenten menu -->
     <SegmentsMenu v-bind:chapter="chapter" v-bind:segments="segments" />
 
@@ -35,7 +35,7 @@ export default {
   },
   components: {
     SegmentsMenu,
-    Footer
+    Footer,
   },
 };
 </script>

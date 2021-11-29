@@ -1,5 +1,5 @@
 <template>
-  <div class="map-page">
+  <div class="page map-page">
     <div class="container column map">
       <!-- Segmenten menu -->
       <SegmentsMenu

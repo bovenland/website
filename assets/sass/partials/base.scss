@@ -63,3 +63,16 @@ svg {
     fill: $white;
   }
 }
+
+// Headers
+h1 {
+  margin: 1.25rem 0;
+}
+label + h1 {
+  margin-top: 0.7rem;
+}
+
+// Column
+.column {
+  padding: 1rem 2rem;
+}
