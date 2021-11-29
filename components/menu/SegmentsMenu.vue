@@ -72,21 +72,42 @@ export default {
     cursor: pointer;
     position: relative;
     border-bottom: 2px solid $white;
+    h3 {
+      padding-bottom: 10px;
+      padding-left: 36px;
+    }
+    svg.icon {
+      top: 2px;
+      left: 0;
+      position: absolute;
+    }
     &.red {
       color: $red;
       border-color: $red;
+      svg.triangle {
+        fill: $red;
+      }
     }
     &.green {
       color: $green;
       border-color: $green;
+      svg.triangle {
+        fill: $green;
+      }
     }
     &.aqua {
       color: $aqua;
       border-color: $aqua;
+      svg.triangle {
+        fill: $aqua;
+      }
     }
     &.blue {
       color: $blue;
       border-color: $blue;
+      svg.triangle {
+        fill: $blue;
+      }
     }
 
     svg.triangle {
@@ -125,8 +146,8 @@ export default {
 .segments-menu {
   .current svg,
   ul.segments-menu-options li svg {
-    width: 20px;
-    height: 20px;
+    width: 26px;
+    height: 26px;
   }
 }
 </style>

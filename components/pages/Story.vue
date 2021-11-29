@@ -1,13 +1,13 @@
 <template>
   <div class="page story-page">
-    <!-- Segmenten menu -->
-    <SegmentsMenu
-      v-bind:chapter="chapter"
-      v-bind:segment="segment"
-      v-bind:segments="segments"
-    />
-
     <div class="container column story">
+      <!-- Segmenten menu -->
+      <SegmentsMenu
+        v-bind:chapter="chapter"
+        v-bind:segment="segment"
+        v-bind:segments="segments"
+      />
+
       <slot />
     </div>
     <Footer />
@@ -19,7 +19,6 @@
 @import "@/assets/sass/partials/mixins.scss";
 
 div.story-page {
-  padding: 0 18px 0 75px;
   label {
     color: $label-color;
   }
@@ -29,6 +28,25 @@ div.story-page {
     }
     p {
       margin: 1rem 0;
+    }
+    section {
+      > h1,
+      > label,
+      > p {
+        padding: 0 0 0 54px;
+      }
+    }
+  }
+  .segments-menu {
+    margin: 0 0 0 54px;
+  }
+
+  div.photos-element,
+  div.minimap-container {
+    margin: 1rem -2rem;
+    background-color: $light-gray;
+    &.minimap-container {
+      background-color: $green;
     }
   }
 }

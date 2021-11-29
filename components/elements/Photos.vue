@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="photos-element">
     <div ref="swiper" class="swiper">
       <div class="swiper-wrapper">
         <div v-for="(_, index) in Array.from({length: count})" :key="index" class="swiper-slide">
