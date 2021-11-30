@@ -1,8 +1,8 @@
 <template>
   <div>
     <nuxt-link :to="{ name: to }">
-      <small>{{ small }}</small>
       <label>{{ label }}</label>
+      <h3>{{ title }}</h3>
       <component v-bind:is="icon" v-bind:color="iconColor" />
     </nuxt-link>
   </div>
@@ -15,7 +15,7 @@ import Reisverslag from "./../svg/icons/Reisverslag";
 import Verbeelding from "./../svg/icons/Verbeelding";
 
 export default {
-  props: ["to", "small", "label", "icon", "iconColor"],
+  props: ["to", "title", "label", "icon", "iconColor"],
   components: {
     Cartografie,
     Data,
@@ -30,10 +30,20 @@ export default {
 @import "@/assets/sass/partials/mixins.scss";
 
 div {
-  width: 128px;
-  height: 128px;
+  width: 166px;
+  height: 166px;
   position: relative;
+  overflow: hidden;
+  display: block;
   color: $white;
+
+  label {
+    margin-top: 2px;
+    padding: 0 12px;
+  }
+  h3 {
+    padding: 10px;
+  }
 
   a,
   a:link,

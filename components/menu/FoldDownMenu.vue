@@ -8,12 +8,12 @@
       <div class="fold-down-menu-button" v-on:click="foldDown(child)">
         <FoldDown v-bind:active="child.foldDown">
           <label>Hoofdstuk {{ child.index }}</label>
-          <h2>{{ child.title }}</h2>
+          <h3>{{ child.title }}</h3>
         </FoldDown>
       </div>
 
       <div class="description">
-        {{ child.description }}
+        <p>{{ child.description }}</p>
       </div>
 
       <!-- Slider main container -->
@@ -27,7 +27,7 @@
           class="swiper-wrapper"
           :style="
             'min-width: ' +
-            (child.segments.length * 128 + (child.segments.length - 1) * 12) +
+            (child.segments.length * 166 + (child.segments.length - 1) * 32) +
             'px;'
           "
         >
@@ -41,8 +41,8 @@
                 v-bind:to="
                   'hoofdstukken-' + child.to.name + '-' + segment.to.name
                 "
-                v-bind:small="child.index + '.' + (segmentIndex + 1)"
-                v-bind:label="segment.title"
+                v-bind:label="child.index + '.' + (segmentIndex + 1)"
+                v-bind:title="segment.title"
                 v-bind:icon="segment.title"
                 v-bind:class="segment.color"
                 iconColor="white"
@@ -60,11 +60,13 @@
 @import "@/assets/sass/partials/mixins.scss";
 ol {
   list-style: none;
+  margin: 0 -1.25rem 2rem -1.25rem;
 
   > li {
-    h2 {
+    padding: 0.4rem 1.25rem;
+    h3 {
+      margin: 1rem 1rem 1rem 0;
       color: $pink;
-      font-size: 20px;
     }
     label {
       color: $label-color;
@@ -73,15 +75,22 @@ ol {
     background-color: $white;
     transition: background-color 0.6s linear;
     .swiper-slide {
-      max-height: 128px;
+      max-height: 166px;
       transition: max-height 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
     }
     div.description {
       max-height: 100vh;
       transition: max-height 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+      p {
+        margin-top: 30px;
+        margin-bottom: 24px;
+      }
     }
     &:not(.folddown-visible) {
       background-color: $light-gray;
+      .folddown-swiper {
+        margin-bottom: 0;
+      }
       .swiper-slide {
         overflow: hidden;
         max-height: 0px;
@@ -91,24 +100,36 @@ ol {
         max-height: 0;
       }
     }
+    &.folddown-visible {
+      h3,
+      label {
+        padding-left: 124px;
+      }
+    }
   }
 
   > li:not(.folddown-visible) + li:not(.folddown-visible) {
     border-top: 1px solid $border-color;
   }
 
-  .folddown-swiper .swiper-slide {
-    > div {
-      float: left;
-      margin-right: 12px;
-      &:last-child {
-        margin-right: 0;
+  .folddown-swiper {
+    padding-left: 2rem;
+    margin: 0 -2rem;
+    @include calc("width", "100% + 4rem");
+    margin-bottom: 48px;
+    .swiper-slide {
+      > div {
+        float: left;
+        margin-right: 12px;
+        &:last-child {
+          margin-right: 0;
+        }
       }
-    }
-    &:after {
-      content: "";
-      display: table;
-      clear: both;
+      &:after {
+        content: "";
+        display: table;
+        clear: both;
+      }
     }
   }
 }
@@ -123,8 +144,10 @@ div.fold-down-menu-button {
   padding-right: 30px;
   svg {
     position: absolute;
-    right: 13px;
-    @include calc("top", "50% - 12px");
+    right: -2px;
+    width: 32px;
+    height: 32px;
+    @include calc("top", "50% - 10px");
     &.active {
       @include opacity(0.25);
     }
