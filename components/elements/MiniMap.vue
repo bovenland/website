@@ -3,7 +3,7 @@
     name: 'hoofdstukken-waar-we-winkelen-cartografie',
     query: linkQuery
   }">
-    <svg xmlns="http://www.w3.org/2000/svg" :viewBox="`0 0 ${width} ${height}`">
+    <svg class="minimap" xmlns="http://www.w3.org/2000/svg" :viewBox="`0 0 ${width} ${height}`">
       <!-- TODO: add loading image -->
       <template v-if="geojson">
         <path :d="path(circle)"

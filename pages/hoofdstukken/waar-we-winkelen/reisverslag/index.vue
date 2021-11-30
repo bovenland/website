@@ -96,9 +96,16 @@
           multibrand winkels hebben het moeilijk.
         </p>
 
-        <MiniMapContainer chapter="waar-we-winkelen" id="2721236614">
-          <h3>Hier titel van MiniMap</h3>
-          <p>En hier wat tekst over deze plek. En hier wat tekst over deze plek. En hier wat tekst over deze plek. En hier wat tekst over deze plek. En hier wat tekst over deze plek. En hier wat tekst over deze plek. </p>
+        <MiniMapContainer
+          chapter="waar-we-winkelen"
+          id="2721236614"
+          class="light map-right"
+        >
+          <h3>Het winkelcentrum van Westfield, een arena vol ervaringen</h3>
+          <p>
+            Wat zijn nog meer hotspots in Nederland waar de distributiecentra
+            ontstaan?
+          </p>
         </MiniMapContainer>
 
         <p>
@@ -163,9 +170,12 @@
           dan altijd dat mensen gratis hun auto kwijt kunnen.
         </p>
 
-        <MiniMapContainer chapter="waar-we-winkelen" id="8118681024">
-          <h3>Hier titel van MiniMap</h3>
-          <p>En hier wat tekst over deze plek. En hier wat tekst over deze plek. En hier wat tekst over deze plek. En hier wat tekst over deze plek. En hier wat tekst over deze plek. En hier wat tekst over deze plek. </p>
+        <MiniMapContainer
+          chapter="waar-we-winkelen"
+          id="8118681024"
+          class="dark map-bottom"
+        >
+          <h3>Het winkelcentrum van Westfield, een arena vol ervaringen</h3>
         </MiniMapContainer>
 
         <p>
@@ -269,9 +279,17 @@
           is weg is de buurtwinkel.
         </p>
 
-        <MiniMapContainer chapter="waar-we-winkelen" id="2848641358">
+        <MiniMapContainer
+          chapter="waar-we-winkelen"
+          id="2848641358"
+          class="map-right"
+        >
           <h3>Hier titel van MiniMap</h3>
-          <p>En hier wat tekst over deze plek. En hier wat tekst over deze plek. En hier wat tekst over deze plek. En hier wat tekst over deze plek. En hier wat tekst over deze plek. En hier wat tekst over deze plek. </p>
+          <p>
+            En hier wat tekst over deze plek. En hier wat tekst over deze plek.
+            En hier wat tekst over deze plek. En hier wat tekst over deze plek.
+            En hier wat tekst over deze plek. En hier wat tekst over deze plek.
+          </p>
         </MiniMapContainer>
 
         <p>
@@ -513,16 +531,16 @@
 </template>
 
 <script>
-import StoryPage from "./../../../../components/pages/Story"
-import MiniMapContainer from "./../../../../components/elements/MiniMapContainer.vue"
-import Photos from "./../../../../components/elements/Photos"
+import StoryPage from "./../../../../components/pages/Story";
+import MiniMapContainer from "./../../../../components/elements/MiniMapContainer.vue";
+import Photos from "./../../../../components/elements/Photos";
 
 export default {
   transition: "story",
   components: {
     StoryPage,
     MiniMapContainer,
-    Photos
-  }
-}
+    Photos,
+  },
+};
 </script>

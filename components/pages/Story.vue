@@ -44,9 +44,74 @@ div.story-page {
   div.photos-element,
   div.minimap-container {
     margin: 1rem -2rem;
-    background-color: $light-gray;
-    &.minimap-container {
+    background-color: $darker-light-gray;
+  }
+
+  div.minimap-container {
+    position: relative;
+    svg.minimap {
+      display: block;
+      margin: 0 auto;
+    }
+    color: $green;
+    label {
+      color: $green;
+    }
+    svg.icon {
+      position: absolute;
+      fill: $green;
+    }
+    &.dark {
+      label {
+        display: none;
+      }
+      svg.icon {
+        fill: $white;
+      }
+      color: $white;
       background-color: $green;
+    }
+    &.map-bottom {
+      h3 {
+        padding: 24px 74px 0 74px;
+      }
+      p {
+        margin: 0.5rem 0;
+        padding: 0 24px 0 100px;
+      }
+      svg.icon {
+        width: 22px;
+        height: 22px;
+        left: 36px;
+        top: 26px;
+      }
+      svg.minimap {
+        width: 210px;
+        height: 210px;
+        padding-bottom: 1rem;
+      }
+    }
+    &.map-right {
+      padding: 3rem 0 2rem 0;
+      label,
+      h3,
+      p {
+        margin: 0;
+        padding: 18px 130px 0 36px;
+      }
+      svg.icon {
+        width: 142px;
+        height: 142px;
+        left: -40px;
+        @include opacity(0.2);
+      }
+      svg.minimap {
+        width: 200px;
+        height: 200px;
+        position: absolute;
+        @include calc("top", "50% - 100px");
+        right: -90px;
+      }
     }
   }
 }
