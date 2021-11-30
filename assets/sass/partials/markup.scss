@@ -77,9 +77,15 @@ ul.segments-menu-options {
   line-height: 26px;
 }
 
+div.photos-element,
 div.minimap-container.map-bottom {
   h3 {
     font-size: 17px;
     line-height: 21px;
   }
+}
+
+div.photos-element .swiper-slide p {
+  font-size: 12px;
+  line-height: 18px;
 }

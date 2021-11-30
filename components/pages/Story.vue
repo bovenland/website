@@ -47,7 +47,39 @@ div.story-page {
     background-color: $darker-light-gray;
   }
 
+  div.photos-element {
+    background-color: $yellow;
+    .photos-description {
+      h3,
+      p {
+        margin: 0 0 12px 0;
+        padding: 18px 36px 0 36px;
+      }
+      p {
+        padding-top: 0;
+      }
+    }
+    .swiper-button-next,
+    .swiper-button-prev {
+      color: $yellow;
+    }
+    .swiper-pagination-bullet-active {
+      background-color: $black;
+    }
+    .swiper-pagination-bullet:not(.swiper-pagination-bullet-active) {
+      background-color: $white;
+      @include opacity(1);
+    }
+    .swiper-slide {
+      p {
+        margin: 0;
+        padding: 8px 36px 0px 36px;
+      }
+    }
+  }
+
   div.minimap-container {
+    overflow: hidden;
     position: relative;
     svg.minimap {
       display: block;

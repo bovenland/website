@@ -6,7 +6,9 @@
         https://files.boven.land/video/waalwijk-720.mp4 -->
       <video
         src="https://files.boven.land/video/waalwijk-1080.mp4"
-        autoplay muted loop
+        autoplay
+        muted
+        loop
       />
     </div>
 
@@ -74,8 +76,15 @@
           Koek van Westfield Mall of the Netherlands.
         </p>
 
-        <Photos series="kartonnen-dozen" :count="11"
-          :captions="['Mooie caption', null, 'hallo']">
+        <Photos
+          series="kartonnen-dozen"
+          :count="11"
+          :captions="[
+            'Een winkelcentrum van Westfield is als een arena vol ervaringen. Hier is winkelen geen noodzakelijke bezigheid waarbij transacties plaatsvinden, maar een leuk dagje uit, en een belevenis voor het hele gezin.',
+            null,
+            'hallo',
+          ]"
+        >
           <h3>Het winkelcentrum van Westfield, een arena vol ervaringen.</h3>
           <p>Fotoserie door Jan Dirk van der Burg</p>
         </Photos>
@@ -250,13 +259,16 @@
           parkeerplaats staat vol met auto’s met Belgische nummerplaten. De
           producten zijn hier beter en goedkoper, aldus een winkelmedewerkster
           op als we hier naar vragen. Ons oog valt bij binnenkomst direct op een
-          affiche met de tekst:”Breaking News: Jan &amp; Tiny van supermarkt Plus
-          Buysse in IJzendijke geven het “stokje” door.”
+          affiche met de tekst:”Breaking News: Jan &amp; Tiny van supermarkt
+          Plus Buysse in IJzendijke geven het “stokje” door.”
         </p>
 
-        <Photos series="westfield-mall-of-the-netherlands" :count="6"
-          :captions="[]">
-          <h2>Titel.</h2>
+        <Photos
+          series="westfield-mall-of-the-netherlands"
+          :count="6"
+          :captions="[]"
+        >
+          <h3>Titel.</h3>
           <p>Omschrijving!</p>
         </Photos>
 
@@ -426,9 +438,7 @@
           punt is onduidelijk.
         </p>
 
-        <Photos series="distributiecentra" :count="6"
-          :captions="[]">
-        </Photos>
+        <Photos series="distributiecentra" :count="6" :captions="[]"> </Photos>
 
         <p>
           Nog een plek waar we niet welkom zijn ligt in Bleiswijk. De Duitse
