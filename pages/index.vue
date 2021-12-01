@@ -74,6 +74,11 @@
     color: $aqua;
   }
 
+  .container {
+    margin: 0 auto;
+    max-width: $column-width !important;
+  }
+
   div.intro {
     text-align: center;
     padding: 20px 25px 8px 25px;

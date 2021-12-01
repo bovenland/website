@@ -23,6 +23,7 @@ div.story-page {
     color: $label-color;
   }
   .container {
+    max-width: 100vw !important;
     h1 {
       color: $red;
     }
@@ -33,12 +34,17 @@ div.story-page {
       > h1,
       > label,
       > p {
+        display: block;
         padding: 0 0 0 54px;
+        margin-left: auto;
+        margin-right: auto;
+        max-width: $column-width;
       }
     }
   }
   .segments-menu {
     margin: 0 0 0 54px;
+    max-width: $column-width;
   }
 
   div.photos-element,
@@ -71,7 +77,11 @@ div.story-page {
       @include opacity(1);
     }
     .swiper-slide {
+      img {
+        margin: 0 auto;
+      }
       p {
+        max-width: $column-width;
         margin: 0;
         padding: 8px 36px 0px 36px;
       }
@@ -79,6 +89,11 @@ div.story-page {
   }
 
   div.minimap-container {
+    min-height: 240px;
+    max-width: $column-width;
+    @media screen and (min-width: $column-width+1) {
+      margin: 1rem auto;
+    }
     overflow: hidden;
     position: relative;
     svg.minimap {
