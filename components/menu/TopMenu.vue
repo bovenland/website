@@ -18,7 +18,7 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 @import "@/assets/sass/partials/base.scss";
 @import "@/assets/sass/partials/mixins.scss";
 
@@ -34,7 +34,7 @@ export default {
   width: 100vw;
 
   > section {
-    padding: 3rem 20px 2rem 20px;
+    padding: 4rem 2rem 2rem 2rem;
   }
 
   &.slide-enter-active,
