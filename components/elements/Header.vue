@@ -35,10 +35,11 @@ header {
   width: 100%;
   padding: 16px;
   position: relative;
-  z-index: 100;
 }
 
 svg {
+  position: relative;
+  z-index: 100;
   padding: 20px 76px;
   width: 100%;
   max-width: 384px;

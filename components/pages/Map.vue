@@ -1,16 +1,17 @@
 <template>
   <div class="page map-page">
+    <!-- Segmenten menu -->
+    <SegmentsMenu
+      minimal="true"
+      class="minimal"
+      v-bind:chapter="chapter"
+      v-bind:segment="segment"
+      v-bind:segments="segments"
+    />
     <div class="container column map">
-      <!-- Segmenten menu -->
-      <SegmentsMenu
-        v-bind:chapter="chapter"
-        v-bind:segment="segment"
-        v-bind:segments="segments"
-      />
       <slot />
       <div class="map">
-        <slot name="map">
-        </slot>
+        <slot name="map"> </slot>
       </div>
     </div>
   </div>
@@ -21,7 +22,7 @@ import structure from "/structure.js";
 import SegmentsMenu from "./../menu/SegmentsMenu";
 
 export default {
-  data () {
+  data() {
     var chapter = null;
     var segment = null;
     structure.chapters.forEach((c) => {
@@ -53,17 +54,26 @@ export default {
   },
   components: {
     SegmentsMenu,
-  }
-}
+  },
+};
 </script>
 
-<style scoped>
-.map {
-  position: absolute;
-  z-index: 0;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
+<style lang="scss" scoped>
+.map-page {
+  // position: relative;
+  .map {
+    position: absolute;
+    z-index: 0;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+  }
+  .segments-menu {
+    position: absolute;
+    top: 28px;
+    left: 36px;
+    z-index: 101;
+  }
 }
 </style>

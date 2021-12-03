@@ -146,7 +146,7 @@ export default {
         display: inline-block;
         width: 100%;
         margin-left: -0.75rem;
-        padding: 0.25rem 0 0.25rem 0.75rem ;
+        padding: 0.25rem 0 0.25rem 0.75rem;
         @include calc("width", "100% + 1.5rem");
         text-decoration: none;
       }
@@ -159,6 +159,22 @@ export default {
     .current {
       svg.triangle {
         transform: rotate(90deg);
+      }
+    }
+  }
+
+  &.minimal {
+    background-color: transparent;
+    width: 200px;
+    transition: width 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+    &.segments-menu-hidden {
+      width: 26px;
+    }
+    .current {
+      height: 36px;
+      .triangle,
+      h3 {
+        display: none;
       }
     }
   }

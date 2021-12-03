@@ -49,7 +49,7 @@ div.story-page {
 
   div.photos-element,
   div.minimap-container {
-    margin: 1rem -2rem;
+    margin: 4rem -2rem;
     background-color: $darker-light-gray;
   }
 

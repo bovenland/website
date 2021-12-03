@@ -36,8 +36,8 @@ export default {
 
 #burger {
   position: fixed;
-  top: 30px;
-  right: 36px;
+  top: 37px;
+  right: 30px;
   z-index: 1000;
 }
 
@@ -56,8 +56,8 @@ button:focus {
 
 .burger-button {
   position: relative;
-  height: 36px;
-  width: 36px;
+  height: 30px;
+  width: 32px;
   display: block;
   z-index: 999;
   border: 0;
@@ -73,7 +73,7 @@ button:focus {
   top: 50%;
   right: 6px;
   left: 6px;
-  height: 2px;
+  height: 3px;
   width: auto;
   margin-top: -1px;
   transition: transform 0.6s cubic-bezier(0.165, 0.84, 0.44, 1),
