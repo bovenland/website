@@ -295,9 +295,11 @@ export default {
 
   beforeMount() {
     window.addEventListener("scroll", this.handleScroll);
+    window.addEventListener("resize", this.handleScroll);
   },
   beforeDestroy() {
     window.removeEventListener("scroll", this.handleScroll);
+    window.removeEventListener("resize", this.handleScroll);
   },
 
   components: {
