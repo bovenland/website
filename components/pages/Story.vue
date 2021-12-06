@@ -8,6 +8,24 @@
         v-bind:segments="segments"
       />
 
+      <div id="path-handle"></div>
+      <svg
+        id="path"
+        xmlns="http://www.w3.org/2000/svg"
+        width="32"
+        height="1024"
+        viewBox="0 0 32 1024"
+      >
+        <path
+          class="background"
+          d="M20,0S21.381,115.2381,13.04762,162.85714C-6.58223,275.02772,38.89018,261.686,23.73318,440.508S2.33333,649.7619,4.71429,692.61905c0,0,19.04761,113.09524,21.42857,136.90476C27.997,848.06523,16.61905,993.80952,16,1024"
+        />
+        <path
+          class="progress"
+          d="M20,0S21.381,115.2381,13.04762,162.85714C-6.58223,275.02772,38.89018,261.686,23.73318,440.508S2.33333,649.7619,4.71429,692.61905c0,0,19.04761,113.09524,21.42857,136.90476C27.997,848.06523,16.61905,993.80952,16,1024"
+        />
+      </svg>
+
       <slot />
     </div>
     <Footer />
@@ -19,6 +37,30 @@
 @import "@/assets/sass/partials/mixins.scss";
 
 div.story-page {
+  #path-handle {
+    overflow: hidden;
+    width: 100%;
+    position: relative;
+    height: 0px;
+  }
+  svg#path {
+    position: fixed;
+    top: 0;
+    left: 16px;
+    width: 32px;
+    height: 100vh;
+    fill: none;
+
+    path.progress {
+      stroke: $red;
+      stroke-dasharray: 0 0 1200px;
+    }
+    path.background {
+      stroke: $border-color;
+    }
+    stroke-width: 5px;
+  }
+
   label {
     color: $label-color;
   }
@@ -200,6 +242,50 @@ export default {
       segment: segment,
       segments: chapter.segments,
     };
+  },
+
+  methods: {
+    handleScroll() {
+      // get the offset position of the pathHandle
+      var top = 0;
+      if (this.pathHandleElement) {
+        top = this.pathHandleElement.getBoundingClientRect().top;
+      }
+      if (this.pathElement) {
+        if (top >= 0) {
+          this.pathElement.style.top =
+            this.pathHandleElement.getBoundingClientRect().top -
+            this.pathHandleElement.parentNode.getBoundingClientRect().top;
+          this.pathElement.style.position = "absolute";
+        } else {
+          this.pathElement.style.top = 0;
+          this.pathElement.style.position = "fixed";
+        }
+        // this.pathElement.style.
+      }
+      if (this.progressElement) {
+        var progress =
+          window.scrollY / (document.body.clientHeight - window.innerHeight);
+        var dasharray = "0 " + progress * 1024.0 + "px 1200px";
+        this.progressElement.style.strokeDasharray = dasharray;
+      }
+    },
+  },
+
+  mounted: function () {
+    this.pathHandleElement = document.querySelector("#path-handle");
+    this.pathElement = document.querySelector("#path");
+    if (this.pathElement) {
+      this.progressElement = this.pathElement.querySelector(".progress");
+    }
+    this.handleScroll();
+  },
+
+  beforeMount() {
+    window.addEventListener("scroll", this.handleScroll);
+  },
+  beforeDestroy() {
+    window.removeEventListener("scroll", this.handleScroll);
   },
 
   components: {
