@@ -46,7 +46,7 @@ div.story-page {
   svg#path {
     position: fixed;
     top: 0;
-    left: 16px;
+    left: 24px;
     width: 32px;
     height: 100vh;
     fill: none;
@@ -93,6 +93,8 @@ div.story-page {
   div.minimap-container {
     margin: 4rem -2rem;
     background-color: $darker-light-gray;
+    position: relative;
+    z-index: 1;
   }
 
   div.photos-element {
@@ -248,6 +250,10 @@ export default {
     handleScroll() {
       // get the offset position of the pathHandle
       var top = 0;
+      var bottom =
+        document.body.clientHeight -
+        window.innerHeight -
+        this.footerElement.clientHeight;
       if (this.pathHandleElement) {
         top = this.pathHandleElement.getBoundingClientRect().top;
       }
@@ -261,11 +267,16 @@ export default {
           this.pathElement.style.top = 0;
           this.pathElement.style.position = "fixed";
         }
-        // this.pathElement.style.
+        if (window.scrollY >= bottom) {
+          this.pathElement.style.height =
+            window.innerHeight + (bottom - window.scrollY) + "px";
+        } else {
+          this.pathElement.style.height = "100vh";
+        }
       }
+
       if (this.progressElement) {
-        var progress =
-          window.scrollY / (document.body.clientHeight - window.innerHeight);
+        var progress = window.scrollY / bottom;
         var dasharray = "0 " + progress * 1024.0 + "px 1200px";
         this.progressElement.style.strokeDasharray = dasharray;
       }
@@ -273,6 +284,7 @@ export default {
   },
 
   mounted: function () {
+    this.footerElement = document.querySelector("footer");
     this.pathHandleElement = document.querySelector("#path-handle");
     this.pathElement = document.querySelector("#path");
     if (this.pathElement) {
