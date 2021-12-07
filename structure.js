@@ -51,7 +51,7 @@ export default {
     index: 2,
     title: "Vijftien minuten verderop",
     description: "Donec eleifend mollis consequat. Suspendisse vitae posuere ipsum. Curabitur lacinia sem lectus, vitae dictum elit aliquet nec. Quisque posuere augue ac ligula bibendum dapibus. Phasellus blandit dictum mi, nec mattis ante efficitur ut. Nullam id commodo tortor.",
-    foldDown: false,
+    foldDown: "visible",
     to: {
       name: "vijftien-minuten-verderop"
     },

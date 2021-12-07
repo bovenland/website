@@ -12,7 +12,7 @@
 
     <div class="container column">
       <!-- Hoofdstukken -->
-      <FoldDownMenu v-bind:children="chapters" />
+      <FoldDownMenu v-bind:children="chapters" collapsible="false" />
 
       <!-- Wat is boven.land? -->
       <label>Het project</label>

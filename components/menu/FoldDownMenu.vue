@@ -3,9 +3,14 @@
     <li
       v-for="(child, index) of children"
       :key="index"
-      v-bind:class="'folddown-' + child.foldDown"
+      v-bind:class="
+        'folddown-' + child.foldDown + ' collapsible-' + collapsible
+      "
     >
-      <div class="fold-down-menu-button" v-on:click="foldDown(child)">
+      <div
+        class="fold-down-menu-button"
+        v-on:click="foldDown(child, collapsible)"
+      >
         <FoldDown v-bind:active="child.foldDown">
           <label>Hoofdstuk {{ child.index }}</label>
           <h3>{{ child.title }}</h3>
@@ -153,20 +158,32 @@ div.fold-down-menu-button {
     }
   }
 }
+.collapsible-false div.fold-down-menu-button {
+  cursor: initial;
+  padding-right: 0;
+  svg {
+    display: none;
+  }
+}
 </style>
 
 <script>
 import FoldDown from "./../buttons/FoldDown";
 import SquareButton from "./../buttons/Square";
 export default {
-  props: ["children"],
+  props: ["children", "collapsible"],
   components: {
     FoldDown,
     SquareButton,
   },
   methods: {
-    foldDown: function (child) {
-      if (child.foldDown == "visible") {
+    foldDown: function (child, collapsible = true) {
+      console.log(collapsible);
+      if (
+        child.foldDown == "visible" &&
+        collapsible != "0" &&
+        collapsible != "false"
+      ) {
         child.foldDown = "hidden";
       } else {
         child.foldDown = "visible";
