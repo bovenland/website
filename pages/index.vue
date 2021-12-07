@@ -5,27 +5,33 @@
       Nederland tot Nederland maakt.
     </div>
 
-    <!-- Intro afbeelding -->
-    <div class="header-image">
-      <nuxt-img src="/img/homepage/wadden.jpg" />
+    <div class="header-image story-header-image">
+      <video
+          src="https://files.boven.land/video/stadskanaal-1080.mp4"
+          autoplay
+          muted
+          loop
+        />
     </div>
 
     <div class="container column">
-      <!-- Hoofdstukken -->
-      <FoldDownMenu v-bind:children="chapters" collapsible="false" />
-
       <!-- Wat is boven.land? -->
       <label>Het project</label>
       <h3>Wat is boven.land?</h3>
       <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam euismod
-        turpis quis felis ultricies, eu vehicula purus mattis. Donec auctor
-        neque eu dolor molestie sollicitudin. Curabitur in enim ornare, viverra
-        risus ac, convallis eros. Morbi ac enim sit amet mauris convallis
-        cursus. Etiam in ipsum et mauris faucibus bibendum eu quis elit. Aliquam
-        molestie lacus quam, ac rhoncus risus rutrum ac. Integer vehicula
-        pulvinar odio, sed cursus nisl.
+        Nederland is klein en geordend. Aanvliegend op ons land is dit je uitzicht: een pannenkoek van rechthoekige polders, waar sloten doorheen snijden, landbouwgrond, natuurgebieden, water. De grillige vormpjes van dorpen, afgewisseld door de grote variant: de stad, met voorsteden en Vinex-wijken. Het patroon van de snelwegen ligt als een web over ons land, met grote hoekige blokken van kassen data- en distributiecentra ernaast.
       </p>
+
+      <p>
+        Waarom ons land er zo uitziet, vragen de meesten van ons zich niet dagelijks af. We zijn ons niet zo bewust van de invloed die regelgeving en ons gedrag heeft op het uiterlijk van het ons omringende landschap. De ruimte in Nederland is beperkt en we delen hem met velen. Regulering van het gebruik is daarom noodzaak en wordt urgenter naarmate we onze ruimte intensiever gebruiken. De Rijksbouwmeesters doen een oproep om meer toezicht te houden op hoe we ons land inrichten en wie daarover beslist, de roep om een minister ruimtelijke ordening klinkt. Er zijn dan ook veel urgente thema’s die invloed hebben op onze omgeving: de energietransitie, CO2-uitstoot, de verdichting om er slechts een paar te noemen. Maar ook minder voordehandliggende vragen als: waar kopen we, hoe lopen we, waar is het in Nederland nog stil, hoe ver kunnen we nog zien of wat is het meest afgelegen punt in Nederland?
+      </p>
+
+      <p>
+        In Boven.land stellen wij deze vragen, de meest urgente afgewisseld met wat misschien op het eerste oog triviaal lijkt, maar bij nadere beschouwing bijzonder belangrijk. Boven.land is een ontdekkingsreis door het Nederlandse landschap, aan de hand van cartografie, tekst en (drone)beeld. Wij, Bert Spaan en Jenny Smets, vertellen de verhalen. Verhalen over ons land en over de ruimtelijke ordening. Dat doen we vanuit vanuit onze achtergrond: Jenny maakt beeldverhalen en Bert is cartograaf en digital designer. We reizen af naar opvallende plekken in het Nederlandse landschap. Of naar alledaagse plekken die we met andere ogen bekijken. We brengen in kaart hoe ons dagelijkse gedrag: consumptie, reizen, werk, vrije tijd, sporen nalaat in onze omgeving. We bieden ons publiek een nieuw en verrassend perspectief.
+      </p>
+
+      <!-- Hoofdstukken -->
+      <FoldDownMenu v-bind:children="chapters" collapsible="false" />
 
       <!-- Wie maken boven.land? -->
       <h3>Wie maken boven.land?</h3>
