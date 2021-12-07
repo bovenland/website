@@ -1,7 +1,7 @@
 <template>
   <header>
     <NuxtLink to="/">
-      <Logo v-bind:dot="color" letters="black" />
+      <Logo v-bind:dot="dotColor" v-bind:letters="letterColor" />
     </NuxtLink>
     <Burger />
 
@@ -18,7 +18,7 @@ import MainMenu from "./../menu/MainMenu";
 import TopMenu from "./../menu/TopMenu";
 export default {
   name: "Header",
-  props: ["color"],
+  props: ["dotColor", "letterColor"],
   components: {
     Logo,
     Burger,

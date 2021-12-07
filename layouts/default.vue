@@ -1,6 +1,7 @@
 <template>
   <div class="default">
-    <Header color="pink" />
+    <!-- TODO: Base these colors on the route -->
+    <Header dotColor="pink" letterColor="black" />
     <main>
       <nuxt />
     </main>
@@ -12,7 +13,7 @@ import Header from "./../components/elements/Header";
 
 export default {
   components: {
-    Header
-  }
+    Header,
+  },
 };
 </script>
