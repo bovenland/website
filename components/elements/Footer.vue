@@ -1,5 +1,5 @@
 <template>
-  <footer>Stimulerings fonds creatieve industrie</footer>
+  <footer>Stimuleringsfonds Creatieve Industrie</footer>
 </template>
 
 <script>
