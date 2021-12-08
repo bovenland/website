@@ -31,7 +31,7 @@
   <section class="section">
     <ul>
       <li v-for="(item, index) of menu" :key="index">
-        <nuxt-link :to="{ name: item.to.name }">
+        <nuxt-link :to="{ ...item.to }">
           <h3>{{ item.title }}</h3>
         </nuxt-link>
       </li>
