@@ -3,19 +3,22 @@ export default {
 
   // Main menu
   menu: [{
-    title: "Wat is dit?",
+    title: "Wat is Boven.land?",
     to: {
-      name: "wat"
+      name: "index",
+      hash: '#project'
     },
   }, {
     title: "Over ons",
     to: {
-      name: "over",
+      name: "index",
+      hash: '#over-ons'
     },
   }, {
     title: "Contact",
     to: {
-      name: "contact",
+      name: "index",
+      hash: '#contact'
     },
   }, ],
 
@@ -41,6 +44,7 @@ export default {
         name: "cartografie"
       }
     }, {
+      // title: "Data & research",
       title: "Data",
       color: "blue",
       to: {
@@ -68,6 +72,7 @@ export default {
         name: "cartografie"
       }
     }, {
+      // title: "Data & research",
       title: "Data",
       color: "blue",
       to: {

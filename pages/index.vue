@@ -6,18 +6,13 @@
     </div>
 
     <div class="header-image story-header-image">
-      <video
-          src="https://files.boven.land/video/stadskanaal-1080.mp4"
-          autoplay
-          muted
-          loop
-        />
+      <Video id="stadskanaal" />
     </div>
 
     <div class="container column">
       <!-- Wat is boven.land? -->
       <label>Het project</label>
-      <h3>Wat is boven.land?</h3>
+      <h3 id="project">Wat is Boven.land?</h3>
       <p>
         Nederland is klein en geordend. Aanvliegend op ons land is dit je uitzicht: een pannenkoek van rechthoekige polders, waar sloten doorheen snijden, landbouwgrond, natuurgebieden, water. De grillige vormpjes van dorpen, afgewisseld door de grote variant: de stad, met voorsteden en Vinex-wijken. Het patroon van de snelwegen ligt als een web over ons land, met grote hoekige blokken van kassen data- en distributiecentra ernaast.
       </p>
@@ -34,7 +29,7 @@
       <FoldDownMenu v-bind:children="chapters" collapsible="false" />
 
       <!-- Wie maken boven.land? -->
-      <h3>Wie maken boven.land?</h3>
+      <h3 id="over-ons">Wie maken boven.land?</h3>
 
       <!-- Profielen -->
       <ul class="profiles">
@@ -53,6 +48,8 @@
           <p>Cartografie, data &amp; technologie</p>
         </li>
       </ul>
+
+      <h3 id="contact">Contact</h3>
 
       <p>
         Nullam in dui metus. Praesent vestibulum ex sed quam dapibus porta.
@@ -120,6 +117,7 @@
 <script>
 import structure from "/structure.js";
 
+import Video from "./../components/elements/Video";
 import Footer from "./../components/elements/Footer";
 import FoldDownMenu from "./../components/menu/FoldDownMenu";
 import DotMask from "./../components/svg/icons/DotMask";
@@ -133,6 +131,7 @@ export default {
     DotMask,
     FoldDownMenu,
     Footer,
+    Video
   },
 };
 </script>
