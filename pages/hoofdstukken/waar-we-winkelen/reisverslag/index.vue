@@ -107,20 +107,40 @@
           Terneuzen staat samen met onder meer Landgraaf en Kerkrade in Limburg bekend als de stad met de meeste leegstand. De ene na de andere winkel staat te huur, bijna meer dan dat er nog in gebruik zijn. We worden verrast door een carnavaleske optocht en er is een kermis. We worden er toch niet vrolijk van.
         </p>
 
-        <!-- TODO: foto Jenny, Terneuzen IMG_4214.jpeg -->
+        <Photos
+          series="optocht-terneuzen"
+          :count="1"
+          :captions="[]">
+          <h3>Titel.</h3>
+          <p>Omschrijving!</p>
+        </Photos>
 
         <p>
           De website van de stad Terneuzen noemt het een stoere havenstad en een stad die je moet ontdekken. Helaas gaan wij dat niet ervaren, we moeten door naar onze volgende bestemming. Op naar Middelburg.
         </p>
 
+        <Photos
+          series="leegstand-terneuzen"
+          :count="42"
+          :captions="[]">
+          <h3>Titel.</h3>
+          <p>Omschrijving!</p>
+        </Photos>
+
         <h2>Middelburg: de videotheek</h2>
 
         <p>
-          We leerden van Gertjan Slob van Locatus dat er nog acht videotheken over zijn in Nederland. De meesten werden gestart in de hoogtijdagen van de videotheek, de jaren tachtig. Toen zaten ze op elke straathoek, er waren er meer dan duizend in Nederland. Het waren zaken waar je, ondanks de vaak sjofele inrichting uren kon doorbrengen omdat je geen keuze kon maken. En waar de speciale hoek voor erotiek altijd wat ongemakkelijk voelde. Nu zijn er nog maar een paar videotheken overgebleven, twee in Sittard, en één in Middelburg, de charmante hoofdstad van Zeeland waar we langskomen op onze reis. Uit  jeugdsentiment bezoeken we hier één van de acht laatste videotheken. Eigenlijk zou deze videotheek geen videotheek meer moeten heten, want video’s worden er niet of nauwelijks meer verkocht of verhuurd. Want wie heeft er nu nog een videospeler in huis? Dus hebben de alleraardigste eigenaren Özcan en Canan Yarar van Viduet-Film & Games in Middelburg nog maar vier of vijf klanten per maand die voor video’s naar hun zaak komen. De zaak die sinds 2016 in hun bezit is, is nu meer een tabakshop. Langzaam maar zeker wil het echtpaar Yarar de schappen met dvd’s en video’s vervangen door andere waar. Wat dat precies gaat worden is niet helemaal duidelijk, nu zien we vooral veel kinderspeelgoed en plastic prullaria. Bij het afscheid krijgen we een mooi geplastificeerd visitekaartje waarop de website staat vermeld. Als ik die later wil bezoeken krijg ik echter de melding dat de server onvindbaar is.
+          We leerden van Gertjan Slob van Locatus dat er nog acht videotheken over zijn in Nederland. De meesten werden gestart in de hoogtijdagen van de videotheek, de jaren tachtig. Toen zaten ze op elke straathoek, er waren er meer dan duizend in Nederland. Het waren zaken waar je, ondanks de vaak sjofele inrichting uren kon doorbrengen omdat je geen keuze kon maken. En waar de speciale hoek voor erotiek altijd wat ongemakkelijk voelde. Nu zijn er nog maar een paar videotheken overgebleven, twee in Sittard, en één in Middelburg, de charmante hoofdstad van Zeeland waar we langskomen op onze reis. Uit  jeugdsentiment bezoeken we hier één van de acht laatste videotheken. Eigenlijk zou deze videotheek geen videotheek meer moeten heten, want video’s worden er niet of nauwelijks meer verkocht of verhuurd. Want wie heeft er nu nog een videospeler in huis? Dus hebben de alleraardigste eigenaren Özcan en Canan Yarar van Viduet-Film &amp; Games in Middelburg nog maar vier of vijf klanten per maand die voor video’s naar hun zaak komen. De zaak die sinds 2016 in hun bezit is, is nu meer een tabakshop. Langzaam maar zeker wil het echtpaar Yarar de schappen met dvd’s en video’s vervangen door andere waar. Wat dat precies gaat worden is niet helemaal duidelijk, nu zien we vooral veel kinderspeelgoed en plastic prullaria. Bij het afscheid krijgen we een mooi geplastificeerd visitekaartje waarop de website staat vermeld. Als ik die later wil bezoeken krijg ik echter de melding dat de server onvindbaar is.
 
         </p>
 
-        <!-- TODO: foto bert videotheek -->
+        <Photos
+          series="viduet"
+          :count="1"
+          :captions="[]">
+          <h3>Titel.</h3>
+          <p>Omschrijving!</p>
+        </Photos>
 
         <p>
           We zijn ontroerd dat er winkeleigenaren zijn zoals de familie Yarar, die hun dagelijks leven doorbrengen in hun zaak. En die zo klantvriendelijk zijn dat we zelfs een chocoladereep cadeau krijgen bij vertrek. We hopen op een goede toekomst voor Viduet en trekken dieper Zeeland in. Op zoek naar een buurtsupermarkt die net als Viduet gerund wordt door een familie.
@@ -134,11 +154,16 @@
           Het lawaai van de motor van onze terreinwagen komt met moeite boven het stormgeraas uit, maar de auto brengt ons toch weer veilig op de volgende bestemming: de buurtsupermarkt van IJzendijke. We zijn naar dit punt in Zeeuws-Vlaanderen gereden omdat de buurtsupermarkt in IJzendijke het grootste buurtbereik lijkt te hebben. De dichtstbijzijnde andere supermarkt bevindt zich op ongeveer zeven kilometer. De klanten komen dan ook van ver om hier hun boodschappen te doen. De parkeerplaats staat vol met auto’s met Belgische nummerplaten. De producten zijn hier beter en goedkoper, aldus een winkelmedewerkster als we hiernaar vragen. Ons oog valt bij binnenkomst direct op een affiche met de tekst:”Breaking News: Jan &amp; Tiny van supermarkt Plus Buysse in IJzendijke geven het ‘stokje’ door.”
 
         <p>
-          <!-- TODO: fix jan & tiny, tiny & jan -->
-          Bijna zestig jaar na de oprichting stoppen de eigenaren Jan &amp; Tiny Poissonnier-Buysse met de kruidenierszaak, Het portret van het echtpaar prijkt nu nog op de gevel. Ze namen de zaak over in 2004 van de ouders van Tiny. Moeder Annie Buysse startte in 1963 op een andere locatie met een kleine kruidenierszaak. De zaak kwam onder verschillende vlaggen: van Grosco, IFA, Centra, MikroMarkt, Kopak werd het een C1000 en vervolgens dus een Plus Briljant Supermarkt, een coöperatieve organisatie met ruimte voor het zelfstandig ondernemerschap. Aandacht, Kwaliteit, Lokaal en Verantwoord zijn altijd de kernwaarden van Tiny &amp; Jan geweest. Maar nu stoppen ze met de winkel, en staat er een interim aan het hoofd. De zaak gaat terug naar Plus, het personeel blijft. Het afscheid moet aangepast vanwege de coronamaatregelen. Geen koffie met gebak, geen borrel of biertje.Het laatste weekend van Jan &amp; Tiny krijgt de klant die meer besteedt dan €25 aan boodschappen een limited editions set speelkaarten van Supermarkt Buysse. Let op! Op=Op. En weg is weg is de buurtwinkel.
+          Bijna zestig jaar na de oprichting stoppen de eigenaren Jan &amp; Tiny Poissonnier-Buysse met de kruidenierszaak, Het portret van het echtpaar prijkt nu nog op de gevel. Ze namen de zaak over in 2004 van de ouders van Tiny. Moeder Annie Buysse startte in 1963 op een andere locatie met een kleine kruidenierszaak. De zaak kwam onder verschillende vlaggen: van Grosco, IFA, Centra, MikroMarkt, Kopak werd het een C1000 en vervolgens dus een Plus Briljant Supermarkt, een coöperatieve organisatie met ruimte voor het zelfstandig ondernemerschap. Aandacht, Kwaliteit, Lokaal en Verantwoord zijn altijd de kernwaarden van Jan &amp; Tiny geweest. Maar nu stoppen ze met de winkel, en staat er een interim aan het hoofd. De zaak gaat terug naar Plus, het personeel blijft. Het afscheid moet aangepast vanwege de coronamaatregelen. Geen koffie met gebak, geen borrel of biertje.Het laatste weekend van Jan &amp; Tiny krijgt de klant die meer besteedt dan €25 aan boodschappen een limited editions set speelkaarten van Supermarkt Buysse. Let op! Op=Op. En weg is weg is de buurtwinkel.
         </p>
 
-        <!-- TODO: foto Bert IJzendijke -->
+        <Photos
+          series="ijzendijke"
+          :count="1"
+          :captions="[]">
+          <h3>Titel.</h3>
+          <p>Omschrijving!</p>
+        </Photos>
 
         <h2>Designer Outlet Roosendaal</h2>
 
@@ -146,7 +171,13 @@
           Vanuit Zeeland rijden we met hoge verwachtingen naar een factory outlet center in Brabant. Een factory outlet is een winkelplek waar fabrikanten hun merkwaar met veel korting verkopen. Wij zijn er beiden nog nooit eerder geweest maar kennen het fenomeen uit de documentaire van Michiel van Erp, Pretpark Nederland uit 2007. In deze documentaire zie je dat voor sommige mensen winkelen is als een dagje uit voor het hele gezin naar een pretpark. Van Erp filmde in Batavia Stad in Lelystad. Voor Boven.land besluiten we naar de Designer Outlet Roosendaal te reizen. Onze verbazing is groot als we de enorme parkeerplaats oprijden. Geheel tegen de regels van Teun Koek moet de bezoeker hier betalen om te kunnen parkeren. Het lijkt de klanten niet te storen; zelfs op een druilerige zondag als deze, lijken ze een bezoek aan een nep winkeldorp als het hoogst haalbare tijdverdrijf te beschouwen.
         </p>
 
-        <!-- TODO: foto bert stip Roosendaal -->
+        <Photos
+          series="stip-roosendaal"
+          :count="1"
+          :captions="[]">
+          <h3>Titel.</h3>
+          <p>Foto: Jenny Smets</p>
+        </Photos>
 
         <p>
           Op keurige corona-afstand staan de bezoekers in de rij om de winkels binnen te mogen. Wij bekijken het met gemengde gevoelens, we kunnen ons leukere uitstapjes voorstellen dan samen winkelen. We behoren ook niet de doelgroep, die bestaat uit tweeverdieners en welvarende gezinnen met kinderen. En toeristen uit binnen- en buitenland. De outlet in Roosendaal is opgezet volgens dezelfde formule als Batavia Stad, Fashion Outlet Amsterdam en Retailpark Roermond. Funshopping voor lage prijzen. Ze beloven een unieke winkelervaring met meer dan tweehonderdvijftig modemerken, en cafés voor een koffie of lunch tussendoor. Onze eerste kennismaking met een factory outlet center (FOC) zet ons aan het denken. Is dit de toekomst van winkelen buiten de binnensteden en dorpscentra met leegstand als gevolg, zoals sommige retaildeskundigen over Factory Outlets beweren? De winkelcentra in de weilanden zijn wel het gevolg van de consumptiemaatschappij waarbij winkelen een vrijetijdsbesteding voor de hele familie is. En daarmee is het de tegenhanger van online winkelen vanuit huis, een activiteit die meestal individueel is, en veilig in tijden van corona.
@@ -178,7 +209,13 @@
           Het is een van de meest opvallende veranderingen in de landschapsinrichting: de enorme blokkendozen die langs snelwegen en op industrieterreinen in sneltreinvaart gebouwd worden. Het zijn noodzakelijke logistieke centra waar al die goederen die wij als consument willen hebben opgeslagen zijn, en van waaruit ze naar ons huis of afhaalpunt gebracht worden. Deze anonieme hallen van grote en kleine merken worden ook wel fulfillment centra genoemd. Ze worden zeker niet door iedereen gewaardeerd, hun invloed op het uiterlijk van het Nederlandse landschap is velen een doorn in het oog. Het college van Rijksadviseurs schreef er een rapport over met de veelzeggende titel (X)XL verdozing - Minder, compacter, geconcentreerder, multifunctioneler. In de media is veel aandacht voor de negatieve effecten van de bouw van steeds meer, en steeds grotere hallen. ‘Verdozing’ werd een nieuw Nederlands begrip. De Rijksbouwmeesters keken met name naar het uiterlijk, de media onderzochten de vaak slechte arbeidsomstandigheden voor de bezorgers van al die pakketten. En voor de werknemers in die hallen, veelal arbeidsmigranten. De problematiek van de enorme hoeveelheid retouren en vernietiging van met name textiel droeg ook een steentje bij aan het negatieve imago van de consequenties van ons online koopgedrag.
         </p>
 
-        <!-- TODO: foto stip Bert Bol.com -->
+        <Photos
+          series="stip-bol.com"
+          :count="1"
+          :captions="[]">
+          <h3>Titel.</h3>
+          <p>Foto: Jenny Smets</p>
+        </Photos>
 
         <p>
           Dat negatieve imago zorgt er waarschijnlijk voor dat we ondanks vele verzoeken nergens toegang krijgen. We besluiten om dan maar vanaf de openbare weg een kijkje te nemen. Als eerste bezoeken we de opslaghallen van de Nederlandse en Belgische webwinkel Bol.com. Het nieuwe felblauwe distributiecentrum van Bol.com ligt aan de Pakketweg in Waalwijk, de straatnaam kan geen toeval zijn. Het ligt op een bedrijventerrein bij de A59 bij al bestaande Bol.com hallen. Journalist Jeroen van Bergeijk werkte hier undercover en deed verslag van zijn ervaringen in media en in het boek: Binnen bij Bol.com.
@@ -206,7 +243,13 @@
           Dit weerhoudt ons niet om af te reizen naar de locatie op Maasvlakte II. Vanaf de openbare weg zou het bouwterrein gewoon zichtbaar moeten zijn. Na onze lunch bij cafetaria Smickel -inn, het balkon van Europa op het uiterste puntje van de Maasvlakte gaan we vol verwachting op pad. Want wat zullen we aantreffen op de plek waar we zo hartgrondig niet welkom zijn? Niets. Een paar shovels en wat bouwmaterieel, maar verder niets meer dan een zandvlakte in afwachting van activiteit.
         </p>
 
-        <!-- TODO: foto Bert maasvlakte -->
+        <Photos
+          series="maasvlakte"
+          :count="1"
+          :captions="[]">
+          <h3>Titel.</h3>
+          <p>Foto: Jenny Smets</p>
+        </Photos>
 
         <p>
           Is dit uitstel of afstel? Leegte te midden van de indrukwekkende omgeving die de Maasvlakte is. Een enorm maanlandschap waar alles uitvergroot lijkt te zijn en totaal gericht op logistiek en transport. Zelfrijdende treinen, enorme oppervlaktes met containers, bergen van kolen. De mens heeft hier de maat van een mier met bijbehorende werkdrift.
@@ -218,7 +261,15 @@
           Nog een plek waar we niet welkom zijn ligt in Bleiswijk. De Duitse online mode en lifestyle gigant Zalando bouwt hier op het bedrijventerrein Greenparc hun eerste Nederlandse XXL distributiecentrum. Oppervlakte: 19 voetbalvelden groot, investeringskosten ruim 200 miljoen. In de hal moet straks ruimte zijn voor zestien miljoen producten. Als dit de plek is waar de retouren komen zal dat ook niet gering zijn. Zalando biedt de service van gratis retour aan en krijgt ruim de helft van alle aankopen terug. Er mag tot honderd dagen na aankoop geretourneerd worden en ze bieden ook nog eens de ‘Haal Op Service’ aan. Het retourpakket wordt opgehaald waar en wanneer de klant maar wil. Robots zullen hier een deel van het werk van mensen gaan overnemen, de afstanden die werknemers af moeten leggen zijn te groot aan het worden, soms lopen werknemers in distributiecentra meer dan twintig kilometer op een dag. Aan duurzame energievoorziening is gedacht. Op het dak liggen zonnepanelen. Greenparc is een bestaand bedrijvenpark met bijbehorende infrastructuur. Er hoefde dus geen nieuw land opgeofferd voor deze vestiging en het ligt strategisch goed, aan de A12 vlakbij de Randstad. Veel distributiecentra liggen pal aan de snelweg en zijn daardoor zichtbaar voor het voorbijrazende verkeer. Zo ook de hal van de Primark in Roosendaal die we min of meer per ongeluk opeens zien vanuit het autoraam. Ze hebben bij Primark de opslagcapaciteit flink uitgebreid de laatste jaren. Er was al 56.000 vierkante meter aan opslag, in 2020 kwam daar nog eens 30.000 vierkante meter vloeroppervlak bij met een hoogte van 22 meter bij. Dat is dus in totaal 86.000 vierkante meter met Primark spullen; kunstnagels, gewatteerd jasje voor uw huisdier, mannen- vrouwen- en kindermode, alles voor huis tuin en keuken, een kerstmannen outfit voor de baby, telefoonhoesjes, gereedschap. Waarschijnlijk rekken en rekken vol. Deze artikelen zijn bedoeld voor de winkels van Primark, een webshop heeft Primark niet. De winkels met ultragoedkope artikelen moeten de klanten verleiden tot de aankoop van meerdere producten tegelijk. In een webshop is dit moeilijker te bewerkstelligen dan in fysieke winkels. De lage prijzen maken het onmogelijk om levering aan huis te doen. Twintig miljoen investeren in nieuwbouw voor opslag lijkt de actuele norm voor bedrijven. Net als bij Zalando in Bleiswijk is dit de investering in de nieuwbouw voor Primark.
         </p>
 
-        <!-- TODO: foto Bert Zalando -->
+        <Photos
+          series="primark"
+          :count="1"
+          :captions="[]">
+          <h3>Titel.</h3>
+          <p>Omschrijving!</p>
+        </Photos>
+
+        #e559a5
 
         <p>
           Of het nu gaat over Primark, Zalando, Bol.com of andere hallen van XL tot XXL, we realiseren ons dat deze opslag een noodzakelijk gevolg is van hoe we en waar we als Nederlanders kopen. En dat al die logistiek in gang gezet wordt op het moment dat wij iets online bestellen en laten bezorgen. Op het moment dat een pakket de hal verlaat wordt het door een pakketbezorger ofwel naar ons huisadres, ofwel naar een afhaalpunt gebracht. Over de arbeidsomstandigheden van deze pakketbezorgers is steeds meer te doen, slechte arbeidsomstandigheden, lage lonen, het is al net zo triest als de condities waaronder de werknemers in de distributiecentra werken.

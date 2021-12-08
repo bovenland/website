@@ -24,7 +24,13 @@
           Voor ons vertrek naar Oosterwold bij Almere hebben we nogal wat aannames over het soort mensen dat we hier zullen treffen. Oosterwold is een gebied waar bewoners zonder inmenging van planologen, gemeentelijke regels of bouwverordeningen (bijna) geheel naar eigen inzicht hun droomwoning mogen bouwen. Dat maakt ons nieuwsgierig naar hoe die eigen bouwsels eruit zien, en wie hier woont. We verwachten bewoners te treffen die die vrijheid zoeken, ecologische idealisten en pioniers met twee rechterhanden. Die blijken er te zijn, samen met pragmatische linkshandigen en liefhebbers van sprookjes. ‘Hier doen we alles anders’, aldus de tekst op de website en het handboek van het gebied.
         </p>
 
-        <!-- TODO: foto's bert Ben Zhao -->
+        <Photos
+          series="ban-zhaoweg"
+          :count="4"
+          :captions="[]">
+          <h3>Titel.</h3>
+          <p>Omschrijving!</p>
+        </Photos>
 
         <p>
           Yara van der Velden (32) is, met haar man Ronald Schelfhout (37) en hun twee kinderen Ona (5) en Ezra (3), een van de eerste instappers in de plannen van Oosterwold. We ontmoeten haar op het voorste kavels aan de Ban Zhaostraat, een straatnaam bedacht door Yara. Ban Zhao was de eerste vrouwelijke Chinese filosoof en historicus. Yara vond Oosterwold na een lange zoektocht naar een betaalbare woonplek voor haar gezin. De plek moest aan een aantal voorwaarden voldoen: het moest klein zijn (principieel), geen huur- maar een koophuis (nu kon het financieel nog), met veel groen en op nog fietsbare afstand van haar werk (ruim een uur). Terwijl Yara werkt, bouwt Ronald aan het huis. Nu wonen ze nog in de stacaravan, maar over niet al te lange tijd hopen ze in hun nieuwe huis te kunnen trekken.
@@ -34,7 +40,13 @@
           De kinderen gaan of naar school (op 7 minuten), of spelen met in grote getale aanwezige leeftijdsgenootjes. Drie jaar geleden kochten ze de kavel, samen met twee anderen die toen nog onbekenden waren. Shakirah van Oostveen, muziekdocent in het basisonderwijs en 61 jaar en Angelo van Leemput, journalist en 52 jaar. Met deze mensen delen ze nu de meeste voorzieningen en materialen, zoals gereedschap, de vriezer, de wasmachine, en een logeerplek. Om hier te wonen moet je een sociaal mens zijn: de huizen staan dicht op elkaar en je bent aangewezen op elkaars hulp. Er zijn ook veel gedeelde beslissingen te nemen: bijvoorbeeld over de weg waarvan je samen eigenaar bent. Of over de riolering, over de wateraansluitingen, elektriciteit en alle zaken waar je samen verantwoordelijk voor bent. Vrijheid en gebrek aan regels komt ook met verantwoordelijkheden en soms met kopzorgen. De Filosofenwijk waar de Ban Zhaostraat deel van uitmaakt, is minder homogeen dan je zou vermoeden. Weliswaar zijn veel bewoners gezinnen tussen de vijfendertig en veertig jaar met jonge kinderen. Maar er wonen ook alleenstaanden, en ouderen. Mensen uit Almere en omgeving. En niet iedereen is avontuurlijk en komt naar Oosterwold vanwege de vrijheid, zelfvoorzienendheid en de gemeenschapszin.
         </p>
 
-        <!-- TODO: foto Bert Perenbloesemhof -->
+        <Photos
+          series="perenbloesemhof"
+          :count="1"
+          :captions="[]">
+          <h3>Titel.</h3>
+          <p>Omschrijving!</p>
+        </Photos>
 
         <p>
           Om de hoek van de Ban Zhoastraat gaat de puinweg over in de keurige bestrating van de Perenbloesemhof. Lantaarnpalen zorgen ervoor dat  het hier ‘s avonds een strak verlicht eiland is, temidden van een zee van bouwprojecten. Hier kozen de bewoners voor kant-en-klaar ontworpen huizen uit een catalogus van een projectontwikkelaar. Alle achttien woningen identiek, en allemaal met voor- en achtertuin.
@@ -44,13 +56,25 @@
           De Perenbloesemhof is zo goed als klaar, maar net als de andere inwoners zullen ook de inwoners van deze straat nog tien jaar moeten wachten voor ze zijn aangesloten op het netwerk van het openbaar vervoer. Nu rijdt slechts af en toe bus 159 naar Almere Stad. Erg veel andere voorzieningen zijn er ook nog niet, hoewel dat snel verandert. De dichtstbijzijnde supermarkt was tot voor kort de Odin, op 15 minuten fietsen. Maar onlangs opende in de buurt de Lidl, en binnenkort ook een Albert Heijn. En dan was er al een zorgbakkerij en een yogastudio. Voor scholen, een dokter of een bioscoop  zijn ze nog aangewezen op Almere.
         </p>
 
-        <!-- TODO: foto Bert Kasteel -->
+        <Photos
+          series="john-lockeweg"
+          :count="1"
+          :captions="[]">
+          <h3>Titel.</h3>
+          <p>Omschrijving!</p>
+        </Photos>
 
         <p>
           Op een kavel verderop bouwt een jong stel uit Almere aan hun droomhuis. Eind van dit jaar hopen ze in hun zelfgebouwde kasteel te kunnen trekken. Compleet met een donjon en kantelen. De zwaar van dikke steen ogende muren blijken nep, het zijn plakstrips met namaakstenen. Net echt. Geïmporteerd uit Italië. De kasteeleigenaren zijn heel blij met de mogelijkheid om hun fantasie de vrije loop te laten. En het kan altijd nog gekker vertellen ze: verderop wordt een huis gebouwd  in de vorm van een UFO. Die kan zelfs om zijn as draaien! Het stel was, zoals veel zelfbouwers, blij met de corona-lockdown. Die gaf hun de tijd om door te werken aan hun huis. De bouwplanning van één jaar bleek niet realistisch. Tegen de tijd dat ze hun kasteel betrekken zijn er ruim twee jaar verstreken.
         </p>
 
-        <!-- TODO: Foto bert Julia en Willem -->
+        <Photos
+          series="oeverwalweg"
+          :count="1"
+          :captions="[]">
+          <h3>Titel.</h3>
+          <p>Omschrijving!</p>
+        </Photos>
 
         <p>
           Julia en Willem zijn na ruim dertig jaar het leven in de drukte van Amsterdam zat. Hun lang gekoesterde wens om te wonen in een zelfontworpen huis, temidden van groen bracht ze naar de Oeverwalweg in Oosterwold. Het ontwerp van hun huis is ingetogen, de in de arm genomen architect hield op hun verzoek rekening met de geschiedenis van het gebied. Strak, simpel en licht, met verwijzingen naar oude boerenschuren uit de omgeving.
@@ -60,7 +84,13 @@
           Willem is voormalig art-director en kunstenaar en krijgt in het nieuwe huis een atelier met noorderlicht. Julia heeft straks een werkkamer van waaruit ze haar werk voor haar fotoagentschap in Amsterdam kan doen. Dit stel bouwt niet zelf. Ze noemen zich zelfvoorzienend, maar dat heeft een iets andere betekenis dan bij de ecologische pioniers. Weliswaar krijgen ze straks een moestuin en een vijver waarin ze kunnen zwemmen, voor hun sociale en maatschappelijke voorzieningen moeten ze straks de wijk uit. Ze denken groot: de centrale ligging van Oosterwold ten opzichte van andere steden zien ze als een pluspunt. Je bent zo in Amsterdam, Rotterdam of elke andere plek.
         </p>
 
-        <!-- TODO: foto bert doodlopend -->
+        <Photos
+          series="isaac-newtonstraat"
+          :count="1"
+          :captions="[]">
+          <h3>Titel.</h3>
+          <p>Omschrijving!</p>
+        </Photos>
 
         <p>
           Tijdens onze dag fietsen door dit land van pioniers is de terugkerende vraag: gaan we naar links, of gaan we naar rechts op de weinige wegen in dit gebied? We fietsten vijftien minuten van de woonplek van Yara en haar gezin en kozen voor links. Nadat we exact tien minuten op de pedalen hadden getrapt en niets aan voorzieningen waren tegengekomen kwamen we ruim binnen de tijd toch nog aan bij de supermarkt, de Lidl.
@@ -96,7 +126,13 @@
           We rijden door naar de stad Emmeloord. Waar we ook kijken in de Noordoostpolder, overal zien we de Centrale-Plaatsentheorie van de Duitse geograaf Walter Christaller terug. Deze theorie kwamen we ook al tegen in ons hoofdstuk Waar we Winkelen. (link) De polder is ontworpen in een tijd dat deze theorie erg populair was. Men geloofde in de maakbaarheid van stad en land. Op de tekentafel werd het nieuwe land in de polder zó ingericht dat de nederzettingen op de perfecte afstand van elkaar lagen. De centrale plaats - stad, dorp of gehucht - was het voorzieningencentrum van het omringende achterland. Dit geldt voor Kampen, en ook voor Emmeloord. Deze steden zijn de centrale plaatsen voor de Noordoostpolder.
         </p>
 
-        <!-- TODO: foto bert noordoostpolder schuur -->
+        <Photos
+          series="noordoostpolder"
+          :count="1"
+          :captions="[]">
+          <h3>Titel.</h3>
+          <p>Omschrijving!</p>
+        </Photos>
 
         <p>
           Veel huizen en schuren in de Noordoostpolder zien er identiek uit. Ze zijn gebouwd door de overheid en verdeeld onder boeren die zich hadden opgegeven voor wonen en werken in dit nieuwe land. Alleen de beste boeren kwamen door de selectieprocedure. De schuren zijn gebouwd van een geprefabriceerde platen schokbeton, en dat geeft ze hun karakteristieke uiterlijk én hun naam: schokbetonschuren. Als we de auto stoppen om een van de mooie schuren te fotograferen worden we op boze toon aangesproken door een lokale boer. Hij vertrouwt onze uitleg waarom we hier op de oprit naar het erf van zijn zoon staan niet. Het is duidelijk dat mensen uit de stad hier niet meteen welkom zijn. Waarschijnlijk heeft de recente discussie over boeren en hun bijdrage aan de CO2-uitstoot aan deze argwaan bijgedragen. Uiteindelijk overtuigen we hem van onze interesse in de geschiedenis van deze streek en in de schoonheid van de Schokbetonschuren.
@@ -125,7 +161,13 @@
           We verruilen de fiets weer voor de auto en rijden naar de N34, de provinciale weg die van Noord naar zuid dwars door Drenthe loopt. De N34 wordt ook wel de ‘Hunebed Highway’ genoemd, er staan 47 hunebedden langs deze weg. We zoeken naar Lemmenerveld, een plek op de kaart die ons thuis bij de reisvoorbereiding was opgevallen omdat daar een weg was ‘verdwenen’ van de kaart. Daar waar tot twee jaar geleden buren elkaar binnen vijf minuten konden opzoeken, kost het ze nu 15 minuten.
         </p>
 
-        <!-- TODO: foto bert n34 -->
+        <Photos
+          series="n34"
+          :count="1"
+          :captions="[]">
+          <h3>Titel.</h3>
+          <p>Omschrijving!</p>
+        </Photos>
 
         <p>
           De weg tussen hun huizen, die de N34 hier haaks kruist, is afgesloten. Er staat nu een hek en de restanten zijn begroeid met gras. De enige manier om de buren aan de overkant te bereiken is óf via een nieuw gemaakte onderdoorgang in de weg, óf 15 minuten omfietsen. Het lijkt de bewoners niet te storen: de weg was sowieso als een soort sociale scheidslijn. Aan beide zijden is er een aparte buurtvereniging. Ger en zijn gezin wonen sinds 2013 aan de ene zijde van de weg. Ze zijn ‘import’ en kwamen uit liefde voor hun huis. Het is een oude boerderij die ze nog steeds aan het verbouwen zijn. Hij kent zijn overburen niet en dat deert Ger niet. Ook de afsluiting van de verbindende weg stoort hem niet. Het lawaai van de N34 wel. Met een zelfgebouwde groene geluidswal op zijn erf probeert hij het verkeerslawaai te beperken.
@@ -156,6 +198,7 @@
 
 <script>
 import StoryPage from './../../../../components/pages/Story.vue'
+import Photos from './../../../../components/elements/Photos.vue'
 import Video from './../../../../components/elements/Video.vue'
 import VideoContainer from './../../../../components/elements/VideoContainer.vue'
 
@@ -163,6 +206,7 @@ export default {
   transition: 'story',
   components: {
     StoryPage,
+    Photos,
     Video,
     VideoContainer
   }
