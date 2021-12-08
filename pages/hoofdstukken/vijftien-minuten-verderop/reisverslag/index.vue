@@ -2,10 +2,7 @@
   <div>
     <!-- Intro afbeelding -->
     <div class="header-image story-header-image">
-      <video
-        src="https://files.boven.land/video/oosterwold-1080.mp4"
-        autoplay muted loop
-      />
+      <Video id="oosterwold" />
     </div>
 
     <StoryPage>
@@ -21,7 +18,7 @@
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab, maiores illo! Nam atque, sapiente obcaecati, totam eaque sint, quam pariatur modi labore molestias unde. Aperiam sunt quaerat veritatis quasi harum?
         </p>
 
-        <VideoContainer video="n384">
+        <VideoContainer id="n384">
           <h3>titel van video</h3>
           <p>Omschrijving!</p>
         </VideoContainer>
@@ -35,13 +32,15 @@
 </template>
 
 <script>
-import StoryPage from './../../../../components/pages/Story'
-import VideoContainer from './../../../../components/elements/VideoContainer'
+import StoryPage from './../../../../components/pages/Story.vue'
+import Video from './../../../../components/elements/Video.vue'
+import VideoContainer from './../../../../components/elements/VideoContainer.vue'
 
 export default {
   transition: 'story',
   components: {
     StoryPage,
+    Video,
     VideoContainer
   }
 }
