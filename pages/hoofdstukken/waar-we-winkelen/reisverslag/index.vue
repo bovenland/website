@@ -269,8 +269,6 @@
           <p>Omschrijving!</p>
         </Photos>
 
-        #e559a5
-
         <p>
           Of het nu gaat over Primark, Zalando, Bol.com of andere hallen van XL tot XXL, we realiseren ons dat deze opslag een noodzakelijk gevolg is van hoe we en waar we als Nederlanders kopen. En dat al die logistiek in gang gezet wordt op het moment dat wij iets online bestellen en laten bezorgen. Op het moment dat een pakket de hal verlaat wordt het door een pakketbezorger ofwel naar ons huisadres, ofwel naar een afhaalpunt gebracht. Over de arbeidsomstandigheden van deze pakketbezorgers is steeds meer te doen, slechte arbeidsomstandigheden, lage lonen, het is al net zo triest als de condities waaronder de werknemers in de distributiecentra werken.
         </p>
