@@ -1,5 +1,20 @@
 <template>
-  <footer>Stimuleringsfonds Creatieve Industrie</footer>
+  <footer>
+    <p>Mede mogelijk gemaakt door:</p>
+    <ul>
+      <li>
+        <a
+          href="https://stimuleringsfonds.nl/nl/toekenningen/bovenland/"
+          target="_blank"
+          rel="nofollow"
+        >
+          <nuxt-img
+            src="/img/logos/stimulerings-fonds-creatieve-industrie.svg"
+          />
+        </a>
+      </li>
+    </ul>
+  </footer>
 </template>
 
 <script>
@@ -18,5 +33,16 @@ footer {
   padding: 32px 16px 52px;
   margin-top: 48px;
   background-color: $pink;
+
+  ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    li {
+      padding: 1rem;
+      max-width: 220px;
+    }
+  }
 }
 </style>
