@@ -66,14 +66,12 @@ div.story-page {
   }
   .container {
     max-width: 100vw !important;
-    h1 {
-      color: $red;
-    }
-    p {
-      margin: 1rem 0;
-    }
+
     section {
       > h1,
+      > h2,
+      > h3,
+      > h4,
       > label,
       > p {
         display: block;
@@ -81,6 +79,20 @@ div.story-page {
         margin-left: auto;
         margin-right: auto;
         max-width: $column-width;
+      }
+      p {
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+      }
+      > h1 {
+        color: $red;
+      }
+      > h2,
+      > h3,
+      > h4 {
+        color: $red;
+        margin-top: 2rem;
+        margin-bottom: 2rem;
       }
     }
   }
