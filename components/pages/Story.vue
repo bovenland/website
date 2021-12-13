@@ -46,10 +46,15 @@ div.story-page {
   svg#path {
     position: fixed;
     top: 0;
-    left: 24px;
+
+    @include calc("left", "50% - 450px");
+    @media screen and (max-width: 980px) {
+      left: 24px;
+    }
     width: 32px;
     height: 100vh;
     fill: none;
+    z-index: 0;
 
     path.progress {
       stroke: $red;
@@ -68,6 +73,8 @@ div.story-page {
     max-width: 100vw !important;
 
     section {
+      position: relative;
+      z-index: 2;
       > h1,
       > h2,
       > h3,
@@ -107,7 +114,7 @@ div.story-page {
     margin: 4rem -2rem;
     background-color: $darker-light-gray;
     position: relative;
-    z-index: 1;
+    z-index: 2;
   }
 
   div.photos-element,
