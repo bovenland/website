@@ -1,9 +1,9 @@
 <template>
   <header>
     <NuxtLink to="/">
-      <Logo v-bind:dot="dotColor" v-bind:letters="letterColor" />
+      <Logo :dot="dotColor" :letters="letterColor" />
     </NuxtLink>
-    <Burger />
+    <Burger :color="letterColor" />
 
     <TopMenu>
       <MainMenu />

@@ -16,7 +16,7 @@ export default {
   },
   computed: {
     letterColor: function () {
-      return this.isMapRoute() ? 'white' : 'black'
+      return this.isMapRoute() ? 'white' : '#130f40'
     }
   },
   methods: {

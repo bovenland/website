@@ -6,9 +6,9 @@
   >
     <slot>
       <button type="button" class="burger-button" title="Menu">
-        <span class="burger-bar burger-bar--1"></span>
-        <span class="burger-bar burger-bar--2"></span>
-        <span class="burger-bar burger-bar--3"></span>
+        <span :style="{backgroundColor: color}" class="burger-bar burger-bar--1"></span>
+        <span :style="{backgroundColor: color}" class="burger-bar burger-bar--2"></span>
+        <span :style="{backgroundColor: color}" class="burger-bar burger-bar--3"></span>
       </button>
     </slot>
   </div>
@@ -16,7 +16,11 @@
 
 <script>
 import { mapMutations } from "vuex";
+
 export default {
+  props: [
+    'color'
+  ],
   computed: {
     isHamburgerActive() {
       return this.$store.state.menu.isHamburgerActive;
@@ -68,7 +72,6 @@ button:focus {
 }
 
 .burger-bar {
-  background-color: #130f40;
   position: absolute;
   top: 50%;
   right: 6px;
