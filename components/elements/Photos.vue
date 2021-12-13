@@ -23,7 +23,6 @@
           </div>
         </div>
         <div ref="pagination" class="swiper-pagination"></div>
-        <!-- <div ref="scrollbar" class="swiper-scrollbar"></div> -->
       </div>
       <div v-if="count > 1" ref="prev" class="swiper-button-prev"></div>
       <div v-if="count > 1" ref="next" class="swiper-button-next"></div>

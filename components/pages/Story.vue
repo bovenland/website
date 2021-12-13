@@ -124,6 +124,7 @@ div.story-page {
 
   div.photos-element,
   div.video-container {
+    // background-color: black;
     background-color: $yellow;
     .photos-description,
     .video-description {
