@@ -1,30 +1,32 @@
 <template>
   <div class="photos-element">
-    <div class="photos-description">
-      <slot />
-    </div>
-
-    <div ref="swiper" class="swiper" v-bind:data-slides="count">
-      <div class="swiper-wrapper">
-        <div
-          v-for="(_, index) in Array.from({ length: count })"
-          :key="index"
-          class="swiper-slide"
-        >
-          <!-- TODO: sizes attribute is still incorrect -->
-          <img
-            :alt="captions[index]"
-            :srcset="createSrcset(index)"
-            sizes="(min-width: 1344px) 1344px,
-              100vw"
-          />
-          <p v-if="captions[index]">{{ captions[index] }}</p>
-        </div>
+    <div class="element-max-width">
+      <div class="photos-description">
+        <slot />
       </div>
-      <div ref="pagination" class="swiper-pagination"></div>
+
+      <div ref="swiper" class="swiper" v-bind:data-slides="count">
+        <div class="swiper-wrapper">
+          <div
+            v-for="(_, index) in Array.from({ length: count })"
+            :key="index"
+            class="swiper-slide"
+          >
+            <!-- TODO: sizes attribute is still incorrect -->
+            <img
+              :alt="captions[index]"
+              :srcset="createSrcset(index)"
+              sizes="(min-width: 1344px) 1344px,
+              100vw"
+            />
+            <p v-if="captions[index]">{{ captions[index] }}</p>
+          </div>
+        </div>
+        <div ref="pagination" class="swiper-pagination"></div>
+        <!-- <div ref="scrollbar" class="swiper-scrollbar"></div> -->
+      </div>
       <div v-if="count > 1" ref="prev" class="swiper-button-prev"></div>
       <div v-if="count > 1" ref="next" class="swiper-button-next"></div>
-      <!-- <div ref="scrollbar" class="swiper-scrollbar"></div> -->
     </div>
   </div>
 </template>

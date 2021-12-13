@@ -80,7 +80,8 @@ div.story-page {
       > h3,
       > h4,
       > label,
-      > p {
+      > p,
+      > img {
         display: block;
         padding: 0 0 0 54px;
         margin-left: auto;
@@ -115,6 +116,10 @@ div.story-page {
     background-color: $darker-light-gray;
     position: relative;
     z-index: 2;
+    .element-max-width {
+      margin: 0 auto;
+      max-width: 1344px;
+    }
   }
 
   div.photos-element,
@@ -139,6 +144,23 @@ div.story-page {
     .swiper-button-prev {
       color: $yellow;
     }
+
+    @media screen and (min-width: 1362px) {
+      .swiper-button-prev,
+      .swiper-button-next {
+        color: $black;
+      }
+    }
+
+    @media screen and (min-width: 1500px) {
+      .swiper-button-prev {
+        @include calc("left", "50% - 736px");
+      }
+      .swiper-button-next {
+        @include calc("right", "50% - 736px");
+      }
+    }
+
     .swiper-pagination-bullet-active {
       background-color: $black;
     }

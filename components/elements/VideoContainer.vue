@@ -1,8 +1,10 @@
 <template>
   <div class="video-container">
-    <Video :id="id" />
-    <div class="video-description">
-      <slot />
+    <div class="element-max-width">
+      <Video :id="id" />
+      <div class="video-description">
+        <slot />
+      </div>
     </div>
   </div>
 </template>
