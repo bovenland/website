@@ -85,6 +85,7 @@ ul.segments-menu-options {
 }
 
 div.photos-element,
+div.video-container,
 div.minimap-container.map-bottom {
   h3 {
     font-size: 17px;
@@ -92,7 +93,8 @@ div.minimap-container.map-bottom {
   }
 }
 
-div.photos-element .swiper-slide p {
+div.photos-element .swiper-slide p,
+div.video-container p {
   font-size: 12px;
   line-height: 18px;
 }
