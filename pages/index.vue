@@ -80,6 +80,10 @@
   .container {
     margin: 0 auto;
     max-width: $column-width !important;
+
+    > p {
+      padding: 0.5rem 0;
+    }
   }
 
   div.intro {
@@ -131,7 +135,7 @@ export default {
     DotMask,
     FoldDownMenu,
     Footer,
-    Video
+    Video,
   },
 };
 </script>

@@ -4,11 +4,7 @@
   <section class="section">
     <ol>
       <li v-for="(chapter, index) of chapters" :key="index">
-        <nuxt-link v-if="chapter.to" :to="{ name: `hoofdstukken-${chapter.to.name}` }">
-          <label>{{ chapter.index }}</label>
-          <h3>{{ chapter.title }}</h3>
-        </nuxt-link>
-        <div v-else>
+        <div>
           <label>{{ chapter.index }}</label>
           <h3>{{ chapter.title }}</h3>
         </div>
@@ -53,6 +49,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import "@/assets/sass/partials/base.scss";
 @import "@/assets/sass/partials/mixins.scss";
 
 section.section {
@@ -61,6 +58,13 @@ section.section {
     list-style: none;
     > li {
       margin: 1rem 0;
+      > div {
+        &:after {
+          content: "";
+          display: table;
+          clear: both;
+        }
+      }
     }
     li {
       > a:after {
@@ -108,5 +112,9 @@ a.nuxt-link-exact-active,
 a.nuxt-link-exact-active:link,
 a.nuxt-link-exact-active:visited {
   text-decoration: none;
+}
+a:hover,
+a.nuxt-link-exact-active:hover {
+  color: $white;
 }
 </style>
