@@ -4,7 +4,7 @@
       <slot />
     </div>
 
-    <div ref="swiper" class="swiper">
+    <div ref="swiper" class="swiper" v-bind:data-slides="count">
       <div class="swiper-wrapper">
         <div
           v-for="(_, index) in Array.from({ length: count })"
@@ -22,8 +22,8 @@
         </div>
       </div>
       <div ref="pagination" class="swiper-pagination"></div>
-      <div ref="prev" class="swiper-button-prev"></div>
-      <div ref="next" class="swiper-button-next"></div>
+      <div v-if="count > 1" ref="prev" class="swiper-button-prev"></div>
+      <div v-if="count > 1" ref="next" class="swiper-button-next"></div>
       <!-- <div ref="scrollbar" class="swiper-scrollbar"></div> -->
     </div>
   </div>
@@ -55,18 +55,28 @@ export default {
     },
   },
   mounted: function () {
-    this.swiper = new Swiper(this.$refs.swiper, {
-      direction: "horizontal",
-      loop: true,
-      autoHeight: true,
-      pagination: {
-        el: this.$refs.pagination,
-      },
-      navigation: {
-        nextEl: this.$refs.next,
-        prevEl: this.$refs.prev,
-      },
-    });
+    var numSlides = this.$refs.swiper.getAttribute("data-slides");
+    var options = {
+      allowSlidePrev: false,
+      allowSlideNext: false,
+    };
+    if (numSlides > 1) {
+      options = {
+        direction: "horizontal",
+        loop: true,
+        autoHeight: true,
+        allowSlidePrev: true,
+        allowSlideNext: true,
+        pagination: {
+          el: this.$refs.pagination,
+        },
+        navigation: {
+          nextEl: this.$refs.next,
+          prevEl: this.$refs.prev,
+        },
+      };
+    }
+    this.swiper = new Swiper(this.$refs.swiper, options);
   },
   beforeDestroy: function () {
     if (this.swiper) {
