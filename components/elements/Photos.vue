@@ -69,6 +69,8 @@ export default {
         allowSlideNext: true,
         pagination: {
           el: this.$refs.pagination,
+          dynamicBullets: numSlides > 10,
+          dynamicMainBullets: 10,
         },
         navigation: {
           nextEl: this.$refs.next,
