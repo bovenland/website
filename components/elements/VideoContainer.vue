@@ -1,23 +1,24 @@
 <template>
   <div class="video-container">
     <Video :id="id" />
-    <slot />
+    <div class="video-description">
+      <slot />
+    </div>
   </div>
 </template>
 
 <script>
-import Video from './Video.vue'
+import Video from "./Video.vue";
 
 export default {
-  name: 'VideoContainer',
+  name: "VideoContainer",
   components: {
-    Video
+    Video,
   },
   props: {
-    id: String
-  }
-}
+    id: String,
+  },
+};
 </script>
 
-<style scoped>
-</style>
+<style scoped></style>

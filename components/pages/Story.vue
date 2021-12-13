@@ -102,16 +102,19 @@ div.story-page {
   }
 
   div.photos-element,
-  div.minimap-container {
+  div.minimap-container,
+  div.video-container {
     margin: 4rem -2rem;
     background-color: $darker-light-gray;
     position: relative;
     z-index: 1;
   }
 
-  div.photos-element {
+  div.photos-element,
+  div.video-container {
     background-color: $yellow;
-    .photos-description {
+    .photos-description,
+    .video-description {
       h3,
       p {
         margin: 0 0 12px 0;
@@ -121,6 +124,10 @@ div.story-page {
         padding-top: 0;
       }
     }
+    .video-description {
+      padding-bottom: 18px;
+    }
+
     .swiper-button-next,
     .swiper-button-prev {
       color: $yellow;
