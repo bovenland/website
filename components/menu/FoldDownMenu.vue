@@ -48,7 +48,7 @@
                 "
                 v-bind:label="child.index + '.' + (segmentIndex + 1)"
                 v-bind:title="segment.title"
-                v-bind:icon="segment.title"
+                v-bind:icon="segment.icon"
                 v-bind:class="segment.color"
                 iconColor="white"
               />

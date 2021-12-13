@@ -33,19 +33,21 @@ export default {
     },
     segments: [{
       title: "Reisverslag",
+      icon: "Reisverslag",
       color: "red",
       to: {
         name: "reisverslag"
       }
     }, {
       title: "Cartografie",
+      icon: "Cartografie",
       color: "green",
       to: {
         name: "cartografie"
       }
     }, {
-      // title: "Data & research",
-      title: "Data",
+      title: "Research & data",
+      icon: "Data",
       color: "blue",
       to: {
         name: "data"
@@ -61,19 +63,21 @@ export default {
     },
     segments: [{
       title: "Reisverslag",
+      icon: "Reisverslag",
       color: "red",
       to: {
         name: "reisverslag"
       }
     }, {
       title: "Cartografie",
+      icon: "Cartografie",
       color: "green",
       to: {
         name: "cartografie"
       }
     }, {
-      // title: "Data & research",
-      title: "Data",
+      title: "Research & data",
+      icon: "Data",
       color: "blue",
       to: {
         name: "data"
