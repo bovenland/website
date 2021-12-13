@@ -60,15 +60,16 @@ export default {
 
 <style lang="scss" scoped>
 .map-page {
-  // position: relative;
   .map {
     position: absolute;
+    background-color: #222429;
     z-index: 0;
     top: 0;
     left: 0;
     width: 100vw;
     height: 100vh;
   }
+
   .segments-menu {
     position: absolute;
     top: 28px;

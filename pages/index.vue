@@ -26,7 +26,28 @@
       </p>
 
       <!-- Hoofdstukken -->
-      <FoldDownMenu v-bind:children="chapters" collapsible="false" />
+      <FoldDownMenu v-bind:children="chapters" collapsible="false">
+        <template v-slot:waar-we-winkelen>
+          <p>
+            Ons eerste hoofdstuk gaat over een actueel thema tijdens de huidige pandemie: Waar we Winkelen. Door de toename van online verkoop van goederen, gefaciliteerd door gigantische distributiecentra verspreid door heel Nederland, verandert zowel het Nederlandse landschap als de binnensteden, dorpskernen en hun randen. Een ontwikkeling die is versnelt onder invloed van Covid-19. Niet alleen kopen Nederlanders meer van achter het scherm, ze willen hun producten ook steeds sneller en goedkoper ontvangen. In dit hoofdstuk brengen we de gevolgen van deze ontwikkeling in kaart. We laten zien waar de grote distributiecentra momenteel staan.
+          </p>
+          <p>
+            Ook onderzoeken we de leegloop van de winkelstraten in Nederlandse steden. Waar zien we dit fenomeen het meest, en waarom?
+          </p>
+          <p>
+          We kijken naar het gedrag van de Nederlandse consument, en hoe dit gedrag zich heeft ontwikkeld. Winkelen is meer dan de activiteit van  het kopen van noodzakelijke producten. Het is voor veel Nederlanders een dagje uit, een beleving voor het hele gezin. De bereikbaarheid van de winkel, het parkeergemak, de grote en de hoeveelheid extra -luxe- voorzieningen, dat alles speelt een rol in de keuze van Waar We Winkelen.
+          </p>
+        </template>
+
+        <template v-slot:vijftien-minuten-verderop>
+          <p>
+            ‘Vijftien minuten verderop’ is onder andere geïnspireerd op de  15-minute city: een stad waar alle voorzieningen — winkels, scholen, cafés — binnen 15 minuten fietsen te bereiken zijn. Veel Amerikaanse steden, bijvoorbeeld, zijn het tegenovergestelde: iedereen woont in suburbs, zonder enige voorzieningen, en de enige manier om je te verplaatsen is de auto. Zelfs stoepen zijn er nauwelijks.
+          <p>
+          <p>
+            Dezelfde uitgangspunten als in de 15-minute city zijn te gebruiken om dorpen en het platteland te onderzoeken: wat kom je tegen aan voorzieningen als je vanuit de plek waar je woont 15 minuten fietst? In het hoofdstuk Waar we winkelen zagen we dat in veel kleine dorpen geen enkele winkel meer overblijft. Dit heeft invloed op de aantrekkelijkheid van een gebied en op de sociale cohesie. Als de auto als het enige vervoermiddel overblijft, wordt het aantal toevallige ontmoetingen minder.
+          </p>
+        </template>
+      </FoldDownMenu>
 
       <!-- Wie maken boven.land? -->
       <h3 id="over-ons">Wie maken boven.land?</h3>
@@ -51,13 +72,18 @@
 
       <h3 id="contact">Contact</h3>
 
-      <p>
-        Nullam in dui metus. Praesent vestibulum ex sed quam dapibus porta.
-        Praesent consectetur nunc at diam porttitor, et maximus velit vulputate.
-        Sed ultricies risus lorem, tristique vehicula dui posuere eu. Praesent
-        quam risus, egestas nec tempus ac, rhoncus et ligula. Nam vestibulum
-        lorem in dignissim malesuada.
-      </p>
+        <!-- Jenny  houdt van het maken van verhalen, en vooral van verhalen verteld met beeld. Deze liefde vormt de rode draad in haar carrière. Verhalen die ze vertelt met materiaal van anderen; fotografen, kunstenaars en andere creatieven. Meestal is het beeld fotografie, maar ook bewegend beeld, interactieve projecten, installaties of andersoortig (digitaal) beeld en kunstprojecten kunnen hier deel van zijn.
+        Jenny  werkt in de kunst en in de media. In beide omgevingen probeert ze een breed publiek te vinden. Haar podium kan de tentoonstellingsruimte zijn, een (online) publicatie met beeld en tekst, of een presentatie in de vorm van een lezing. In veel gevallen hebben de verhalen een maatschappelijke relevante inhoud en is documentaire fotografie het voornaamste bestanddeel.
+        Jenny studeerde Kunstgeschiedenis aan de Universiteit van Amsterdam en werkte voor diverse organisaties als World Press Photo, de Kabk in Den Haag en media titels als Vrij Nederland, Het Parool en Trouw. -->
+
+      <!--
+
+      Door het landschap van bovenaf te bekijken, via kaarten of luchtfoto’s, zie je patronen en vormen die onzichtbaar blijven als je de wereld vanaf straatniveau bekijkt. Deze patronen vertellen verhalen over de geschiedenis, ze verklaren hedendaagse fenomenen en ze kunnen helpen om inzicht te geven in de toekomst. Bert werkt met kaarten, data en open source-tools om deze patronen in het landschap bloot te leggen en te laten zien.
+
+      Bert studeerde informatica en cartografie, studeerde af bij TomTom, en werkte daarna achtereenvolgens bij Waag en de New York Public Library. Momenteel werkt hij als zelfstandig cartograaf en ontwerper van creatieve technologie.
+
+      Met Boven.land wil Bert zijn nieuwsgierigheid naar de bijzondere eigenschappen van het alledaagse Nederlandse landschap op anderen overbrengen. Door in het onderzoek naar deze eigenschappen gebruik te maken van open data en open source-tools worden deze onderzoeken niet alleen reproduceerbaar maar kunnen ze ook gebruikt worden voor educatie en tijdens meetups over deze data en technologie.
+        -->
     </div>
     <Footer />
   </div>

@@ -18,7 +18,7 @@
       </div>
 
       <div class="description">
-        <p>{{ child.description }}</p>
+        <slot :name="child.to.name"></slot>
       </div>
 
       <!-- Slider main container -->

@@ -21,6 +21,8 @@
           De terreinwagen is volgepakt. Een enorme roze punt neemt veel ruimte in. Het is het herkenningsteken van boven.land. We gaan deze punt plaatsen op alle belangrijke plekken die we tijdens onze reis bezoeken. En vervolgens is de roze punt ons herkenningsteken in de drone-films en fotografie. Voor Waar We Winkelen brengt de reis ons naar Brabant, Zeeland en Zuid-Holland. Langs shopping malls, buurtwinkels en de grote anonieme hallen van de distributiecentra langs de snelweg.
         </p>
 
+        <!-- TODO: misschien routekaart? en dan zelfde route laten zien in overzichtskaart -->
+
         <h2>
           Winkelcentra: Westfield Mall of the Netherlands
         </h2>
@@ -107,14 +109,6 @@
           Terneuzen staat samen met onder meer Landgraaf en Kerkrade in Limburg bekend als de stad met de meeste leegstand. De ene na de andere winkel staat te huur, bijna meer dan dat er nog in gebruik zijn. We worden verrast door een carnavaleske optocht en er is een kermis. We worden er toch niet vrolijk van.
         </p>
 
-        <Photos
-          series="optocht-terneuzen"
-          :count="1"
-          :captions="[]">
-          <h3>Titel.</h3>
-          <p>Omschrijving!</p>
-        </Photos>
-
         <p>
           De website van de stad Terneuzen noemt het een stoere havenstad en een stad die je moet ontdekken. Helaas gaan wij dat niet ervaren, we moeten door naar onze volgende bestemming. Op naar Middelburg.
         </p>
@@ -134,13 +128,16 @@
 
         </p>
 
-        <Photos
+        <!-- <Photos
           series="viduet"
           :count="1"
           :captions="[]">
           <h3>Titel.</h3>
           <p>Omschrijving!</p>
-        </Photos>
+        </Photos> -->
+
+        <!-- TODO: onze foto's niet  -->
+        <img src="https://files.boven.land/foto/viduet/1-1280.jpg" />
 
         <p>
           We zijn ontroerd dat er winkeleigenaren zijn zoals de familie Yarar, die hun dagelijks leven doorbrengen in hun zaak. En die zo klantvriendelijk zijn dat we zelfs een chocoladereep cadeau krijgen bij vertrek. We hopen op een goede toekomst voor Viduet en trekken dieper Zeeland in. Op zoek naar een buurtsupermarkt die net als Viduet gerund wordt door een familie.
@@ -260,14 +257,6 @@
         <p>
           Nog een plek waar we niet welkom zijn ligt in Bleiswijk. De Duitse online mode en lifestyle gigant Zalando bouwt hier op het bedrijventerrein Greenparc hun eerste Nederlandse XXL distributiecentrum. Oppervlakte: 19 voetbalvelden groot, investeringskosten ruim 200 miljoen. In de hal moet straks ruimte zijn voor zestien miljoen producten. Als dit de plek is waar de retouren komen zal dat ook niet gering zijn. Zalando biedt de service van gratis retour aan en krijgt ruim de helft van alle aankopen terug. Er mag tot honderd dagen na aankoop geretourneerd worden en ze bieden ook nog eens de ‘Haal Op Service’ aan. Het retourpakket wordt opgehaald waar en wanneer de klant maar wil. Robots zullen hier een deel van het werk van mensen gaan overnemen, de afstanden die werknemers af moeten leggen zijn te groot aan het worden, soms lopen werknemers in distributiecentra meer dan twintig kilometer op een dag. Aan duurzame energievoorziening is gedacht. Op het dak liggen zonnepanelen. Greenparc is een bestaand bedrijvenpark met bijbehorende infrastructuur. Er hoefde dus geen nieuw land opgeofferd voor deze vestiging en het ligt strategisch goed, aan de A12 vlakbij de Randstad. Veel distributiecentra liggen pal aan de snelweg en zijn daardoor zichtbaar voor het voorbijrazende verkeer. Zo ook de hal van de Primark in Roosendaal die we min of meer per ongeluk opeens zien vanuit het autoraam. Ze hebben bij Primark de opslagcapaciteit flink uitgebreid de laatste jaren. Er was al 56.000 vierkante meter aan opslag, in 2020 kwam daar nog eens 30.000 vierkante meter vloeroppervlak bij met een hoogte van 22 meter bij. Dat is dus in totaal 86.000 vierkante meter met Primark spullen; kunstnagels, gewatteerd jasje voor uw huisdier, mannen- vrouwen- en kindermode, alles voor huis tuin en keuken, een kerstmannen outfit voor de baby, telefoonhoesjes, gereedschap. Waarschijnlijk rekken en rekken vol. Deze artikelen zijn bedoeld voor de winkels van Primark, een webshop heeft Primark niet. De winkels met ultragoedkope artikelen moeten de klanten verleiden tot de aankoop van meerdere producten tegelijk. In een webshop is dit moeilijker te bewerkstelligen dan in fysieke winkels. De lage prijzen maken het onmogelijk om levering aan huis te doen. Twintig miljoen investeren in nieuwbouw voor opslag lijkt de actuele norm voor bedrijven. Net als bij Zalando in Bleiswijk is dit de investering in de nieuwbouw voor Primark.
         </p>
-
-        <Photos
-          series="primark"
-          :count="1"
-          :captions="[]">
-          <h3>Titel.</h3>
-          <p>Omschrijving!</p>
-        </Photos>
 
         <p>
           Of het nu gaat over Primark, Zalando, Bol.com of andere hallen van XL tot XXL, we realiseren ons dat deze opslag een noodzakelijk gevolg is van hoe we en waar we als Nederlanders kopen. En dat al die logistiek in gang gezet wordt op het moment dat wij iets online bestellen en laten bezorgen. Op het moment dat een pakket de hal verlaat wordt het door een pakketbezorger ofwel naar ons huisadres, ofwel naar een afhaalpunt gebracht. Over de arbeidsomstandigheden van deze pakketbezorgers is steeds meer te doen, slechte arbeidsomstandigheden, lage lonen, het is al net zo triest als de condities waaronder de werknemers in de distributiecentra werken.
