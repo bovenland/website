@@ -11,7 +11,7 @@
         class="fold-down-menu-button"
         v-on:click="foldDown(child, collapsible)"
       >
-        <FoldDown v-bind:active="child.foldDown">
+        <FoldDown :active="child.foldDown">
           <label>Hoofdstuk {{ child.index }}</label>
           <h3>{{ child.title }}</h3>
         </FoldDown>
@@ -30,11 +30,9 @@
         <!-- Additional required wrapper -->
         <div
           class="swiper-wrapper"
-          :style="
-            'min-width: ' +
-            (child.segments.length * 166 + (child.segments.length - 1) * 32) +
-            'px;'
-          "
+          :style="{
+            minWidth: (child.segments.length * 166 + (child.segments.length - 1) * 32) + 'px'
+          }"
         >
           <!-- Slides -->
           <div class="swiper-slide">
@@ -43,13 +41,13 @@
               :key="segmentIndex"
             >
               <SquareButton
-                v-bind:to="
+                :to="
                   'hoofdstukken-' + child.to.name + '-' + segment.to.name
                 "
-                v-bind:label="child.index + '.' + (segmentIndex + 1)"
-                v-bind:title="segment.title"
-                v-bind:icon="segment.icon"
-                v-bind:class="segment.color"
+                :label="child.index + '.' + (segmentIndex + 1)"
+                :title="segment.title"
+                :icon="segment.icon"
+                :class="segment.color"
                 iconColor="white"
               />
             </div>
