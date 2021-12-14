@@ -41,8 +41,8 @@ export default {
   data: function () {
     return {
       swiper: null,
-      baseUrl: "https://files.boven.land/foto",
-      photoWidths: [1280, 1920],
+      baseUrl: this.$config.photo.baseUrl,
+      widths: this.$config.photo.widths
     };
   },
   computed: {
@@ -52,11 +52,11 @@ export default {
   },
   methods: {
     src: function (index) {
-      return `${this.baseUrl}/${this.series}/${index + 1}-${this.photoWidths[0]}.jpg`
+      return `${this.baseUrl}/${this.series}/${index + 1}-${this.widths[0]}.jpg`
     },
     srcset: function (index) {
       const path = `${this.baseUrl}/${this.series}`;
-      const srcset = this.photoWidths.map(
+      const srcset = this.widths.map(
         (width) => `${path}/${index + 1}-${width}.jpg ${width}w`
       );
 

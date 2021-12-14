@@ -1,9 +1,7 @@
 export default {
-  // Target: https://go.nuxtjs.dev/config-target
   target: 'static',
-
-  // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
+    // TODO: add opengraph tags
     title: 'Boven.land',
     htmlAttrs: {
       lang: 'nl'
@@ -49,30 +47,14 @@ export default {
       }
     ]
   },
-
-  // Global CSS: https://go.nuxtjs.dev/config-css
   css: ['~/assets/sass/main.scss'],
-
-  // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [],
-
-  // Auto import components: https://go.nuxtjs.dev/config-components
   components: true,
-
-  // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
-  buildModules: [
-    '@nuxt/image'
-  ],
-
-  // Modules: https://go.nuxtjs.dev/config-modules
+  buildModules: [],
   modules: [
-    // https://go.nuxtjs.dev/buefy
     'nuxt-buefy',
-    '@nuxtjs/markdownit',
-    '@nuxt/image',
+     '@nuxtjs/markdownit'
   ],
-
-  // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
     standalone: true,
     transpile: [
@@ -80,9 +62,36 @@ export default {
       'd3-array'
     ]
   },
-
   router: {
     middleware: ['hamburger']
+  },
+  publicRuntimeConfig: {
+    photo: {
+      baseUrl: process.env.PHOTO_BASE_URL,
+      widths: process.env.PHOTO_WIDTHS
+        .split(',')
+        .map((str) => parseInt(str))
+    },
+    video: {
+      baseUrl: process.env.VIDEO_BASE_URL,
+      extension: process.env.VIDEO_EXTENSION
+    },
+    mapbox: {
+      accessToken: process.env.MAPBOX_ACCESS_TOKEN,
+      mapStyle: process.env.MAPBOX_MAP_STYLE
+    },
+    minimap: {
+      baseUrl: process.env.MINIMAP_BASE_URL
+    },
+    waarWeWinkelen: {
+      initialField: process.env.WAAR_WE_WINKELEN_INITIAL_FIELD,
+      dataUrl: process.env.WAAR_WE_WINKELEN_DATA_URL,
+      circleMapUrl: process.env.WAAR_WE_WINKELEN_CIRCLE_MAP_URL,
+      worldMapUrl: process.env.WAAR_WE_WINKELEN_WORLD_MAP_URL
+    },
+    vijftienMinutenVerderop: {
+      dataBaseUrl: process.env.VIJFTIEN_MINUTEN_VERDEROP_DATA_BASE_URL,
+      mapUrl: process.env.VIJFTIEN_MINUTEN_VERDEROP_MAP_URL
+    }
   }
-
 }
