@@ -18,10 +18,13 @@ export default {
   data: function () {
     return {
       videoSrc: undefined,
+      // TODO: move to config
       sizes: [
         [1280, 720],
         [1920, 1080]
-      ]
+      ],
+      baseUrl: this.$config.video.baseUrl,
+      extension: this.$config.video.extension
     }
   },
   methods: {
@@ -63,7 +66,7 @@ export default {
 
     const width = video.offsetWidth * window.devicePixelRatio
     const size = this.pickVideoHeight(width)
-    this.videoSrc = `https://files.boven.land/video/${this.id}-${size}.mp4`
+    this.videoSrc = `${this.baseUrl}/${this.id}-${size}.${this.extension}`
   },
   beforeDestroy: function () {
     this.intersectionObserver.disconnect()

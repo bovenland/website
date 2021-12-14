@@ -69,6 +69,8 @@ export default {
     photo: {
       baseUrl: process.env.PHOTO_BASE_URL,
       widths: process.env.PHOTO_WIDTHS
+        .split(',')
+        .map((str) => parseInt(str))
     },
     video: {
       baseUrl: process.env.VIDEO_BASE_URL,
