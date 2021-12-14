@@ -8,12 +8,10 @@ const emptyMapStyle = {
 export default {
   data () {
     return {
-      map: undefined,
       mapLoaded: false
     }
   },
   mounted: function () {
-    // TODO: move to app config
     mapboxgl.accessToken = 'pk.eyJ1IjoiYmVydHNwYWFuIiwiYSI6ImR3dERiQk0ifQ.DLbScmbRohc3Sqv7prfhqw'
 
     const defaultCenter = [5.608302, 52.303667]
@@ -22,12 +20,8 @@ export default {
     let lat = defaultCenter[1]
 
     const maxBounds = [
-      [
-        3.1, 50.5
-      ],
-      [
-        7.5, 53.7
-      ]
+      [3.1, 50.5],
+      [7.5, 53.7]
     ]
 
     if (this.$route.query.view) {
