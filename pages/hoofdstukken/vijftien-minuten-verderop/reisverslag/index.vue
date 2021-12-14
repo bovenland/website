@@ -148,11 +148,6 @@
           We besluiten de laatste dag van onze ontdekkingsreis op zoek te gaan naar land waar de vingerafdruk van het landschap er minder rechtlijnig uitziet dan in de polders en bij Almere. Waar de loop van de wegen meer bepaald is door de natuur en de geschiedenis. Via Overijssel rijden we richting Drenthe. Het land van de hunebedden. We overnachten in een Drents esdorp op de Hondsrug. Het landschap, de dorpen en de wegen zijn hier eeuwenoud. Veel nederzettingen stammen uit de vroege Middeleeuwen, en dat is goed te zien in de vorm van de dorpen en de loop van de wegen. En zelfs al duizenden jaren eerder woonden hier mensen, veel van de grafkamers die ze bouwden, het hunebed, staan er nog steeds. Na onze overnachting maken we een omweg via Stadskanaal. Na tien minuten rijden we in een compleet ander landschap. Pas in de 19e eeuw zijn de onherbergzame veengebieden in het oosten van de Hondsrug ontgonnen. Door deze ontginning, langs rechte kanalen, ontstonden lintdorpen en -steden, zoals Stadskanaal.
         </p>
 
-        <VideoContainer id="stadskanaal">
-          <h3>titel van video</h3>
-          <p>Omschrijving!</p>
-        </VideoContainer>
-
         <p>
           We rijden verder, op zoek naar de typisch Drentse hunebedden en komen terecht in de plaats Westdorp. Vermoedelijk is deze naam afkomstig van woest-dorp, vanwege de ligging in het midden van voormalig woest moerasland. Door de schapenbeweiding is de grond rondom dit esdorp nu grotendeels grasland. De bewoners van Westdorp zijn opstandige types. Het hunebed op de verhoogde es in het dorp is niet authentiek, maar een ludiek protest van de inwoners tegen de subsidiëring van een kunstproject met hunebedden in het nabijgelegen Borger. De subsidie werd door de Westdorpers gezien als geldverspilling. Westdorp is niet vergrijsd; we tellen tijdens ons korte verblijf hier maar liefst vijf schommels en een springkussen. Waar moeten deze kinderen naar school? We halen onze vouwfietsen uit de auto en gaan van start, hier en daar bochten nemend. Het is exact 15 minuten naar het Esdal college in Borger. Onderweg fiets je door een gebied zonder voorzieningen, maar eenmaal in Borger vind je alles wat een mens nodig heeft. Inclusief onderwijs.
         </p>
@@ -165,8 +160,8 @@
           series="n34"
           :count="1"
           :captions="[]">
-          <h3>Titel.</h3>
-          <p>Omschrijving!</p>
+          <h3>Hier omschrijvning!.</h3>
+          <p>!</p>
         </Photos>
 
         <p>
