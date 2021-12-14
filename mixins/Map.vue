@@ -21,6 +21,15 @@ export default {
     let lon = defaultCenter[0]
     let lat = defaultCenter[1]
 
+    const maxBounds = [
+      [
+        3.1, 50.5
+      ],
+      [
+        7.5, 53.7
+      ]
+    ]
+
     if (this.$route.query.view) {
       [zoom, lat, lon] = this.$route.query.view
         .split('/')
@@ -29,15 +38,15 @@ export default {
       // TODO: check numbers!
     }
 
-    // TODO: add bounds!
     const map = new mapboxgl.Map({
       container: this.$refs.map,
       style: emptyMapStyle,
       minZoom: 7,
-      maxZoom: 19,
+      maxZoom: 18,
       center: [lon, lat],
       zoom,
-      dragRotate: false
+      dragRotate: false,
+      maxBounds
     })
 
     this.map = map

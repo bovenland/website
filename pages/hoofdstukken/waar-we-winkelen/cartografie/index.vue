@@ -1,11 +1,5 @@
 <template>
   <MapPage>
-    <!-- <div>
-      <label>Hoofdstuk 1</label>
-      <h1>Waar we winkelen</h1>
-      <p>Cartografie</p>
-    </div> -->
-
     <template v-slot:map>
       <div ref="map" class="map">
       </div>
@@ -37,32 +31,33 @@
 </template>
 
 <script>
+import Map from '../../../../mixins/Map.vue'
+
 import MapPage from '../../../../components/pages/Map.vue'
 import CreateMapStory from '../../../../components/map/CreateMapStory.vue'
 
 import { toggleCircleView, toggleWorldView,
   circleMapStyle, setCircleMapStyle,
   setCircleMapSourceAndLayers, setWorldMapSourceAndLayers,
-  setCircleLayersColor } from './../../../../lib/map.js'
+  setCircleLayersColor } from './../../../../lib/waar-we-winkelen/map.js'
 
-// TODO: use app config
-import config from '../../../../lib/config.js'
-// import { fetchFeatureData } from './lib/data'
-// import { getColor } from '../../../../lib/colors.js'
+// TODO: move config from lib dir to app
+import config from '../../../../lib/waar-we-winkelen/config.js'
+import { fetchFeatureData } from '../../../../lib/waar-we-winkelen/data.js'
+import { getColor } from '../../../../lib/waar-we-winkelen/colors.js'
 
 export default {
-  transition: "map",
+  transition: 'map',
+  mixins: [Map],
   components: {
     MapPage,
     CreateMapStory
   },
   data () {
     return {
-      map: undefined,
       featureData: undefined,
-      mapLoaded: false,
-      featureDataLoaded: false,
       currentView: 'circles',
+      currentField: 'vacantPercentage',
       sourceAndLayersAdded: false
     }
   },
@@ -70,9 +65,36 @@ export default {
     readyToCreateLayers: function () {
       return this.mapLoaded
       // return this.featureDataLoaded && this.mapLoaded
+    },
+    color: function () {
+      return getColor('vacantPercentage', [0, 50])
     }
   },
   watch: {
+    mapLoaded: function () {
+      const map = this.map
+
+      setCircleMapSourceAndLayers(map, config, 'orange')
+
+      // map.on('moveend', () => {
+      //   console.log('moveend', JSON.stringify(map.getBounds().toArray().map((c) => c.map((n) => parseFloat(n.toFixed(6))))), map.getZoom())
+      // })
+
+      map.on('click', 'bovenland-circles-circles', this.circleClick)
+      map.on('click', 'bovenland-world-buildings', this.circleClick)
+
+      map.on('styledata', (event) => {
+        if (this.mapLoaded && !this.sourceAndLayersAdded) {
+          if (this.currentView === 'circles') {
+            setCircleMapSourceAndLayers(this.map, config, this.color)
+          } else {
+            setWorldMapSourceAndLayers(this.map, config, this.color)
+          }
+
+          this.sourceAndLayersAdded = true
+        }
+      })
+    },
     readyToCreateLayers: function () {
       if (this.readyToCreateLayers) {
         this.createLayers()
@@ -90,88 +112,34 @@ export default {
       }
     },
     toggleView: function () {
-      const color = 'green'
       this.sourceAndLayersAdded = false
-
       if (this.currentView === 'circles') {
-        toggleWorldView(this.map, config, color, this.selectedFeatureProperties)
+        toggleWorldView(this.map, config, this.color, this.selectedFeatureProperties)
         this.currentView = 'world'
       } else {
-        toggleCircleView(this.map, config, color, this.selectedFeatureProperties)
-        this.currentView = 'circles'
+        // toggleCircleView(this.map, config, this.color, this.selectedFeatureProperties)
+        // this.currentView = 'circles'
       }
     },
-    // loadFeatureData: async function () {
-    //   this.featureData = await fetchFeatureData()
-    //   const firstField = Object.keys(this.featureData.summary)[0]
-    //   this.selectedField = firstField
-    //   this.featureDataLoaded = true
-    // },
+    loadFeatureData: async function () {
+      const featureData = await fetchFeatureData(config)
+      Object.freeze(featureData)
+
+      this.featureData = featureData
+      //   const firstField = Object.keys(this.featureData.summary)[0]
+      //   this.selectedField = firstField
+    },
     createLayers: function () {
-      const color = 'red' // getColor(this.selectedField, this.fieldExtent)
       // createCircleLayers(this.map, color, true)
       // createMapLayers(this.map, color, false)
-      setCircleMapStyle(this.map, config, color)
+      setCircleMapStyle(this.map, config, this.color)
     },
     mapStoryUpdated: function () {
       console.log('mapStoryUpdated')
     }
   },
   mounted: function () {
-    // TODO: move all code in this function to lib
-    mapboxgl.accessToken = 'pk.eyJ1IjoiYmVydHNwYWFuIiwiYSI6ImR3dERiQk0ifQ.DLbScmbRohc3Sqv7prfhqw'
-
-    const defaultCenter = [5.608302, 52.303667]
-    let zoom = 8
-    let lon = defaultCenter[0]
-    let lat = defaultCenter[1]
-
-    if (this.$route.query.view) {
-      [zoom, lat, lon] = this.$route.query.view
-        .split('/')
-        .map((n) => parseFloat(n))
-
-      // TODO: check numbers!
-      console.log('from view', [zoom, lat, lon])
-    }
-
-    const map = new mapboxgl.Map({
-      container: this.$refs.map,
-      style: circleMapStyle,
-      minZoom: 7,
-      maxZoom: 19,
-      center: [lon, lat],
-      zoom,
-      dragRotate: false
-    })
-
-    this.map = map
-
-    map.on('load', () => {
-      this.mapLoaded = true
-      setCircleMapSourceAndLayers(this.map, config, 'orange')
-
-      // map.on('moveend', () => {
-      //   console.log('moveend', JSON.stringify(map.getBounds().toArray().map((c) => c.map((n) => parseFloat(n.toFixed(6))))), map.getZoom())
-      // })
-
-      map.on('click', 'bovenland-circles-circles', this.circleClick)
-      map.on('click', 'bovenland-world-circles', this.circleClick)
-    })
-
-    map.on('styledata', (event) => {
-      if (this.mapLoaded && !this.sourceAndLayersAdded) {
-        const color = 'green'
-        if (this.currentView === 'circles') {
-          setCircleMapSourceAndLayers(this.map, config, color)
-        } else {
-          setWorldMapSourceAndLayers(this.map, config, color)
-        }
-
-        this.sourceAndLayersAdded = true
-      }
-    })
-    // this.loadFeatureData()
+    this.loadFeatureData()
   }
 }
 </script>

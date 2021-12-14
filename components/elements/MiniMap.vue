@@ -25,7 +25,7 @@
 import { geoPath, geoMercator } from 'd3-geo'
 
 // TODO: use app config
-import config from '../../lib/config.js'
+import config from '../../lib/waar-we-winkelen/config.js'
 import { fetchJson } from '../../lib/fetch.js'
 
 export default {
