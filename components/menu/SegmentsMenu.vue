@@ -129,7 +129,7 @@ export default {
     background-color: $light-gray;
     position: absolute;
     width: 100%;
-    z-index: 2;
+    z-index: 3;
     max-height: 0px;
     transition: max-height 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
     overflow: hidden;
