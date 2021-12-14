@@ -13,7 +13,7 @@
       >
         <FoldDown :active="child.foldDown">
           <label>Hoofdstuk {{ child.index }}</label>
-          <h3>{{ child.title }}</h3>
+          <h3 v-html="child.title"></h3>
         </FoldDown>
       </div>
 
@@ -28,31 +28,24 @@
         class="swiper folddown-swiper"
       >
         <!-- Additional required wrapper -->
-        <div
-          class="swiper-wrapper"
-          :style="{
-            minWidth: (child.segments.length * 166 + (child.segments.length - 1) * 32) + 'px'
-          }"
-        >
+        <div class="swiper-wrapper">
           <!-- Slides -->
-          <div class="swiper-slide">
-            <div
-              v-for="(segment, segmentIndex) of child.segments"
-              :key="segmentIndex"
-            >
-              <SquareButton
-                :to="
-                  'hoofdstukken-' + child.to.name + '-' + segment.to.name
-                "
-                :label="child.index + '.' + (segmentIndex + 1)"
-                :title="segment.title"
-                :icon="segment.icon"
-                :class="segment.color"
-                iconColor="white"
-              />
-            </div>
+          <!-- <div class="swiper-slide"> -->
+          <div
+            v-for="(segment, segmentIndex) of child.segments"
+            :key="segmentIndex"
+          >
+            <SquareButton
+              :to="'hoofdstukken-' + child.to.name + '-' + segment.to.name"
+              :label="child.index + '.' + (segmentIndex + 1)"
+              :title="segment.title"
+              :icon="segment.icon"
+              :class="segment.color"
+              iconColor="white"
+            />
           </div>
         </div>
+        <!-- </div> -->
       </div>
     </li>
   </ol>
@@ -82,7 +75,6 @@ ol {
       transition: max-height 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
     }
     div.description {
-      max-height: 100vh;
       transition: max-height 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
       p {
         margin-top: 30px;
@@ -109,6 +101,11 @@ ol {
         padding-left: 124px;
       }
     }
+    &:not(.collapsible-false) {
+      div.description {
+        max-height: 100vh;
+      }
+    }
   }
 
   > li:not(.folddown-visible) + li:not(.folddown-visible) {
@@ -116,6 +113,7 @@ ol {
   }
 
   .folddown-swiper {
+    position: relative;
     padding-left: 2rem;
     margin: 0 -2rem;
     @include calc("width", "100% + 4rem");
@@ -134,6 +132,34 @@ ol {
         clear: both;
       }
     }
+  }
+
+  @media screen and (max-width: 400px) {
+    .folddown-swiper {
+      padding-left: 0;
+    }
+  }
+}
+
+.swiper-wrapper > div {
+  @include aspect-ratio(1, 1);
+  @include calc("width", "33.333334% - 19px");
+  margin-right: 12px;
+
+  @media screen and (max-width: 400px) {
+    @include calc("width", "33.333334% + 0px");
+    margin-right: 6px;
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+
+  > div {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
   }
 }
 </style>

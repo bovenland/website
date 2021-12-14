@@ -5,14 +5,14 @@
     <ol>
       <li v-for="(chapter, index) of chapters" :key="index">
         <div>
-          <label>{{ chapter.index }}</label>
-          <h3>{{ chapter.title }}</h3>
+          <label>{{chapter.index}}</label>
+          <h3 v-html="chapter.title"></h3>
         </div>
         <ul v-if="chapter.to">
           <li v-for="(segment, segmentIndex) of chapter.segments" :key="segmentIndex">
             <nuxt-link :to="{ name: `hoofdstukken-${chapter.to.name}-${segment.to.name}` }">
               <label>{{chapter.index}}.{{segmentIndex+1}}</label>
-              <h3>{{ segment.title }}</h3>
+              <h3 v-html="segment.title"></h3>
             </nuxt-link>
           </li>
         </ul>
@@ -28,7 +28,7 @@
     <ul>
       <li v-for="(item, index) of menu" :key="index">
         <nuxt-link :to="{ ...item.to }">
-          <h3>{{ item.title }}</h3>
+          <h3 v-html="item.title"></h3>
         </nuxt-link>
       </li>
     </ul>

@@ -31,14 +31,14 @@ export default {
       name: "waar-we-winkelen"
     },
     segments: [{
-      title: "Reisverslag",
+      title: "Reis&shy;verslag",
       icon: "Reisverslag",
       color: "red",
       to: {
         name: "reisverslag"
       }
     }, {
-      title: "Cartografie",
+      title: "Carto&shy;grafie",
       icon: "Cartografie",
       color: "green",
       to: {
@@ -60,14 +60,14 @@ export default {
       name: "vijftien-minuten-verderop"
     },
     segments: [{
-      title: "Reisverslag",
+      title: "Reis&shy;verslag",
       icon: "Reisverslag",
       color: "red",
       to: {
         name: "reisverslag"
       }
     }, {
-      title: "Cartografie",
+      title: "Carto&shy;grafie",
       icon: "Cartografie",
       color: "green",
       to: {

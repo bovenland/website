@@ -2,7 +2,7 @@
   <div>
     <nuxt-link :to="{ name: to }">
       <label>{{ label }}</label>
-      <h3>{{ title }}</h3>
+      <h3 v-html="title"></h3>
       <component v-bind:is="icon" v-bind:color="iconColor" />
     </nuxt-link>
   </div>
@@ -30,8 +30,9 @@ export default {
 @import "@/assets/sass/partials/mixins.scss";
 
 div {
-  width: 166px;
-  height: 166px;
+  width: 100%;
+  height: 100%;
+  // @include calc("wi/dth", "33% - 0px");
   position: relative;
   overflow: hidden;
   display: block;
