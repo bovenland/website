@@ -56,14 +56,14 @@
       <ul class="profiles">
         <li>
           <DotMask>
-            <nuxt-img src="/img/jenny-smets.jpg" />
+            <img src="/img/jenny-smets.jpg" alt="Jenny Smets" />
           </DotMask>
           <h2>Jenny Smets</h2>
           <p>Visuele verhalen &amp; verbeelding</p>
         </li>
         <li>
           <DotMask>
-            <nuxt-img src="/img/bert-spaan.jpg" />
+            <img src="/img/bert-spaan.jpg" alt="Bert Spaan" />
           </DotMask>
           <h2>Bert Spaan</h2>
           <p>Cartografie, data &amp; technologie</p>

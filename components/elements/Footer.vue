@@ -8,8 +8,9 @@
           target="_blank"
           rel="nofollow"
         >
-          <nuxt-img
+          <img
             src="/img/logos/stimulerings-fonds-creatieve-industrie.svg"
+            alt="Stimulerings Fonds Creatieve Industrie"
           />
         </a>
       </li>
