@@ -12,12 +12,12 @@
             :key="index"
             class="swiper-slide"
           >
-            <!-- TODO: sizes attribute is still incorrect -->
+            <!-- TODO: check! -->
             <img
+              :src="src(index)"
               :alt="captions[index]"
-              :srcset="createSrcset(index)"
-              sizes="(min-width: 1344px) 1344px,
-              100vw"
+              :srcset="srcset(index)"
+              :sizes="sizes"
             />
             <p v-if="captions[index]">{{ captions[index] }}</p>
           </div>
@@ -45,8 +45,16 @@ export default {
       photoWidths: [1280, 1920],
     };
   },
+  computed: {
+    sizes: function () {
+      return "(min-width: 1344px) 1344px, 100vw"
+    }
+  },
   methods: {
-    createSrcset: function (index) {
+    src: function (index) {
+      return `${this.baseUrl}/${this.series}/${index + 1}-${this.photoWidths[0]}.jpg`
+    },
+    srcset: function (index) {
       const path = `${this.baseUrl}/${this.series}`;
       const srcset = this.photoWidths.map(
         (width) => `${path}/${index + 1}-${width}.jpg ${width}w`
@@ -56,11 +64,12 @@ export default {
     },
   },
   mounted: function () {
-    var numSlides = this.$refs.swiper.getAttribute("data-slides");
-    var options = {
+    const numSlides = this.$refs.swiper.getAttribute("data-slides");
+    let options = {
       allowSlidePrev: false,
       allowSlideNext: false,
     };
+
     if (numSlides > 1) {
       options = {
         direction: "horizontal",
