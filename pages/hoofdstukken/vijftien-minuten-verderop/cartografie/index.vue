@@ -56,6 +56,7 @@ export default {
   methods: {
     startAnimation: async function (osmId) {
       if (this.controller) {
+        // TODO: make sure this works!
         this.controller.abort()
       }
 
@@ -128,13 +129,14 @@ export default {
     mapMoveEnd: function () {
       const map = this.map
       const zoom = map.getZoom()
-      const { lat, lng } = map.getCenter()
-      const center = {
-        type: 'Point',
-        coordinates: [lng, lat]
-      }
 
-      if (zoom >= 12) {
+      if (zoom >= 11) {
+        const { lat, lng } = map.getCenter()
+        const center = {
+          type: 'Point',
+          coordinates: [lng, lat]
+        }
+
         const origins = map.queryRenderedFeatures(undefined, {
           layers: ['origins']
         })
