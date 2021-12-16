@@ -10,8 +10,6 @@
   },
   "dependencies": {
     "@nuxtjs/markdownit": "^2.0.0",
-    "@turf/length": "^6.5.0",
-    "@turf/line-slice-along": "^6.5.0",
     "@turf/nearest-point": "^6.5.0",
     "core-js": "^3.9.1",
     "d3-geo": "^3.0.1",

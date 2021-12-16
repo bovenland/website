@@ -22,8 +22,6 @@ import CreateMapStory from '../../../../components/map/CreateMapStory.vue'
 import { fetchJson } from './../../../../lib/fetch.js'
 import { setMapStyle, setMapSourceAndLayers, emptyGeoJSON } from './../../../../lib/vijftien-minuten-verderop/map.js'
 
-import length from '@turf/length'
-import lineSliceAlong from '@turf/line-slice-along'
 import nearestPoint from '@turf/nearest-point'
 
 export default {
@@ -66,7 +64,7 @@ export default {
 
       this.animationId = osmId
 
-      const url = `http://localhost:7913/${osmId}`
+      const url = `${this.$config.vijftienMinutenVerderop.dataBaseUrl}/${osmId}.json`
 
       this.map.getSource('area').setData(emptyGeoJSON)
 
@@ -80,8 +78,8 @@ export default {
         const area = data.area
         const routes = data.routes
 
-        const maxLength = Math.max(...routes.features.map((feature) => length(feature, {units: 'meters'})))
-        this.animateRoutes(osmId, 0, maxLength, routes)
+        const maxIndex = Math.max(...routes.features.map((feature) => feature.properties.index))
+        this.animateRoutes(osmId, 0, maxIndex, routes)
 
         this.map.getSource('area').setData(area)
         this.map.setPaintProperty('area', 'fill-opacity-transition', {
@@ -93,39 +91,36 @@ export default {
         console.error(err)
       }
     },
-    animateRoutes: function (animationId, length, maxLength, geojson, startTimestamp) {
+    animateRoutes: function (animationId, index, maxIndex, geojson, startTimestamp) {
+      if (index === 0) {
+        this.map.setFilter('routes', [
+          '<',
+          ['get', 'index'],
+          0
+        ])
+        this.map.getSource('routes').setData(geojson)
+      }
+
       if (this.animationId === animationId) {
-        const cappedGeojson = {
-          type: 'FeatureCollection',
-          features: geojson.features
-            .map((feature) => {
-              if (length === 0) {
-                return
-              }
-
-              try {
-                return lineSliceAlong(feature, 0, length, {units: 'meters'})
-              } catch (err) {
-                console.error(startTimestamp, feature, length, err)
-              }
-            })
-            .filter((feature) => feature)
-        }
-
-        this.map.getSource('routes').setData(cappedGeojson)
-
-        if (length <= maxLength) {
+        if (index <= maxIndex) {
           requestAnimationFrame((timestamp) => {
             if (startTimestamp === undefined) {
               startTimestamp = timestamp
             }
 
-            const speed = 2.5
+            const speed = 4
 
             const progress = timestamp - startTimestamp
             const length = progress * speed
+            const index = length / 250
 
-            this.animateRoutes(animationId, length, maxLength, geojson, startTimestamp)
+            this.map.setFilter('routes', [
+              '<=',
+              ['get', 'index'],
+              Math.round(index)
+            ])
+
+            this.animateRoutes(animationId, index, maxIndex, geojson, startTimestamp)
           })
         }
       }
