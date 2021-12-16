@@ -92,6 +92,10 @@ export default {
     vijftienMinutenVerderop: {
       dataBaseUrl: process.env.VIJFTIEN_MINUTEN_VERDEROP_DATA_BASE_URL,
       mapUrl: process.env.VIJFTIEN_MINUTEN_VERDEROP_MAP_URL
+        // const maxBounds = [
+        //   [3.1, 50.5],
+        //   [7.5, 53.7]
+        // ]
     }
   }
 }

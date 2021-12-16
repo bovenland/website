@@ -143,6 +143,7 @@ export default {
       }
       a,
       a.nuxt-link {
+        white-space: nowrap;
         display: inline-block;
         width: 100%;
         margin-left: -0.75rem;

@@ -1,5 +1,5 @@
 <template lang="md">
-<label>hoofdstukken</label>
+  <label>hoofdstukken</label>
 
   <section class="section">
     <ol>

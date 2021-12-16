@@ -5,8 +5,7 @@
       </div>
     </template>
 
-    <CreateMapStory :map="map"
-      @updated="mapStoryUpdated">
+    <CreateMapStory @updated="mapStoryUpdated">
       <div data-layer="aaa" data-bounds="[[5.075088,52.216149],[6.045731,52.448873]]">
         <p>Er zijn meer dan 80.000 winkels in Nederland.</p>
       </div>
@@ -74,6 +73,10 @@ export default {
     mapLoaded: function () {
       const map = this.map
 
+      map.fitBounds([[5.471191, 52.281602], [7.454224, 53.232345]], {
+        padding: {top: 25, bottom: 25, left: 25, right: 25}
+      })
+
       setCircleMapSourceAndLayers(map, config, 'orange')
 
       // map.on('moveend', () => {
@@ -134,8 +137,26 @@ export default {
       // createMapLayers(this.map, color, false)
       setCircleMapStyle(this.map, config, this.color)
     },
-    mapStoryUpdated: function () {
-      console.log('mapStoryUpdated')
+    mapStoryUpdated: function (data) {
+      // console.log('mapStoryUpdated', data)
+
+      if (this.map) {
+        const padding = 10;
+        const storyBox = document.querySelector(".story");
+        const leftPadding = storyBox.getBoundingClientRect().right + padding;
+
+        // https://docs.mapbox.com/mapbox-gl-js/api/properties/#paddingoptions
+        this.map.fitBounds(data.bounds, {
+          linear: false,
+          essential: true,
+          padding: {
+            top: padding,
+            bottom: padding,
+            left: leftPadding,
+            right: padding,
+          },
+        });
+      }
     }
   },
   mounted: function () {

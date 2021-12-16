@@ -10,7 +10,6 @@
     </div>
 
     <div class="container column">
-      <!-- Wat is boven.land? -->
       <label>Het project</label>
       <h3 id="project">Wat is Boven.land?</h3>
       <p>
@@ -49,10 +48,8 @@
         </template>
       </FoldDownMenu>
 
-      <!-- Wie maken boven.land? -->
       <h3 id="over-ons">Wie maken boven.land?</h3>
 
-      <!-- Profielen -->
       <ul class="profiles">
         <li>
           <DotMask>

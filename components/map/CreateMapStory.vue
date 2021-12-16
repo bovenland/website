@@ -4,7 +4,6 @@ export default {
   name: 'MapStory',
   functional: true,
   props: {
-    map: Object,
     startIndex: {
       type: Number,
       default: undefined
@@ -13,6 +12,7 @@ export default {
   render: function (createElement, context) {
     const children = context.children
       .filter((child) => child.tag)
+
     return createElement(MapStory, {
       on: context.data.on,
       props: {

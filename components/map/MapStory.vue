@@ -43,7 +43,6 @@ export default {
     Box,
   },
   props: {
-    map: Object,
     items: Array,
     startIndex: {
       type: Number,
@@ -72,24 +71,12 @@ export default {
       this.flyTo(this.index);
     },
     flyTo: function (index) {
-      if (this.map && index >= 0) {
+      if (index >= 0) {
         const location = this.getLocation(index);
-
-        const padding = 10;
-        const storyBox = document.querySelector(".story");
-        const leftPadding = storyBox.getBoundingClientRect().right + padding;
-
-        // https://docs.mapbox.com/mapbox-gl-js/api/properties/#paddingoptions
-        this.map.fitBounds(location.bounds, {
-          linear: false,
-          essential: true,
-          padding: {
-            top: padding,
-            bottom: padding,
-            left: leftPadding,
-            right: padding,
-          },
-        });
+        this.$emit('updated', {
+          index,
+          ...location
+        })
       }
     },
     getLocation: function (index) {

@@ -5,8 +5,7 @@
       </div>
     </template>
 
-    <CreateMapStory :map="map"
-      @updated="mapStoryUpdated">
+    <CreateMapStory @updated="mapStoryUpdated">
       <div data-layer="aaa" data-bounds="[[5.075088,52.216149],[6.045731,52.448873]]">
         Routes
       </div>

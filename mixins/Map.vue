@@ -19,11 +19,6 @@ export default {
     let lon = defaultCenter[0]
     let lat = defaultCenter[1]
 
-    const maxBounds = [
-      [3.1, 50.5],
-      [7.5, 53.7]
-    ]
-
     if (this.$route.query.view) {
       [zoom, lat, lon] = this.$route.query.view
         .split('/')
@@ -39,8 +34,7 @@ export default {
       maxZoom: 18,
       center: [lon, lat],
       zoom,
-      dragRotate: false,
-      maxBounds
+      dragRotate: false
     })
 
     this.map = map
