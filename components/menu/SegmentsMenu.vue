@@ -6,7 +6,7 @@
       v-on:click="toggleMenu()"
     >
       <component v-bind:is="segment.icon" v-bind:color="segment.color" />
-      <h3>{{ segment.title }}</h3>
+      <h3 v-html="segment.title"></h3>
       <svg
         class="triangle"
         xmlns="http://www.w3.org/2000/svg"
@@ -26,7 +26,7 @@
           :to="{ name: `hoofdstukken-${chapter.to.name}-${segment.to.name}` }"
         >
           <component v-bind:is="segment.icon" v-bind:color="segment.color" />
-          {{ segment.title }}
+          <span v-html="segment.title"></span>
         </nuxt-link>
       </li>
     </ul>
