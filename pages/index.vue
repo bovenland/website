@@ -141,6 +141,7 @@
     padding: 0;
     li {
       margin: 0 12px;
+      max-width: 238px;
       flex-basis: 400px;
       h2 {
         margin-top: 20px;
