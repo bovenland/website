@@ -153,11 +153,15 @@
         </p>
 
         <p>
-          We verruilen de fiets weer voor de auto en rijden naar de N34, de provinciale weg die van Noord naar zuid dwars door Drenthe loopt. De N34 wordt ook wel de ‘Hunebed Highway’ genoemd, er staan 47 hunebedden langs deze weg. We zoeken naar Lemmenerveld, een plek op de kaart die ons thuis bij de reisvoorbereiding was opgevallen omdat daar een weg was ‘verdwenen’ van de kaart. Daar waar tot twee jaar geleden buren elkaar binnen vijf minuten konden opzoeken, kost het ze nu 15 minuten.
+          We verruilen de fiets weer voor de auto en rijden naar de N34, de provinciale weg die van Noord naar zuid dwars door Drenthe loopt. De N34 wordt ook wel de <em>Hunebed Highway</em> genoemd, er staan 47 hunebedden langs deze weg. We zoeken naar Lemmenerveld, een plek op de kaart die ons
+
+          <!-- TODO: N34, N348 -->
+
+          thuis bij de reisvoorbereiding was opgevallen omdat daar een weg was ‘verdwenen’ van de kaart. Daar waar tot twee jaar geleden buren elkaar binnen vijf minuten konden opzoeken, kost het ze nu 15 minuten.
         </p>
 
         <Photos
-          series="n34"
+          series="n348"
           :count="1"
           :captions="[]">
           <h3>Hier omschrijvning!.</h3>
@@ -165,7 +169,7 @@
         </Photos>
 
         <p>
-          De weg tussen hun huizen, die de N34 hier haaks kruist, is afgesloten. Er staat nu een hek en de restanten zijn begroeid met gras. De enige manier om de buren aan de overkant te bereiken is óf via een nieuw gemaakte onderdoorgang in de weg, óf 15 minuten omfietsen. Het lijkt de bewoners niet te storen: de weg was sowieso als een soort sociale scheidslijn. Aan beide zijden is er een aparte buurtvereniging. Ger en zijn gezin wonen sinds 2013 aan de ene zijde van de weg. Ze zijn ‘import’ en kwamen uit liefde voor hun huis. Het is een oude boerderij die ze nog steeds aan het verbouwen zijn. Hij kent zijn overburen niet en dat deert Ger niet. Ook de afsluiting van de verbindende weg stoort hem niet. Het lawaai van de N34 wel. Met een zelfgebouwde groene geluidswal op zijn erf probeert hij het verkeerslawaai te beperken.
+          De weg tussen hun huizen, die de N348 hier haaks kruist, is afgesloten. Er staat nu een hek en de restanten zijn begroeid met gras. De enige manier om de buren aan de overkant te bereiken is óf via een nieuw gemaakte onderdoorgang in de weg, óf 15 minuten omfietsen. Het lijkt de bewoners niet te storen: de weg was sowieso als een soort sociale scheidslijn. Aan beide zijden is er een aparte buurtvereniging. Ger en zijn gezin wonen sinds 2013 aan de ene zijde van de weg. Ze zijn ‘import’ en kwamen uit liefde voor hun huis. Het is een oude boerderij die ze nog steeds aan het verbouwen zijn. Hij kent zijn overburen niet en dat deert Ger niet. Ook de afsluiting van de verbindende weg stoort hem niet. Het lawaai van de N348 wel. Met een zelfgebouwde groene geluidswal op zijn erf probeert hij het verkeerslawaai te beperken.
         </p>
 
         <p>
