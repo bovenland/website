@@ -111,7 +111,7 @@
           <p>Omschrijving!</p>
         </VideoContainer>
 
-        <h2>De rechte lijnen van de Noordoostpolder</h2>
+        <h2>De rechte lijnen van de Noordoost&shy;polder</h2>
 
         <p>
           Via Kampen rijden we de Noordoostpolder in. Deze is veel later op de Zuiderzee gewonnen dan de Mastenbroekerpolder. We rijden er over de rechte wegen en kijken uit over weilanden. Regelmatig komen we achter tractors met aanhangwagens, volgeladen met suikerbieten. Het is oogsttijd en verre van stil in dit seizoen. Op de Monnikenweg bij Nagele zien we een rijtje naoorlogse arbeiderswoningen. Bij één huis staat een oude rode brandweerauto voor de deur, bij een ander huis doet de aankleding vermoeden dat hier eerder mensen uit de stad dan boeren of arbeiders wonen. We spreken de bewoners van het huis met de brandweerauto aan. Ze zijn een gezin met acht kinderen en komen uit deze regio. Het kan hun niet afgelegen genoeg zijn vertelt oudste van negentien van achter het tuinhek. Ze hebben het onderling gezellig met elkaar, en hebben weinig anderen nodig. De kinderen krijgen thuisonderwijs. De arbeiderswoningen in deze buurt zijn inmiddels gewild bij Amsterdammers en andere mensen van buiten. Ook al liggen de woningen in een leeg gebied, als je de fiets pakt en 15 minuten fietst, kom je wel in het winkelcentrum in de buitenwijk van Urk, het vissersdorp  dat net als Schokland een voormalig eiland is in de Zuiderzee.

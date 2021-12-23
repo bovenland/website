@@ -12,9 +12,8 @@
       <svg
         id="path"
         xmlns="http://www.w3.org/2000/svg"
-        width="32"
-        height="1024"
         viewBox="0 0 32 1024"
+        preserveAspectRatio="none"
       >
         <path
           class="background"
@@ -46,6 +45,7 @@ div.story-page {
   svg#path {
     position: fixed;
     top: 0;
+    display: none;
 
     @include calc("left", "50% - 450px");
     @media screen and (max-width: 980px) {
@@ -323,6 +323,7 @@ export default {
           this.pathElement.style.height = "100vh";
         }
       }
+      this.pathElement.style.display = "block";
 
       if (this.progressElement) {
         var progress = window.scrollY / bottom;

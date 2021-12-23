@@ -71,7 +71,7 @@
         </p>
 
         <h2>
-          Winkelcentrum In de Bogaard in Rijswijk
+          Winkel&shy;centrum In de Bogaard in Rijswijk
         </h2>
 
         <p>
@@ -138,7 +138,7 @@
         </p>
 
         <h2>
-          Zeeland: De buurtsupermarkt van IJzendijke
+          Zeeland: De buurt&shy;supermarkt van IJzendijke
         </h2>
 
         <p>
@@ -174,7 +174,7 @@
           <p>Omschrijving!</p>
         </Photos>
 
-        <h2>Online verkoop en distributiecentra</h2>
+        <h2>Online verkoop en distributie&shy;centra</h2>
 
         <p>
           Tot dusver heeft onze reis ons gebracht naar plaatsen waar fysiek winkelen zijn invloed heeft op het uiterlijk van steden en dorpen. De algemene verwachting is dat online verkoop minstens zo hard zal toenemen als het winkelen als ervaring. We gaan op op zoek naar de zichtbare consequenties van deze groei van online verkoop. De toename van distributiecentra in het Nederlandse landschap is daar een zichtbaar gevolg van. Grote concentraties zijn te vinden zijn in Noord-Brabant en Noord-Limburg.

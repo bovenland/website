@@ -11,6 +11,7 @@
             v-for="(_, index) in Array.from({ length: count })"
             :key="index"
             class="swiper-slide"
+            :style="style"
           >
             <!-- TODO: check! -->
             <img
@@ -18,6 +19,7 @@
               :alt="captions[index]"
               :srcset="srcset(index)"
               :sizes="sizes"
+              :onload="onImageLoad(index)"
             />
             <p v-if="captions[index]">{{ captions[index] }}</p>
           </div>
@@ -42,17 +44,19 @@ export default {
     return {
       swiper: null,
       baseUrl: this.$config.photo.baseUrl,
-      widths: this.$config.photo.widths
+      widths: this.$config.photo.widths,
     };
   },
   computed: {
     sizes: function () {
-      return "(min-width: 1344px) 1344px, 100vw"
-    }
+      return "(min-width: 1344px) 1344px, 100vw";
+    },
   },
   methods: {
     src: function (index) {
-      return `${this.baseUrl}/${this.series}/${index + 1}-${this.widths[0]}.jpg`
+      return `${this.baseUrl}/${this.series}/${index + 1}-${
+        this.widths[0]
+      }.jpg`;
     },
     srcset: function (index) {
       const path = `${this.baseUrl}/${this.series}`;
@@ -62,7 +66,21 @@ export default {
 
       return srcset.join(",\n");
     },
+    onImageLoad: function (index) {
+      if (index == 0) {
+        // Reset the min-height when the first image is loaded
+        this.style = "";
+      }
+    },
   },
+
+  created: function () {
+    if (typeof window == "undefined") return;
+    // Create a min-height of the images before they are loadeds
+    this.style =
+      "min-height:" + (Math.min(1344, window.innerWidth) / 1920) * 1280 + "px";
+  },
+
   mounted: function () {
     const numSlides = this.$refs.swiper.getAttribute("data-slides");
     let options = {
