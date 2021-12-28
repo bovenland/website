@@ -21,15 +21,15 @@
         <h2>Eerste stop: nieuw land in Oosterwold</h2>
 
         <p>
-          Voor ons vertrek naar Oosterwold bij Almere hebben we nogal wat aannames over het soort mensen dat we hier zullen treffen. Oosterwold is een gebied waar bewoners zonder inmenging van planologen, gemeentelijke regels of bouwverordeningen (bijna) geheel naar eigen inzicht hun droomwoning mogen bouwen. Dat maakt ons nieuwsgierig naar hoe die eigen bouwsels eruit zien, en wie hier woont. We verwachten bewoners te treffen die die vrijheid zoeken, ecologische idealisten en pioniers met twee rechterhanden. Die blijken er te zijn, samen met pragmatische linkshandigen en liefhebbers van sprookjes. ‘Hier doen we alles anders’, aldus de tekst op de website en het handboek van het gebied.
+          Voor ons vertrek naar Oosterwold bij Almere hebben we nogal wat aannames over het soort mensen dat we hier zullen treffen. Oosterwold is een gebied waar bewoners zonder inmenging van planologen, gemeentelijke regels of bouwverordeningen (bijna) geheel naar eigen inzicht hun droomwoning mogen bouwen. Dat maakt ons nieuwsgierig naar hoe die eigen bouwsels eruit zien, en wie hier woont. We verwachten bewoners te treffen die die vrijheid zoeken, ecologische idealisten en pioniers met twee rechterhanden. Die blijken er te zijn, samen met pragmatische linkshandigen en liefhebbers van sprookjes. “Hier doen we alles anders,” aldus de tekst op de website en het handboek van het gebied.
         </p>
 
         <Photos
           series="ban-zhaoweg"
           :count="4"
           :captions="[]">
-          <h3>Titel.</h3>
-          <p>Omschrijving!</p>
+          <h3>De Ban Zhaoweg in Oosterwold, Almere</h3>
+          <p>Foto’s: Bert Spaan</p>
         </Photos>
 
         <p>
@@ -44,8 +44,8 @@
           series="perenbloesemhof"
           :count="1"
           :captions="[]">
-          <h3>Titel.</h3>
-          <p>Omschrijving!</p>
+          <h3>De Perenbloesemhof in Oosterwold, Almere</h3>
+          <p>Foto: Bert Spaan</p>
         </Photos>
 
         <p>
@@ -60,8 +60,8 @@
           series="john-lockeweg"
           :count="1"
           :captions="[]">
-          <h3>Titel.</h3>
-          <p>Omschrijving!</p>
+          <h3>Kasteel in aanbouw in Oosterwold, Almere</h3>
+          <p>Foto: Bert Spaan</p>
         </Photos>
 
         <p>
@@ -72,8 +72,8 @@
           series="oeverwalweg"
           :count="1"
           :captions="[]">
-          <h3>Titel.</h3>
-          <p>Omschrijving!</p>
+          <h3>Huis van Julia en Willem in aanbouw in Oosterwold, Almere</h3>
+          <p>Foto’s: Bert Spaan</p>
         </Photos>
 
         <p>
@@ -88,8 +88,8 @@
           series="isaac-newtonstraat"
           :count="1"
           :captions="[]">
-          <h3>Titel.</h3>
-          <p>Omschrijving!</p>
+          <h3>In Oosterwold is het niet eenvoudig binnendoor van de ene plek naar de andere te komen</h3>
+          <p>Foto: Bert Spaan</p>
         </Photos>
 
         <p>
@@ -107,8 +107,8 @@
         </p>
 
         <VideoContainer id="kampen">
-          <h3>titel van video</h3>
-          <p>Omschrijving!</p>
+          <h3>Kampen: een middeleeuwse stad met veel voorzieningen</h3>
+          <p>Video: Bert Spaan</p>
         </VideoContainer>
 
         <h2>De rechte lijnen van de Noordoost&shy;polder</h2>
@@ -118,20 +118,20 @@
         </p>
 
         <VideoContainer id="noordoostpolder">
-          <h3>titel van video</h3>
-          <p>Omschrijving!</p>
+          <h3>Kaarsrechte wegen en grote boerderijen in de Noordoostpolder</h3>
+          <p>Video: Bert Spaan</p>
         </VideoContainer>
 
         <p>
-          We rijden door naar de stad Emmeloord. Waar we ook kijken in de Noordoostpolder, overal zien we de Centrale-Plaatsentheorie van de Duitse geograaf Walter Christaller terug. Deze theorie kwamen we ook al tegen in ons hoofdstuk Waar we Winkelen. (link) De polder is ontworpen in een tijd dat deze theorie erg populair was. Men geloofde in de maakbaarheid van stad en land. Op de tekentafel werd het nieuwe land in de polder zó ingericht dat de nederzettingen op de perfecte afstand van elkaar lagen. De centrale plaats - stad, dorp of gehucht - was het voorzieningencentrum van het omringende achterland. Dit geldt voor Kampen, en ook voor Emmeloord. Deze steden zijn de centrale plaatsen voor de Noordoostpolder.
+          We rijden door naar de stad Emmeloord. Waar we ook kijken in de Noordoostpolder, overal zien we de Centrale-Plaatsentheorie van de Duitse geograaf Walter Christaller terug. Deze theorie kwamen we ook al tegen in hoofdstuk <nuxt-link :to="{ name: 'hoofdstukken-waar-we-winkelen-reisverslag' }">Waar we winkelen</nuxt-link>. De polder is ontworpen in een tijd dat deze theorie erg populair was. Men geloofde in de maakbaarheid van stad en land. Op de tekentafel werd het nieuwe land in de polder zó ingericht dat de nederzettingen op de perfecte afstand van elkaar lagen. De centrale plaats - stad, dorp of gehucht - was het voorzieningencentrum van het omringende achterland. Dit geldt voor Kampen, en ook voor Emmeloord. Deze steden zijn de centrale plaatsen voor de Noordoostpolder.
         </p>
 
         <Photos
           series="noordoostpolder"
           :count="1"
           :captions="[]">
-          <h3>Titel.</h3>
-          <p>Omschrijving!</p>
+          <h3>Een schuur van schokbeton in de Noordoostpolder</h3>
+          <p>Foto: Bert Spaan</p>
         </Photos>
 
         <p>
@@ -153,32 +153,28 @@
         </p>
 
         <p>
-          We verruilen de fiets weer voor de auto en rijden naar de N34, de provinciale weg die van Noord naar zuid dwars door Drenthe loopt. De N34 wordt ook wel de <em>Hunebed Highway</em> genoemd, er staan 47 hunebedden langs deze weg. We zoeken naar Lemmenerveld, een plek op de kaart die ons
-
-          <!-- TODO: N34, N348 -->
-
-          thuis bij de reisvoorbereiding was opgevallen omdat daar een weg was ‘verdwenen’ van de kaart. Daar waar tot twee jaar geleden buren elkaar binnen vijf minuten konden opzoeken, kost het ze nu 15 minuten.
+          We verruilen de fiets weer voor de auto en rijden naar de N34, de provinciale weg die van Noord naar zuid dwars door Drenthe loopt. De N34 wordt ook wel de <em>Hunebed Highway</em> genoemd, er staan 47 hunebedden langs deze weg. Via de N34 komen we op de N348 en gaan we op zoek naar Lemmenerveld, een plek op de kaart die ons thuis bij de reisvoorbereiding was opgevallen omdat daar een weg was <em>verdwenen</em> van de kaart. Daar waar tot twee jaar geleden buren elkaar binnen vijf minuten konden opzoeken, kost het ze nu 15 minuten.
         </p>
 
         <Photos
           series="n348"
           :count="1"
           :captions="[]">
-          <h3>Hier omschrijvning!.</h3>
-          <p>!</p>
+          <h3>De N348 snijdt dwars door oude structuren in het landschap</h3>
+          <p>Foto: Bert Spaan</p>
         </Photos>
 
         <p>
-          De weg tussen hun huizen, die de N348 hier haaks kruist, is afgesloten. Er staat nu een hek en de restanten zijn begroeid met gras. De enige manier om de buren aan de overkant te bereiken is óf via een nieuw gemaakte onderdoorgang in de weg, óf 15 minuten omfietsen. Het lijkt de bewoners niet te storen: de weg was sowieso als een soort sociale scheidslijn. Aan beide zijden is er een aparte buurtvereniging. Ger en zijn gezin wonen sinds 2013 aan de ene zijde van de weg. Ze zijn ‘import’ en kwamen uit liefde voor hun huis. Het is een oude boerderij die ze nog steeds aan het verbouwen zijn. Hij kent zijn overburen niet en dat deert Ger niet. Ook de afsluiting van de verbindende weg stoort hem niet. Het lawaai van de N348 wel. Met een zelfgebouwde groene geluidswal op zijn erf probeert hij het verkeerslawaai te beperken.
+          De weg tussen hun huizen, die de N348 hier haaks kruist, is afgesloten. Er staat nu een hek en de restanten zijn begroeid met gras. De enige manier om de buren aan de overkant te bereiken is óf via een nieuw gemaakte onderdoorgang in de weg, óf 15 minuten omfietsen. Het lijkt de bewoners niet te storen: de weg was sowieso als een soort sociale scheidslijn. Aan beide zijden is er een aparte buurtvereniging. Ger en zijn gezin wonen sinds 2013 aan de ene zijde van de weg. Ze zijn <em>import</em> en kwamen uit liefde voor hun huis. Het is een oude boerderij die ze nog steeds aan het verbouwen zijn. Hij kent zijn overburen niet en dat deert Ger niet. Ook de afsluiting van de verbindende weg stoort hem niet. Het lawaai van de N348 wel. Met een zelfgebouwde groene geluidswal op zijn erf probeert hij het verkeerslawaai te beperken.
         </p>
 
         <p>
-          We fietsen in vijftien minuten naar de overburen, nieuwsgierig naar hoe zij de verwijdering van de wegovergang ervaren. We zien licht branden in de keuken en er loopt iemand rond. Maar ook na twee keer bellen komt er geen reactie. Het bord met ‘hier waakt de hond’ doet ons besluiten geen derde poging te wagen. De buren houden blijkbaar niet van onverwacht bezoek.
+          We fietsen in vijftien minuten naar de overburen, nieuwsgierig naar hoe zij de verwijdering van de wegovergang ervaren. We zien licht branden in de keuken en er loopt iemand rond. Maar ook na twee keer bellen komt er geen reactie. Het bord met “hier waakt de hond” doet ons besluiten geen derde poging te wagen. De buren houden blijkbaar niet van onverwacht bezoek.
         </p>
 
-        <VideoContainer id="n384">
-          <h3>titel van video</h3>
-          <p>Omschrijving!</p>
+        <VideoContainer id="n348">
+          <h3>Vroeger buren, door de N348 ver van elkaar verwijderd</h3>
+          <p>Video: Bert Spaan</p>
         </VideoContainer>
 
         <h2>Thuis</h2>
