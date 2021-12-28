@@ -17,6 +17,10 @@ $label-color: #c4c4c4;
 // Size
 $column-width: 800px;
 
+html {
+  overflow-y: auto;
+}
+
 // Body
 body {
   color: $black;
@@ -29,9 +33,6 @@ a:link,
 a:visited {
   color: inherit;
   text-decoration: underline;
-}
-a:hover {
-  text-decoration: line-through;
 }
 
 a.nuxt-link-active,
