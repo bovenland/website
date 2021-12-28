@@ -14,13 +14,7 @@ export default {
       name: "index",
       hash: '#over-ons'
     },
-  }, {
-    title: "Contact",
-    to: {
-      name: "index",
-      hash: '#contact'
-    },
-  }, ],
+  }],
 
   // The Chapters
   chapters: [{
