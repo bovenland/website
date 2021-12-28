@@ -68,32 +68,21 @@
       </ul>
 
       <p>
-        Jenny houdt van het maken van verhalen, en vooral van verhalen verteld met beeld. Deze liefde vormt de rode draad in haar carrière. Verhalen die ze vertelt met materiaal van anderen; fotografen, kunstenaars en andere creatieven. Meestal is het beeld fotografie, maar ook bewegend beeld, interactieve projecten, installaties of andersoortig (digitaal) beeld en kunstprojecten kunnen hier deel van zijn.
-      </p>
-      <p>
-        Jenny werkt in de kunst en in de media. In beide omgevingen probeert ze een breed publiek te vinden. Haar podium kan de tentoonstellingsruimte zijn, een (online) publicatie met beeld en tekst, of een presentatie in de vorm van een lezing. In veel gevallen hebben de verhalen een maatschappelijke relevante inhoud en is documentaire fotografie het voornaamste bestanddeel.
-      </p>
-      <p>
-        Jenny studeerde Kunstgeschiedenis aan de Universiteit van Amsterdam en werkte voor diverse organisaties als World Press Photo, de Kabk in Den Haag en media titels als Vrij Nederland, Het Parool en Trouw.
+        Jenny houdt van verhalen, en vooral van verhalen verteld met beeld. Deze liefde vormt de rode draad in haar carrière. Ze maakt verhalen met materiaal van anderen: van fotografen, van kunstenaars en van andere creatieven. Meestal is het beeld documentaire fotografie, maar ook bewegend beeld, interactieve projecten, installaties of andersoortig (digitaal) beeld en kunstprojecten kunnen hier deel van zijn. Jenny werkt in de kunst en in de media. Het podium voor haar verhalen is de tentoonstellingsruimte, een (online) publicatie met beeld en tekst, of een presentatie in de vorm van een lezing. Meestal gaan Jenny’s verhalen over de maatschappelijke uitdagingen van onze tijd.
+        Ze studeerde moderne en hedendaagse kunst aan de Universiteit van Amsterdam en werkte voor diverse organisaties als: World Press Photo, de Kabk kunstacademie in Den Haag, Fotodok in Utrecht. Ze is voormalig fotoredacteur voor de titels Vrij Nederland, Het Parool en Trouw.
       </p>
 
-      <p>
-        Door het landschap van bovenaf te bekijken, via kaarten of luchtfoto’s, zie je patronen en vormen die onzichtbaar blijven als je de wereld vanaf straatniveau bekijkt. Deze patronen vertellen verhalen over de geschiedenis, ze verklaren hedendaagse fenomenen en ze kunnen helpen om inzicht te geven in de toekomst. Bert werkt met kaarten, data en open source-tools om deze patronen in het landschap bloot te leggen en te laten zien.
-      </p>
+      <p>Voor meer informatie over Jenny, zie <a href="https://docsandtales.com/">Docs+Tales</a>.
+
       <p>
         Bert studeerde informatica en cartografie, studeerde af bij TomTom, en werkte daarna achtereenvolgens bij Waag en de New York Public Library. Momenteel werkt hij als zelfstandig cartograaf en ontwerper van creatieve technologie.
+        Door het landschap van bovenaf te bekijken, via kaarten of luchtfoto’s, zie je patronen en vormen die onzichtbaar blijven als je de wereld vanaf straatniveau bekijkt. Deze patronen vertellen verhalen over de geschiedenis, ze verklaren hedendaagse fenomenen en ze kunnen helpen om inzicht te geven in de toekomst. Bert werkt met kaarten, data en open source-tools om deze patronen in het landschap bloot te leggen en te laten zien.
+        Met Boven.land wil Bert zijn nieuwsgierigheid naar de bijzondere eigenschappen van het alledaagse Nederlandse landschap op anderen overbrengen.
       </p>
-      <p>
-        Met Boven.land wil Bert zijn nieuwsgierigheid naar de bijzondere eigenschappen van het alledaagse Nederlandse landschap op anderen overbrengen. Door in het onderzoek naar deze eigenschappen gebruik te maken van open data en open source-tools worden deze onderzoeken niet alleen reproduceerbaar maar kunnen ze ook gebruikt worden voor educatie en tijdens meetups over deze data en technologie.
-      </p>
-
-      <h3 id="contact">Contact</h3>
 
       <p>
-        <a href="mailto:jenny@docsandtales.com">Jenny Smets</a>
-        <a href="mailto:hello@bertspaan.nl">Bert Spaan</a>
+        Voor meer informatie over Bert, zie <a href="https://bertspaan.nl">bertspaan.nl</a>.
       </p>
-
     </div>
     <Footer />
   </div>
