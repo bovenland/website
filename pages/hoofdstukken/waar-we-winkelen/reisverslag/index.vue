@@ -45,8 +45,8 @@
           :count="6"
           :captions="[]"
         >
-          <h3>Titel.</h3>
-          <p>Omschrijving!</p>
+          <h3>Westfield Mall of the Netherlands, Leidschendam</h3>
+          <p>Foto’s: Jan Dirk van der Burg</p>
         </Photos>
 
         <!-- Koopbeleving -->
@@ -87,8 +87,8 @@
           :count="8"
           :captions="[]"
         >
-          <h3>Titel.</h3>
-          <p>Omschrijving!</p>
+          <h3>Winkelcentrum In de Bogaard, Rijswijk</h3>
+          <p>Fotos’s: Jan Dirk van der Burg</p>
         </Photos>
 
         <h2>Terneuzen</h2>
@@ -96,15 +96,6 @@
         <p>
           Tot onze enkels staan we in het water in de parkeergarage. Het winkelgebied in Terneuzen centrum heeft raakvlakken met  In de Bogaard in Rijswijk voor wat leegstand betreft. Op de reis hierheen ontdekken we nog wel de schoonheid van het landschap, het Verdronken Land van Saeftinghe. Maar door de indruk die de gigantische industriegebieden en indrukwekkende zeesluizen op ons maken, verandert de stemming in Terneuzen in treurigheid. Ook de wijkraad van Terneuzen vond de binnenstad nogal grauw en bedacht de volgende oplossing: ze plaatsen in maart 2021 een letterbeeld met na de letters TER, twee neuzen.
         </p>
-
-        <!-- TODO: really remove this photo? -->
-        <!-- <Photos
-          series="terneuzen"
-          :count="1"
-          :captions="[]">
-          <h3>Titel.</h3>
-          <p>Omschrijving!</p>
-        </Photos> -->
 
         <p>
           Terneuzen staat samen met onder meer Landgraaf en Kerkrade in Limburg bekend als de stad met de meeste leegstand. De ene na de andere winkel staat te huur, bijna meer dan dat er nog in gebruik zijn. We worden verrast door een carnavaleske optocht en er is een kermis. We worden er toch niet vrolijk van.
@@ -118,15 +109,15 @@
           series="leegstand-terneuzen"
           :count="42"
           :captions="[]">
-          <h3>Titel.</h3>
-          <p>Omschrijving!</p>
+          <h3>Leegstand van winkelpanden in Terneuzen</h3>
+          <p>Foto’s: Bert Spaan</p>
         </Photos>
 
         <h2>Middelburg: de videotheek</h2>
 
         <p>
+          <!-- TODO: ineens Gertjan en Locatus? -->
           We leerden van Gertjan Slob van Locatus dat er nog acht videotheken over zijn in Nederland. De meesten werden gestart in de hoogtijdagen van de videotheek, de jaren tachtig. Toen zaten ze op elke straathoek, er waren er meer dan duizend in Nederland. Het waren zaken waar je, ondanks de vaak sjofele inrichting uren kon doorbrengen omdat je geen keuze kon maken. En waar de speciale hoek voor erotiek altijd wat ongemakkelijk voelde. Nu zijn er nog maar een paar videotheken overgebleven, twee in Sittard, en één in Middelburg, de charmante hoofdstad van Zeeland waar we langskomen op onze reis. Uit  jeugdsentiment bezoeken we hier één van de acht laatste videotheken. Eigenlijk zou deze videotheek geen videotheek meer moeten heten, want video’s worden er niet of nauwelijks meer verkocht of verhuurd. Want wie heeft er nu nog een videospeler in huis? Dus hebben de alleraardigste eigenaren Özcan en Canan Yarar van Viduet-Film &amp; Games in Middelburg nog maar vier of vijf klanten per maand die voor video’s naar hun zaak komen. De zaak die sinds 2016 in hun bezit is, is nu meer een tabakshop. Langzaam maar zeker wil het echtpaar Yarar de schappen met dvd’s en video’s vervangen door andere waar. Wat dat precies gaat worden is niet helemaal duidelijk, nu zien we vooral veel kinderspeelgoed en plastic prullaria. Bij het afscheid krijgen we een mooi geplastificeerd visitekaartje waarop de website staat vermeld. Als ik die later wil bezoeken krijg ik echter de melding dat de server onvindbaar is.
-
         </p>
 
         <p>
@@ -170,8 +161,8 @@
           series="designer-outlet-roosendaal"
           :count="3"
           :captions="[]">
-          <h3>Titel.</h3>
-          <p>Omschrijving!</p>
+          <h3>Designer Outlet Roosendaal</h3>
+          <p>Foto’s: Jan Dirk van der Burg</p>
         </Photos>
 
         <h2>Online verkoop en distributie&shy;centra</h2>
@@ -184,8 +175,8 @@
           series="distributiecentra"
           :count="6"
           :captions="[]">
-          <h3>Titel.</h3>
-          <p>Omschrijving!</p>
+          <h3>(X)XL-distributiecentra</h3>
+          <p>Foto’s: Jan Dirk van der Burg</p>
         </Photos>
 
         <p>
@@ -205,7 +196,7 @@
         </p>
 
         <p>
-          We sjouwen de roze Boven.land-stip door de modder om de juiste plek te vinden die de omvang van de hal zal illustreren. Dat valt niet mee. We gaan van de ene kant van het gebouw naar de andere, klimmen op elektriciteitshuisje om hoogte te maken en zakken weg in de modder als we dichterbij willen komen. We worden al sinds onze aankomst gevolgd door een man in een zwart wagentje die ons uiteindelijk aanspreekt:’Mag ik vragen wat jullie doen?’. Ons antwoord dat we fotografen zijn die een vorm en kleur studie doen-onze roze ronde cirkel steekt zo mooi af tegen het hoekige blauw-lijkt hem te overtuigen van onze goede bedoelingen. Om de groei van de internetaankopen bij te houden wordt er ook op dit terrein volop bijgebouwd, het hele complex moet groeien naar 100.000 m². Deze nieuwe hal is 50.000 m² en heeft ruimte voor zeven miljoen artikelen. De gevolgen van de groeiende noodzaak om meer distributiecentra te bouwen wordt op steeds meer locaties zichtbaar.
+          We sjouwen de roze Boven.land-stip door de modder om de juiste plek te vinden die de omvang van de hal zal illustreren. Dat valt niet mee. We gaan van de ene kant van het gebouw naar de andere, klimmen op elektriciteitshuisje om hoogte te maken en zakken weg in de modder als we dichterbij willen komen. We worden al sinds onze aankomst gevolgd door een man in een zwart wagentje die ons uiteindelijk aanspreekt: “Mag ik vragen wat jullie doen?” Ons antwoord dat we fotografen zijn die een vorm en kleur studie doen-onze roze ronde cirkel steekt zo mooi af tegen het hoekige blauw-lijkt hem te overtuigen van onze goede bedoelingen. Om de groei van de internetaankopen bij te houden wordt er ook op dit terrein volop bijgebouwd, het hele complex moet groeien naar 100.000 m². Deze nieuwe hal is 50.000 m² en heeft ruimte voor zeven miljoen artikelen. De gevolgen van de groeiende noodzaak om meer distributiecentra te bouwen wordt op steeds meer locaties zichtbaar.
         </p>
 
         <h2>Maasvlakte</h2>
@@ -215,11 +206,11 @@
         </p>
 
         <p>
-          Ook hier zijn we niet welkom om een kijkje te nemen. De afwijzingen in de e-mails zijn vriendelijk maar worden steeds duidelijker en eindigt na vele doorverwijzingen met een bericht van de Director Port Development Havenbedrijf Rotterdam: ‘Bedankt voor uw e-mail met de uitgebreide toelichting. Naar aanleiding van uw verzoek heb ik hierover contact opgenomen met DHG en hebben we besloten om hier geen medewerking aan te verlenen.’ Datzelfde overkwam ons eigenlijk bij alle toegangsverzoeken bij XXL distributiecentra. De negatieve berichtgeving over de invloed die deze dozen hebben op het landschap, de zogenaamde verdozing van Nederland maakt dat ze niet staan te springen om pottenkijkers. Ook niet als dat twee nieuwsgierige vreemde creatieven zijn met een ‘kunstproject’.
+          Ook hier zijn we niet welkom om een kijkje te nemen. De afwijzingen in de e-mails zijn vriendelijk maar worden steeds duidelijker en eindigt na vele doorverwijzingen met een bericht van de Director Port Development Havenbedrijf Rotterdam: ‘Bedankt voor uw e-mail met de uitgebreide toelichting. Naar aanleiding van uw verzoek heb ik hierover contact opgenomen met DHG en hebben we besloten om hier geen medewerking aan te verlenen.’ Datzelfde overkwam ons eigenlijk bij alle toegangsverzoeken bij XXL-distributiecentra. De negatieve berichtgeving over de invloed die deze dozen hebben op het landschap, de zogenaamde verdozing van Nederland maakt dat ze niet staan te springen om pottenkijkers. Ook niet als dat twee nieuwsgierige vreemde creatieven zijn met een kunstproject.
         </p>
 
         <p>
-          Dit weerhoudt ons niet om af te reizen naar de locatie op Maasvlakte II. Vanaf de openbare weg zou het bouwterrein gewoon zichtbaar moeten zijn. Na onze lunch bij cafetaria Smickel -inn, het balkon van Europa op het uiterste puntje van de Maasvlakte gaan we vol verwachting op pad. Want wat zullen we aantreffen op de plek waar we zo hartgrondig niet welkom zijn? Niets. Een paar shovels en wat bouwmaterieel, maar verder niets meer dan een zandvlakte in afwachting van activiteit.
+          Dit weerhoudt ons niet om af te reizen naar de locatie op Maasvlakte II. Vanaf de openbare weg zou het bouwterrein gewoon zichtbaar moeten zijn. Na onze lunch bij cafetaria Smickel-inn, het balkon van Europa op het uiterste puntje van de Maasvlakte gaan we vol verwachting op pad. Want wat zullen we aantreffen op de plek waar we zo hartgrondig niet welkom zijn? Niets. Een paar shovels en wat bouwmaterieel, maar verder niets meer dan een zandvlakte in afwachting van activiteit.
         </p>
 
         <p>
@@ -233,7 +224,7 @@
         <h2>XXL Bleiswijk en Roosendaal</h2>
 
         <p>
-          Nog een plek waar we niet welkom zijn ligt in Bleiswijk. De Duitse online mode en lifestyle gigant Zalando bouwt hier op het bedrijventerrein Greenparc hun eerste Nederlandse XXL distributiecentrum. Oppervlakte: 19 voetbalvelden groot, investeringskosten ruim 200 miljoen. In de hal moet straks ruimte zijn voor zestien miljoen producten. Als dit de plek is waar de retouren komen zal dat ook niet gering zijn. Zalando biedt de service van gratis retour aan en krijgt ruim de helft van alle aankopen terug. Er mag tot honderd dagen na aankoop geretourneerd worden en ze bieden ook nog eens de ‘Haal Op Service’ aan. Het retourpakket wordt opgehaald waar en wanneer de klant maar wil. Robots zullen hier een deel van het werk van mensen gaan overnemen, de afstanden die werknemers af moeten leggen zijn te groot aan het worden, soms lopen werknemers in distributiecentra meer dan twintig kilometer op een dag. Aan duurzame energievoorziening is gedacht. Op het dak liggen zonnepanelen. Greenparc is een bestaand bedrijvenpark met bijbehorende infrastructuur. Er hoefde dus geen nieuw land opgeofferd voor deze vestiging en het ligt strategisch goed, aan de A12 vlakbij de Randstad. Veel distributiecentra liggen pal aan de snelweg en zijn daardoor zichtbaar voor het voorbijrazende verkeer. Zo ook de hal van de Primark in Roosendaal die we min of meer per ongeluk opeens zien vanuit het autoraam. Ze hebben bij Primark de opslagcapaciteit flink uitgebreid de laatste jaren. Er was al 56.000 vierkante meter aan opslag, in 2020 kwam daar nog eens 30.000 vierkante meter vloeroppervlak bij met een hoogte van 22 meter bij. Dat is dus in totaal 86.000 vierkante meter met Primark spullen; kunstnagels, gewatteerd jasje voor uw huisdier, mannen- vrouwen- en kindermode, alles voor huis tuin en keuken, een kerstmannen outfit voor de baby, telefoonhoesjes, gereedschap. Waarschijnlijk rekken en rekken vol. Deze artikelen zijn bedoeld voor de winkels van Primark, een webshop heeft Primark niet. De winkels met ultragoedkope artikelen moeten de klanten verleiden tot de aankoop van meerdere producten tegelijk. In een webshop is dit moeilijker te bewerkstelligen dan in fysieke winkels. De lage prijzen maken het onmogelijk om levering aan huis te doen. Twintig miljoen investeren in nieuwbouw voor opslag lijkt de actuele norm voor bedrijven. Net als bij Zalando in Bleiswijk is dit de investering in de nieuwbouw voor Primark.
+          Nog een plek waar we niet welkom zijn ligt in Bleiswijk. De Duitse online mode en lifestyle gigant Zalando bouwt hier op het bedrijventerrein Greenparc hun eerste Nederlandse XXL-distributiecentrum. Oppervlakte: 19 voetbalvelden groot, investeringskosten ruim 200 miljoen. In de hal moet straks ruimte zijn voor zestien miljoen producten. Als dit de plek is waar de retouren komen zal dat ook niet gering zijn. Zalando biedt de service van gratis retour aan en krijgt ruim de helft van alle aankopen terug. Er mag tot honderd dagen na aankoop geretourneerd worden en ze bieden ook nog eens de ‘Haal Op Service’ aan. Het retourpakket wordt opgehaald waar en wanneer de klant maar wil. Robots zullen hier een deel van het werk van mensen gaan overnemen, de afstanden die werknemers af moeten leggen zijn te groot aan het worden, soms lopen werknemers in distributiecentra meer dan twintig kilometer op een dag. Aan duurzame energievoorziening is gedacht. Op het dak liggen zonnepanelen. Greenparc is een bestaand bedrijvenpark met bijbehorende infrastructuur. Er hoefde dus geen nieuw land opgeofferd voor deze vestiging en het ligt strategisch goed, aan de A12 vlakbij de Randstad. Veel distributiecentra liggen pal aan de snelweg en zijn daardoor zichtbaar voor het voorbijrazende verkeer. Zo ook de hal van de Primark in Roosendaal die we min of meer per ongeluk opeens zien vanuit het autoraam. Ze hebben bij Primark de opslagcapaciteit flink uitgebreid de laatste jaren. Er was al 56.000 vierkante meter aan opslag, in 2020 kwam daar nog eens 30.000 vierkante meter vloeroppervlak bij met een hoogte van 22 meter bij. Dat is dus in totaal 86.000 vierkante meter met Primark spullen; kunstnagels, gewatteerd jasje voor uw huisdier, mannen- vrouwen- en kindermode, alles voor huis tuin en keuken, een kerstmannen outfit voor de baby, telefoonhoesjes, gereedschap. Waarschijnlijk rekken en rekken vol. Deze artikelen zijn bedoeld voor de winkels van Primark, een webshop heeft Primark niet. De winkels met ultragoedkope artikelen moeten de klanten verleiden tot de aankoop van meerdere producten tegelijk. In een webshop is dit moeilijker te bewerkstelligen dan in fysieke winkels. De lage prijzen maken het onmogelijk om levering aan huis te doen. Twintig miljoen investeren in nieuwbouw voor opslag lijkt de actuele norm voor bedrijven. Net als bij Zalando in Bleiswijk is dit de investering in de nieuwbouw voor Primark.
         </p>
 
         <p>
@@ -256,8 +247,8 @@
           series="kartonnen-dozen"
           :count="11"
           :captions="[]">
-          <h3>Titel.</h3>
-          <p>Omschrijving!</p>
+          <h3>Lege kartonnen dozen van online winkels</h3>
+          <p>Foto’s: Jan Dirk van der Burg</p>
         </Photos>
 
         <h2>En hoe nu verder?</h2>
