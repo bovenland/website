@@ -12,6 +12,7 @@
         v-on:click="foldDown(child, collapsible)"
       >
         <FoldDown :active="child.foldDown">
+
           <label>Hoofdstuk {{ child.index }}</label>
           <h3 v-html="child.title"></h3>
         </FoldDown>
@@ -60,7 +61,8 @@ ol {
 
   > li {
     padding: 0.4rem 1.25rem;
-    h3 {
+
+     h3 {
       margin: 1rem 1rem 1rem 0;
       color: $pink;
     }
@@ -98,7 +100,7 @@ ol {
     &.folddown-visible {
       h3,
       label {
-        padding-left: 124px;
+        // padding-left: 124px;
       }
     }
     &:not(.collapsible-false) {
@@ -194,11 +196,12 @@ div.fold-down-menu-button {
 <script>
 import FoldDown from "./../buttons/FoldDown";
 import SquareButton from "./../buttons/Square";
+
 export default {
   props: ["children", "collapsible"],
   components: {
     FoldDown,
-    SquareButton,
+    SquareButton
   },
   methods: {
     foldDown: function (child, collapsible = true) {

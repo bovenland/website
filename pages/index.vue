@@ -40,7 +40,7 @@
 
         <template v-slot:vijftien-minuten-verderop>
           <p>
-            ‘Vijftien minuten verderop’ is onder andere geïnspireerd op de  15-minute city: een stad waar alle voorzieningen — winkels, scholen, cafés — binnen 15 minuten fietsen te bereiken zijn. Veel Amerikaanse steden, bijvoorbeeld, zijn het tegenovergestelde: iedereen woont in suburbs, zonder enige voorzieningen, en de enige manier om je te verplaatsen is de auto. Zelfs stoepen zijn er nauwelijks.
+            <em>Vijftien minuten verderop</em> is onder andere geïnspireerd op de  15-minute city: een stad waar alle voorzieningen — winkels, scholen, cafés — binnen 15 minuten fietsen te bereiken zijn. Veel Amerikaanse steden, bijvoorbeeld, zijn het tegenovergestelde: iedereen woont in suburbs, zonder enige voorzieningen, en de enige manier om je te verplaatsen is de auto. Zelfs stoepen zijn er nauwelijks.
           <p>
           <p>
             Dezelfde uitgangspunten als in de 15-minute city zijn te gebruiken om dorpen en het platteland te onderzoeken: wat kom je tegen aan voorzieningen als je vanuit de plek waar je woont 15 minuten fietst? In het hoofdstuk Waar we winkelen zagen we dat in veel kleine dorpen geen enkele winkel meer overblijft. Dit heeft invloed op de aantrekkelijkheid van een gebied en op de sociale cohesie. Als de auto als het enige vervoermiddel overblijft, wordt het aantal toevallige ontmoetingen minder.
