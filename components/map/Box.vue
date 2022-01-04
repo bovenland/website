@@ -12,8 +12,11 @@ export default {
 
 <style scoped>
 .box {
+  max-width: 100%;
+  width: 100%;
+
   pointer-events: all;
-  padding: 1em;
+  padding: 10px;
   border-color: black;
   border-width: 1px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);

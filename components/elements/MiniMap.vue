@@ -1,6 +1,6 @@
 <template>
   <NuxtLink :to="{
-    name: 'hoofdstukken-waar-we-winkelen-cartografie',
+    name: 'hoofdstukken-waar-we-winkelen-kaart',
     query: linkQuery
   }">
     <svg class="minimap" xmlns="http://www.w3.org/2000/svg" :viewBox="`0 0 ${width} ${height}`">

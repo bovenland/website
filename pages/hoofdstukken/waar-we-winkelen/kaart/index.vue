@@ -5,27 +5,29 @@
       </div>
     </template>
 
-    <CreateMapStory @updated="mapStoryUpdated">
-      <div data-layer="aaa" data-bounds="[[5.075088,52.216149],[6.045731,52.448873]]">
-        <p>Er zijn meer dan 80.000 winkels in Nederland.</p>
-      </div>
+    <template v-if="false">
+      <CreateMapStory @updated="mapStoryUpdated">
+        <div data-layer="aaa" data-bounds="[[5.075088,52.216149],[6.045731,52.448873]]">
+          <p>Er zijn meer dan 80.000 winkels in Nederland.</p>
+        </div>
 
-      <div data-layer="aaa" data-bounds="[[5.515501,52.257574],[6.154007,52.410659]]">
-        <p>Distributiecentra en XXL-dozen</p>
-      </div>
+        <div data-layer="aaa" data-bounds="[[5.515501,52.257574],[6.154007,52.410659]]">
+          <p>Distributiecentra en XXL-dozen</p>
+        </div>
 
-      <div data-layer="aaa" data-bounds="[[5.474729,52.28082],[5.490862,52.284692]]">
-        <p>Pakketophaalpunten</p>
-      </div>
+        <div data-layer="aaa" data-bounds="[[5.474729,52.28082],[5.490862,52.284692]]">
+          <p>Pakketophaalpunten</p>
+        </div>
 
-      <div data-layer="aaa" data-bounds="[[5.79303,52.30333],[5.821456,52.31015]]">
-        <p>Winkel in een historisch stadscentrum</p>
-      </div>
+        <div data-layer="aaa" data-bounds="[[5.79303,52.30333],[5.821456,52.31015]]">
+          <p>Winkel in een historisch stadscentrum</p>
+        </div>
 
-      <div data-layer="aaa" data-bounds="[[5.608302,52.303667],[5.64266,52.311909]]">
-        <p>Distributiecentrum van Primark in Roosendaal</p>
-      </div>
-    </CreateMapStory>
+        <div data-layer="aaa" data-bounds="[[5.608302,52.303667],[5.64266,52.311909]]">
+          <p>Distributiecentrum van Primark in Roosendaal</p>
+        </div>
+      </CreateMapStory>
+    </template>
   </MapPage>
 </template>
 

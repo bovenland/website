@@ -1,6 +1,6 @@
 <template>
   <div class="minimap-container">
-    <Cartografie />
+    <Kaart />
     <label>Cartografie</label>
     <slot />
     <MiniMap :chapter="chapter" :id="id" />
@@ -8,14 +8,14 @@
 </template>
 
 <script>
-import Cartografie from "../svg/icons/Cartografie.vue";
+import Kaart from "../svg/icons/Kaart.vue";
 import MiniMap from "./MiniMap.vue";
 
 export default {
   name: "MiniMapContainer",
   components: {
     MiniMap,
-    Cartografie,
+    Kaart,
   },
   props: {
     chapter: String,

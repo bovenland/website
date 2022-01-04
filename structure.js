@@ -32,11 +32,11 @@ export default {
         name: "reisverslag"
       }
     }, {
-      title: "Carto&shy;grafie",
-      icon: "Cartografie",
+      title: "Kaart",
+      icon: "Kaart",
       color: "green",
       to: {
-        name: "cartografie"
+        name: "kaart"
       }
     }, {
       title: "Research & data",
@@ -61,11 +61,11 @@ export default {
         name: "reisverslag"
       }
     }, {
-      title: "Carto&shy;grafie",
-      icon: "Cartografie",
+      title: "Kaart",
+      icon: "Kaart",
       color: "green",
       to: {
-        name: "cartografie"
+        name: "kaart"
       }
     }, {
       title: "Research & data",

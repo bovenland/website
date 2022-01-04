@@ -21,7 +21,7 @@ export default {
   },
   methods: {
     isMapRoute () {
-      return this.$route.name.endsWith('-cartografie')
+      return this.$route.name.endsWith('-kaart')
     }
   }
 };

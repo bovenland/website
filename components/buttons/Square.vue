@@ -9,7 +9,7 @@
 </template>
 
 <script>
-import Cartografie from "./../svg/icons/Cartografie";
+import Kaart from "./../svg/icons/Kaart";
 import Data from "./../svg/icons/Data";
 import Reisverslag from "./../svg/icons/Reisverslag";
 import Verbeelding from "./../svg/icons/Verbeelding";
@@ -17,7 +17,7 @@ import Verbeelding from "./../svg/icons/Verbeelding";
 export default {
   props: ["to", "title", "label", "icon", "iconColor"],
   components: {
-    Cartografie,
+    Kaart,
     Data,
     Reisverslag,
     Verbeelding,

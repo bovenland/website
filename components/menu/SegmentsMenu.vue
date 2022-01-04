@@ -34,7 +34,7 @@
 </template>
 
 <script>
-import Cartografie from "./../svg/icons/Cartografie";
+import Kaart from "./../svg/icons/Kaart";
 import Data from "./../svg/icons/Data";
 import Reisverslag from "./../svg/icons/Reisverslag";
 import Verbeelding from "./../svg/icons/Verbeelding";
@@ -45,7 +45,7 @@ export default {
   },
   props: ["chapter", "segment", "segments"],
   components: {
-    Cartografie,
+    Kaart,
     Data,
     Reisverslag,
     Verbeelding,
