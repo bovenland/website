@@ -14,7 +14,7 @@
   </div>
 </template>
 
-<style lang="scss">
+<style scoped lang="scss">
 @import "@/assets/sass/partials/base.scss";
 @import "@/assets/sass/partials/mixins.scss";
 
@@ -22,6 +22,12 @@ div.data-page {
   label {
     color: $label-color;
   }
+
+  ul, ol {
+    list-style: initial;
+    padding-left: 2em;
+  }
+
   .container {
     max-width: 100vw !important;
 
@@ -34,6 +40,9 @@ div.data-page {
       > h4,
       > label,
       > p,
+      > ul,
+      > ol,
+      > figure,
       > img {
         display: block;
         padding: 0 0 0 54px;
