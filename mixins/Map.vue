@@ -34,7 +34,8 @@ export default {
       maxZoom: 18,
       center: [lon, lat],
       zoom,
-      dragRotate: false
+      dragRotate: false,
+      touchZoomRotate: false
     })
 
     this.map = map
