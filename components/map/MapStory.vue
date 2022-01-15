@@ -99,6 +99,8 @@ export default {
 }
 
 .buttons {
+  margin-top: 10px;
+
   display: flex;
   flex-direction: row;
   justify-content: space-between;

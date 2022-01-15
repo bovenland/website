@@ -1,5 +1,5 @@
 <template>
-  <div class="heading">
+  <div class="box-heading">
     <h3>{{ title }}</h3>
     <button v-if="hasCloseButton" @click="$emit('close')">
     ✕
@@ -22,14 +22,15 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-// @import "@/assets/sass/partials/base.scss";
 @import "@/assets/sass/partials/button.scss";
 
-.heading {
+.box-heading {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  padding-bottom: 0.5rem;
+  align-items: center;
+  padding-bottom: 8px;
+  margin-bottom: 10px;
 
   border-bottom-style: solid;
   border-bottom-width: 2px;

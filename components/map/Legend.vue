@@ -1,9 +1,8 @@
 <template>
   <div class="legend">
-    <div>{{format(domain[0])}}</div>
+    <div class="label">{{format(domain[0])}}</div>
     <canvas class="ramp" ref="ramp"></canvas>
-    <div>{{format(domain[1])}}</div>
-    <!-- d3.format(tickFormat) -->
+    <div class="label">{{format(domain[1])}}</div>
   </div>
 </template>
 
@@ -21,12 +20,7 @@ export default {
   },
   methods: {
     createRamp: function () {
-      // color.copy().domain(d3.quantize(d3.interpolate(0, 1), n)
-
       const canvas = this.$refs.ramp
-
-      // const width = ramp.clientWidth
-      // const height = ramp.clientHeight
 
       const n = 256
       canvas.width = n
@@ -34,10 +28,10 @@ export default {
 
       const context = canvas.getContext('2d')
 
-
-
-      for (let i = 0; i < n; ++i) {
-        context.fillStyle = this.color(i / (n - 1) * (this.domain[1] - this.domain[0] / n) + this.domain[0])
+      const step = (this.domain[1] - this.domain[0]) / (n - 1)
+      for (let i = 0; i < n; i++) {
+        const value = i * step + this.domain[0]
+        context.fillStyle = this.color(value)
         context.fillRect(i, 0, 1, 1)
       }
     }
@@ -57,8 +51,14 @@ export default {
 
 .ramp {
   width: 100%;
+  min-width: 0;
   height: 1em;
   border-radius: 5px;
   margin: 0 1em;
+}
+
+.label {
+  margin: 0;
+  white-space: nowrap;
 }
 </style>

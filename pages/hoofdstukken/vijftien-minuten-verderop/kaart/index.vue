@@ -9,20 +9,40 @@
       <template v-if="!mapStoryStarted">
         <StartMapStory @click="startMapStory" />
       </template>
-      <Box class="grid-area">
+      <Box ref="box" class="grid-area">
         <template v-if="mapStoryStarted">
           <CreateMapStory @updated="onMapStoryUpdate" @end="onMapStoryEnd">
-            <MapStoryItem title="Dit" :zoom="15" :center="[5.025088,52.236149]">
-              Routes
+            <MapStoryItem title="Vijftien minuten fietsen" :zoom="7" :center="[ 5.25672, 52.481321 ]">
+              <p>
+                Deze kaart laat zien, voor bijna elke postcode in Nederland, waar je kunt komen binnen 15 minuten fietsen.
+                Hoe geler, hoe kleiner dit gebied. En hoe paarser, hoe groter.
+              </p>
             </MapStoryItem>
-            <MapStoryItem title="Dat" :zoom="16" :center="[6.045731,52.448873]">
-              Chips
+            <MapStoryItem title="Zonder omwegen" :zoom="9" :center="[ 5.647766, 51.498732 ]">
+              Hoe minder je hoeft om te fietsen, hoe groter het gebied is dat je kunt bereiken.
+              In het westen en het noorden van Nederland belemmert water vaak de kortste route,
+              terwijl je in <strong>Zuid-Nederland</strong> je vaker een directe fietsroute kunt vinden.
             </MapStoryItem>
-            <MapStoryItem title="Vis" :zoom="14" :center="[5.175088,52.246149]">
-              koek
+            <MapStoryItem title="Horst, Limburg" :zoom="12.5" :center="[6.054982, 51.457144]">
+              Vanuit bijvoorbeeld het centrum van <strong>Horst in Limburg</strong> kun je in elke richting
+              fietsen en is een gebied van bijna 30 km² bereikbaar.
             </MapStoryItem>
-            <MapStoryItem title="Koek" :zoom="15" :center="[5.275088,52.216149]">
-              Chips
+            <MapStoryItem title="Historische steden" :zoom="12.5" :center="[5.388525, 52.159117]">
+              Ook vanuit het centrum van oude middeleeuwse steden zoals <strong>Amersfoort</strong> is een groot gebied bereikbaar.
+              Er zijn veel wegen en fietsroutes in alle richtingen.
+            </MapStoryItem>
+            <MapStoryItem title="Rivieren, kanelen en sloten" :zoom="12" :center="[ 4.885274, 52.045489 ]">
+              In veengebieden, in polders en langs rivieren bepalen waterlopen hoe je kunt fietsen.
+              De weg tussen <strong>Linschoten en Oudewater</strong> volgt de waterloop van de <strong>Lange Linschoten</strong>.
+            </MapStoryItem>
+            <MapStoryItem title="De polder" :zoom="12" :center="[5.717484, 52.6459]">
+              Ook vanuit <strong>Nagele in de Noordoostpolder</strong> zijn de mogelijkheden beperkt:
+              kaarsrechte polderwegen en de percelen van de grote boerderijen bepalen het landschap.
+            </MapStoryItem>
+            <MapStoryItem title="siuiuh" :zoom="12.5" :center="[ 6.498637, 52.714022 ]">
+              Soms worden oude doorgaande routes doorbroken voor de aanleg van nieuwe wegen of kanalen.
+              De <strong>Langedijk van Hoogeveen naar Hollandscheveld</strong> was tot in de jaren 70
+              een doorgaande route. Nu moeten fietsers omfietsen om verderop de verbreedde Hoogeveense Vaart en de provinciale weg (nu de A37) over te steken.
             </MapStoryItem>
           </CreateMapStory>
         </template>
@@ -32,35 +52,19 @@
           <BoxHeading v-else-if="nearestFeature"
             :title="nearestFeature.properties.postcode" />
 
-          <p v-if="feature">
-            Vanaf dit adres met postcode {{ feature.properties.postcode }} is een gebied van
-            {{ format(feature.properties.area) }} te bereiken.
-          </p>
+          <div class="contents">
+            <p v-if="feature">
+              Vanaf dit adres met postcode <strong>{{ feature.properties.postcode }}</strong> is een gebied van
+              <strong>{{ format(feature.properties.area) }}</strong> te bereiken.
+            </p>
 
-          <div>
             <Legend :color="color" :format="format" />
             <div>
-              Gebied bereikbaar binnen vijftien minuten fietsen
+              Gebied bereikbaar binnen vijftien minuten fietsen.
             </div>
           </div>
         </template>
       </Box>
-<!--
-      <template v-if="selectedFeature">
-        <div>
-          <div>Selected: {{ selectedFeature.properties.postcode }}</div>
-          <button @click="resetSelectedFeature">Sluit</button>
-        </div>
-      </template>
-
-      <template v-else-if="nearestFeature">
-        <div>
-          <div>Nearest: {{ nearestFeature.properties.postcode }}</div>
-          <button @click="selectNearestFeature">Details</button>
-        </div>
-      </template>
-       -->
-
     </template>
   </MapPage>
 </template>
@@ -79,14 +83,15 @@ import StartMapStory from '../../../../components/map/StartMapStory.vue'
 import { fetchJson } from './../../../../lib/fetch.js'
 import { setMapStyle, setMapSourceAndLayers, emptyGeoJSON } from './../../../../lib/vijftien-minuten-verderop/map.js'
 
-import { scaleSqrt } from 'd3-scale'
-import { format } from 'd3-format'
+import { scaleSqrt, scaleQuantize } from 'd3-scale'
 import nearestPoint from '@turf/nearest-point'
 import { debounce } from 'lodash'
 
 export default {
   transition: 'map',
-  mixins: [Map],
+  mixins: [
+    Map
+  ],
   components: {
     MapPage,
     CreateMapStory,
@@ -96,19 +101,35 @@ export default {
     BoxHeading,
     StartMapStory
   },
-  data () {
+  data: function () {
     return {
       mapStoryStarted: false,
 
-      color: scaleSqrt([2000000, 20000000], ["#F0F462", "#F749A8"]),
-      format: (d) => format(".2s")(d) + 'm²',
+      minAnimationZoom: 11,
+      storyPadding: 10,
+      currentField: 'area',
+      color: scaleQuantize()
+        .domain([2000000, 30000000])
+        .range([
+          '#f0f462', '#cae872', '#a1dc80', '#70d08c', '#9d99e5', '#d56ed4', '#ff00c3'
 
-      // maken dat alleen maar nieuwe pakt als er geen geselecteerd is
-      // en dat geselecteerde of gepakte een andere kleurheeft en groter is.
+          // '#f0f462', '#d4eb6e', '#b6e279', '#96d983', '#8b58e2', '#b84cd8', '#dd38cd', '#ff00c3'
+          // '#f0f462', '#d4eb6e', '#b6e279', '#96d983', '#90a5c5', '#bd89c5', '#e163c4', '#ff00c3'
+          // '#f0f462', '#cae872', '#a1dc80', '#fd8efd', '#e800af', '#8a005f'
+          // '#f0f462', '#d4eb6e', '#b6e279', '#96d983', '#fbabfb', '#f952e8', '#d0009a', '#8a005f'
+          // '#003943', '#006973', '#1c9da6', '#5ad1da', '#fbcb82', '#ffa09a', '#ff6faf', '#ff00c3'
+          // '#000046', '#223d6f', '#377a9a', '#febd8a', '#ff81a8', '#ff00c3'
+        ]),//.clamp(true),
+      format: (d) => Math.round(d / (1000 * 1000)) + ' km²',
+
       selectedFeature: undefined,
       nearestFeature: undefined,
+      osmId: undefined,
+      sourceAndLayersAdded: false,
 
-      sourceAndLayersAdded: false
+      eventData: {
+        isMapStory: true
+      }
     }
   },
   computed: {
@@ -121,7 +142,7 @@ export default {
       const map = this.map
 
       map.on('styledata', (event) => {
-        setMapSourceAndLayers(map)
+        setMapSourceAndLayers(map, this.currentField, this.color)
       })
 
       map.on('click', 'origins', this.mapClick)
@@ -143,31 +164,43 @@ export default {
     },
     nearestFeature: function () {
       if (this.nearestFeature) {
-        const osmId = this.nearestFeature.properties.osmId
-        this.startAnimation(osmId)
+        this.osmId = this.nearestFeature.properties.osmId
       }
     },
     selectedFeature: function () {
       if (this.selectedFeature) {
-        const osmId = this.selectedFeature.properties.osmId
-        this.startAnimation(osmId)
+        this.osmId = this.selectedFeature.properties.osmId
+      }
+    },
+    osmId: function () {
+      if (this.osmId) {
+        this.startAnimation(this.osmId)
       }
     }
   },
   methods: {
+    mapWidth: function () {
+      return this.$refs.map.offsetWidth
+    },
+    mapHeight: function () {
+      return this.$refs.map.offsetHeight
+    },
+    zoomedIn: function () {
+      const map = this.map
+      const zoom = map.getZoom()
+
+      if (zoom < this.minAnimationZoom) {
+        return false
+      }
+
+      return true
+    },
     canClick: function () {
       if (this.mapStoryStarted) {
         return false
       }
 
-      const map = this.map
-      const zoom = map.getZoom()
-
-      if (zoom < 11) {
-        return false
-      }
-
-      return true
+      return this.zoomedIn()
     },
     startMapStory: function () {
       this.mapStoryStarted = true
@@ -175,16 +208,21 @@ export default {
     resetSelectedFeature: function () {
       this.nearestFeature = undefined
       this.selectedFeature = undefined
+      this.osmId = undefined
 
-      this.map.getSource('area').setData(emptyGeoJSON)
-      this.map.getSource('routes').setData(emptyGeoJSON)
+      if (this.map.getSource('area')) {
+        this.map.getSource('area').setData(emptyGeoJSON)
+      }
+
+      if (this.map.getSource('routes')) {
+        this.map.getSource('routes').setData(emptyGeoJSON)
+      }
     },
     selectNearestFeature: function () {
       this.selectedFeature = this.nearestFeature
     },
     startAnimation: async function (osmId) {
       if (this.controller) {
-        // TODO: make sure this works!
         this.controller.abort()
       }
 
@@ -257,10 +295,21 @@ export default {
       }
     },
     mapMoveEnd: function (event) {
-      if (event.isMapStory || (this.canClick() && !this.selectedFeature)) {
-        const map = this.map
+      const map = this.map
 
-        const { lat, lng } = map.getCenter()
+      // map.on('moveend', () => {
+      //   console.log('moveend', map.getCenter().toArray().map((n) => parseFloat(n.toFixed(6))),
+      //   JSON.stringify(map.getBounds().toArray().map((c) => c.map((n) => parseFloat(n.toFixed(6))))), map.getZoom())
+      // })
+
+      if ((this.zoomedIn() && event.isMapStory) || (this.canClick() && !this.selectedFeature)) {
+
+        const x = this.mapWidth() / 2
+        const { top, bottom } = this.padding()
+        const y = (this.mapHeight() - bottom - top) / 2 + top
+
+        const { lat, lng } = map.unproject([x, y])
+
         const center = {
           type: 'Point',
           coordinates: [lng, lat]
@@ -285,13 +334,38 @@ export default {
         this.selectedFeature = event.features[0]
       }
     },
-    createLayers: function () {
+    padding: function () {
+      const boxHeight = this.mapHeight() - this.$refs.box.$el.getBoundingClientRect().top
 
+      return {
+        top: this.storyPadding,
+        bottom: this.storyPadding + boxHeight,
+        left: this.storyPadding,
+        right: this.storyPadding
+      }
+    },
+    flyTo: function (zoom, center) {
+      this.map.flyTo({
+        zoom,
+        center,
+        padding: this.padding()
+      }, this.eventData)
+    },
+    fitBounds: function (bounds) {
+      this.map.fitBounds(bounds, {
+        linear: false,
+        // essential: true,
+        padding: this.padding()
+      }, this.eventData)
     },
     onMapStoryUpdate: function (data) {
-      this.map.flyTo(data, {
-        isMapStory: true
-      })
+      this.resetSelectedFeature()
+
+      if (data.bounds) {
+        this.fitBounds(data.bounds)
+      } else {
+        this.flyTo(data.zoom, data.center)
+      }
     },
     onMapStoryEnd: function () {
       this.mapStoryStarted = false
@@ -304,5 +378,9 @@ export default {
 <style scoped>
 .grid-area {
   grid-area: box;
+}
+
+.contents > *:not(:first-child) {
+  padding-top: 10px;
 }
 </style>
