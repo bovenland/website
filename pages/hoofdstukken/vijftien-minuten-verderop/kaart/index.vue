@@ -39,7 +39,7 @@
               Ook vanuit <strong>Nagele in de Noordoostpolder</strong> zijn de mogelijkheden beperkt:
               kaarsrechte polderwegen en de percelen van de grote boerderijen bepalen het landschap.
             </MapStoryItem>
-            <MapStoryItem title="siuiuh" :zoom="12.5" :center="[ 6.498637, 52.714022 ]">
+            <MapStoryItem title="Nieuwe barrières" :zoom="12.5" :center="[ 6.498637, 52.714022 ]">
               Soms worden oude doorgaande routes doorbroken voor de aanleg van nieuwe wegen of kanalen.
               De <strong>Langedijk van Hoogeveen naar Hollandscheveld</strong> was tot in de jaren 70
               een doorgaande route. Nu moeten fietsers omfietsen om verderop de verbreedde Hoogeveense Vaart en de provinciale weg (nu de A37) over te steken.
