@@ -35,8 +35,9 @@ export default {
       center: [lon, lat],
       zoom,
       dragRotate: false,
-      touchZoomRotate: false
     })
+
+    map.touchZoomRotate.disableRotation()
 
     this.map = map
     map.on('load', () => this.mapLoaded = true)
