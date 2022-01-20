@@ -1,6 +1,6 @@
 <template>
   <div class="box-heading">
-    <h3>{{ title }}</h3>
+    <slot />
     <button v-if="hasCloseButton" @click="$emit('close')">
     ✕
     </button>
@@ -10,9 +10,6 @@
 <script>
 export default {
   name: 'BoxHeading',
-  props: {
-    title: String
-  },
   computed: {
     hasCloseButton: function () {
       return this.$listeners && this.$listeners.close

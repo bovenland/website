@@ -47,10 +47,12 @@
           </CreateMapStory>
         </template>
         <template v-else>
-          <BoxHeading v-if="selectedFeature"
-            :title="selectedFeature.properties.postcode" @close="resetSelectedFeature" />
-          <BoxHeading v-else-if="nearestFeature"
-            :title="nearestFeature.properties.postcode" />
+          <BoxHeading v-if="selectedFeature" @close="resetSelectedFeature">
+            <h3>{{ selectedFeature.properties.postcode }}</h3>
+          </BoxHeading>
+          <BoxHeading v-else-if="nearestFeature">
+            <h3>{{ nearestFeature.properties.postcode }}</h3>
+          </BoxHeading>
 
           <div class="contents">
             <p v-if="feature">

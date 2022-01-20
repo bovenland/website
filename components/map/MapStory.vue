@@ -1,7 +1,8 @@
 <template>
   <div class="item story">
-    <BoxHeading :title="item.componentOptions.propsData.title"
-      @close="$emit('end')" />
+    <BoxHeading @close="$emit('end')">
+      <h3>{{ item.componentOptions.propsData.title }}</h3>
+    </BoxHeading>
     <VNode :node="item" />
     <div class="buttons">
       <button class="previous" @click="previous" :disabled="index === 0">
@@ -20,7 +21,7 @@
 </template>
 
 <script>
-import VNode from "./VNode.vue";
+import VNode from './VNode.vue'
 import BoxHeading from './BoxHeading.vue'
 
 export default {

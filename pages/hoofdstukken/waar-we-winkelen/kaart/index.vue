@@ -36,15 +36,19 @@
           </CreateMapStory>
         </template>
         <template v-else>
-          <BoxHeading v-if="selectedFeature"
-            :title="address" @close="resetSelectedFeature" />
+          <BoxHeading v-if="selectedFeature" @close="resetSelectedFeature">
+            <div class="box-heading-contents">
+              <h3>{{ address }}</h3>
+              <button @click="switchView">{{ switchViewTitle }}&nbsp;→</button>
+            </div>
+          </BoxHeading>
 
           <div class="contents">
             <p v-if="selectedFeature">
               <strong>{{ format(selectedFeature.properties[currentField]) }}</strong> binnen 1 km. van deze winkel.
               <!-- Vanaf dit adres met postcode <strong>{{ feature.properties.postcode }}</strong> is een gebied van
               <strong>{{ format(feature.properties.area) }}</strong> te bereiken. -->
-              <button @click="switchView">Laat zien op kaart van Nederland</button>
+
             </p>
 
             <Legend :color="color" :format="format" />
@@ -187,6 +191,9 @@ export default {
     }
   },
   computed: {
+    switchViewTitle: function () {
+      return this.currentView === 'circles' ? 'Kaart' : 'Cirkels'
+    },
     address: function () {
       const { street, houseNumber, city } = this.selectedFeature.properties
       return `${street} ${houseNumber}, ${city}`
@@ -339,6 +346,15 @@ export default {
 
 .grid-area {
   grid-area: box;
+}
+
+.box-heading-contents {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding-right: 5px;
 }
 
 .contents > *:not(:first-child) {
