@@ -22,56 +22,61 @@
             <MapStoryItem title="Zuid-Holland" :data="{view: 'circles',
               bounds: [[5.735213,52.557867],[6.107976,52.783906]]}">
               De meeste winkels in bevinden zich in <strong>Zuid-Holland</strong>,
-              de provincie met de meeste inwoners en de steden Rotterdam en Den Haag, twee van de
+              de provincie met de meeste inwoners en de steden <strong>Rotterdam en Den Haag</strong>, twee van de
               vijf grootste van Nederland.
             </MapStoryItem>
             <MapStoryItem title="Flevoland" :data="{view: 'circles',
               bounds: [[5.974597,52.503202],[6.075622,52.564655]]}">
-              En de minste in <strong>Flevoland</strong>. Alleen maar winkels mét adres
+              De provincie met de minste winkels is <strong>Flevoland</strong>.
             </MapStoryItem>
 
-            <MapStoryItem title="Dit" :data="{view: 'circles',
+            <MapStoryItem title="Winkels in dichtbevolkte gebieden" :data="{view: 'circles',
               bounds: [[6.021632,52.263208],[6.052857,52.280024]]}">
-              Midden van cirkel: meeste inwoners in de buurt. Centrum van Amsterdam
+              De winkels zijn per provincie gesorteerd op het aantal inwoners dat woont binnen 1 kilometer van de winkel.
+              In met midden van elke cirkel bevinden zich de winkels in dichtbevolkte gebieden, zoals het <strong>centrum van Amsterdam</strong>.
             </MapStoryItem>
-            <MapStoryItem title="Dit" :data="{view: 'circles',
+            <MapStoryItem title="Winkels in dunbevolkte gebieden" :data="{view: 'circles',
               bounds: [[5.894137,52.198782],[5.913978,52.209483]]}">
-              Buiten van cirkel: minste inwoners in de buurt. Buitenwijken industrieterrein.
+              Winkels die, per provincie, in gebieden liggen met weinig inwoners bevinden zich aan de randen van de cirkels.
+              Dit kan bijvoorbeeld gaan over winkels in kleine dorpen of over winkels op industrieterreinen.
             </MapStoryItem>
 
-            <MapStoryItem title="Koek" :data="{view: 'circles', field: 'vacantPercentage',
+            <MapStoryItem title="Leegstand van winkelpanden" :data="{view: 'circles', field: 'vacantPercentage',
               bounds: [[5.895863,52.325463],[6.13258,52.452603]]}">
-              Kleur. vacantPercentage.
+              De kleur geeft aan wat het percentage leegstand is van alle winkelpanden binnen 1 kilometer van elke winkel.
+              Winkels in gebieden met weinig leegstand zijn geel, winkels in gebieden met veel leegstand zijn paars.
             </MapStoryItem>
-            <MapStoryItem title="Koek" :data="{view: 'circles', field: 'nearbyShops',
+            <MapStoryItem title="Aantal andere winkels in de buurt" :data="{view: 'circles', field: 'nearbyShops',
               bounds: [[5.844276,52.290879],[6.187485,52.475241]]}">
-              Andere field
+              De winkels kunnen ook gekleurd worden naar andere eigenschappen, zoals het aantal andere winkels in de buurt.
+              Zo is te zien dat — in de meeste provincies — de meest <em>winkeldichte gebieden</em> zich net buiten de meest dichtbevolkte wijken bevinden.
             </MapStoryItem>
-            <MapStoryItem title="Koek" :data="{view: 'circles', field: 'nearbyPeople',
+            <MapStoryItem title="Aantal inwoners in de buurt" :data="{view: 'circles', field: 'nearbyPeople',
               bounds: [[5.750275,52.210071],[6.270149,52.489543]]}">
-              Andere field nearbyPeople
+              Als de winkels gekleurd worden naar dezelfde eigenschap als de ligging binnen de cirkel — het aantal inwoners in de buurt —
+              zien we dat de winkels in de meest dichtbevolkte gebieden zich inderdaad in het midden van elke cirkel bevinden.
             </MapStoryItem>
 
-            <MapStoryItem title="Vis" :data="{view: 'circles', field: 'vacantPercentage',
+            <MapStoryItem title="De directe omgeving" :data="{view: 'circles', field: 'vacantPercentage',
               bounds: [[6.166546,52.446688],[6.170712,52.45089]]}">
-              Inzoomen op winkel. Label. Stadscentrum
+              Verder ingezoomd wordt ook de directe omgeving van de winkel zichtbaar.
             </MapStoryItem>
-            <MapStoryItem title="Vis" :data="{view: 'world', field: 'vacantPercentage',
+            <MapStoryItem title="Kaart van Nederland" :data="{view: 'world', field: 'vacantPercentage',
               bounds: [[5.127188,52.090543],[5.131354,52.094779]]}">
-              Zelfde plek, kaart van Nederland
+              Door te wisselen naar de kaart van Nederland
             </MapStoryItem>
-            <MapStoryItem title="Vis" :data="{view: 'world', field: 'vacantPercentage',
+            <MapStoryItem title="Verder uitgezoomd" :data="{view: 'world', field: 'vacantPercentage',
               bounds: [[3.973505,51.208521],[5.600408,52.86437]]}">
               Uitgezoomd
             </MapStoryItem>
-            <MapStoryItem title="Vis" :data="{view: 'world', field: 'vacantPercentage',
+            <MapStoryItem title="Bussum" :data="{view: 'world', field: 'vacantPercentage',
               bounds: [[5.138065,52.249371],[5.182356,52.294219]]}">
-              Bussum
+              <strong>Bussum</strong>
             </MapStoryItem>
 
-            <MapStoryItem title="Vis" :data="{view: 'circles', field: 'vacantPercentage',
+            <MapStoryItem title="Ontdekkingsreis door Nederland" :data="{view: 'circles', field: 'vacantPercentage',
               bounds: [[5.986059,52.263734],[6.167655,52.447266]]}">
-              En weer terug naar Cirkels
+              Ga zelf op ontdekkingsreis en ontdek waar we winkelen!
             </MapStoryItem>
           </CreateMapStory>
         </template>
