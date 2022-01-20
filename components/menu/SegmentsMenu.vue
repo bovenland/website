@@ -71,7 +71,7 @@ export default {
 
 .segments-menu {
   background-color: $white;
-  position: relative;
+  // position: relative;
   padding: 0.5rem 0 1.6rem 0;
   .current {
     cursor: pointer;

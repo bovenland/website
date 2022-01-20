@@ -12,26 +12,66 @@
       <Box ref="box" class="grid-area">
         <template v-if="mapStoryStarted">
           <CreateMapStory @updated="onMapStoryUpdate" @end="onMapStoryEnd">
-            <MapStoryItem title="Dit" view="circles" :bounds="bounds">
-              Er zijn meer dan 80,000 winkels in Nederland. Elke cirkel een provincie
+            <MapStoryItem title="Waar we winkelen" view="circles" field="vacantPercentage"
+              :bounds="bounds">
+              Er zijn meer dan 80,000 winkels in Nederland.
+              Deze kaart, OSM
+              Elke cirkel een provincie
             </MapStoryItem>
-            <MapStoryItem title="Dit" view="circles" :bounds="bounds">
-              Midden van cirkel: meeste inwoners in de buurt
+
+            <MapStoryItem title="Zuid-Holland" :data="{view: 'circles',
+              bounds: [[5.735213,52.557867],[6.107976,52.783906]]}">
+              De meeste winkels in bevinden zich in <strong>Zuid-Holland</strong>,
+              de provincie met de meeste inwoners en de steden Rotterdam en Den Haag, twee van de
+              vijf grootste van Nederland.
             </MapStoryItem>
-            <MapStoryItem title="Dit" view="circles" :bounds="bounds">
-              Buiten van cirkel: minste inwoners in de buurt
+            <MapStoryItem title="Flevoland" :data="{view: 'circles',
+              bounds: [[5.974597,52.503202],[6.075622,52.564655]]}">
+              En de minste in <strong>Flevoland</strong>. Alleen maar winkels mét adres
             </MapStoryItem>
-            <MapStoryItem title="Dat" view="circles" :bounds="[[5.735213,52.557867],[6.107976,52.783906]]">
-              De meeste winkels in Zuid-Holland
+
+            <MapStoryItem title="Dit" :data="{view: 'circles',
+              bounds: [[6.021632,52.263208],[6.052857,52.280024]]}">
+              Midden van cirkel: meeste inwoners in de buurt. Centrum van Amsterdam
             </MapStoryItem>
-            <MapStoryItem title="Dat" view="circles" :bounds="[[5.974597,52.503202],[6.075622,52.564655]]">
-              En de minste in Flevoland. Alleen maar winkels mét adres
+            <MapStoryItem title="Dit" :data="{view: 'circles',
+              bounds: [[5.894137,52.198782],[5.913978,52.209483]]}">
+              Buiten van cirkel: minste inwoners in de buurt. Buitenwijken industrieterrein.
             </MapStoryItem>
-            <MapStoryItem title="Vis" view="circles" field="nearbyShops">
-              Elke
+
+            <MapStoryItem title="Koek" :data="{view: 'circles', field: 'vacantPercentage',
+              bounds: [[5.895863,52.325463],[6.13258,52.452603]]}">
+              Kleur. vacantPercentage.
             </MapStoryItem>
-            <MapStoryItem title="Koek" view="circles">
-              Chips
+            <MapStoryItem title="Koek" :data="{view: 'circles', field: 'nearbyShops',
+              bounds: [[5.844276,52.290879],[6.187485,52.475241]]}">
+              Andere field
+            </MapStoryItem>
+            <MapStoryItem title="Koek" :data="{view: 'circles', field: 'nearbyPeople',
+              bounds: [[5.750275,52.210071],[6.270149,52.489543]]}">
+              Andere field nearbyPeople
+            </MapStoryItem>
+
+            <MapStoryItem title="Vis" :data="{view: 'circles', field: 'vacantPercentage',
+              bounds: [[6.166546,52.446688],[6.170712,52.45089]]}">
+              Inzoomen op winkel. Label. Stadscentrum
+            </MapStoryItem>
+            <MapStoryItem title="Vis" :data="{view: 'world', field: 'vacantPercentage',
+              bounds: [[5.127188,52.090543],[5.131354,52.094779]]}">
+              Zelfde plek, kaart van Nederland
+            </MapStoryItem>
+            <MapStoryItem title="Vis" :data="{view: 'world', field: 'vacantPercentage',
+              bounds: [[3.973505,51.208521],[5.600408,52.86437]]}">
+              Uitgezoomd
+            </MapStoryItem>
+            <MapStoryItem title="Vis" :data="{view: 'world', field: 'vacantPercentage',
+              bounds: [[5.138065,52.249371],[5.182356,52.294219]]}">
+              Bussum
+            </MapStoryItem>
+
+            <MapStoryItem title="Vis" :data="{view: 'circles', field: 'vacantPercentage',
+              bounds: [[5.986059,52.263734],[6.167655,52.447266]]}">
+              En weer terug naar Cirkels
             </MapStoryItem>
           </CreateMapStory>
         </template>
@@ -45,10 +85,7 @@
 
           <div class="contents">
             <p v-if="selectedFeature">
-              <strong>{{ format(selectedFeature.properties[currentField]) }}</strong> binnen 1 km. van deze winkel.
-              <!-- Vanaf dit adres met postcode <strong>{{ feature.properties.postcode }}</strong> is een gebied van
-              <strong>{{ format(feature.properties.area) }}</strong> te bereiken. -->
-
+              {{ fields[currentField].title }}: <strong>{{ format(selectedFeature.properties[currentField]) }}</strong>.
             </p>
 
             <Legend :color="color" :format="format" />
@@ -87,7 +124,7 @@ import { toggleCircleView, toggleWorldView,
   setCircleLayersColor, setWorldLayersColor
   } from './../../../../lib/waar-we-winkelen/map.js'
 
-import { scaleSqrt, scaleQuantize } from 'd3-scale'
+import { scaleQuantize } from 'd3-scale'
 
 // TODO: move config from lib dir to app
 import config from '../../../../lib/waar-we-winkelen/config.js'
@@ -306,12 +343,8 @@ export default {
       Object.freeze(featureData)
 
       this.featureData = featureData
-      //   const firstField = Object.keys(this.featureData.summary)[0]
-      //   this.selectedField = firstField
     },
     createLayers: function () {
-      // createCircleLayers(this.map, color, true)
-      // createMapLayers(this.map, color, false)
       setCircleMapStyle(this.map, config, this.color)
     },
     startMapStory: function () {
@@ -322,14 +355,17 @@ export default {
     },
 
     onMapStoryUpdate: function (data) {
+      if (data.field) {
+        this.currentField = data.field
+      }
+
       if (data.view && this.currentView !== data.view) {
         this.setView(data.view)
-        this.fitBounds(data.bounds)
-      } else {
         this.fitBounds(data.bounds, {
-          linear: false,
-          essential: true
+          animate: false
         })
+      } else {
+        this.fitBounds(data.bounds)
       }
     }
   },
@@ -339,11 +375,7 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
-// @import "@/assets/sass/partials/base.scss";
-// @import "@/assets/sass/partials/mixins.scss";
-// @import "@/assets/sass/partials/button.scss";
-
+<style scoped>
 .grid-area {
   grid-area: box;
 }

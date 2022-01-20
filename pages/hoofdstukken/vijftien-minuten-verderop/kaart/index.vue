@@ -12,34 +12,32 @@
       <Box ref="box" class="grid-area">
         <template v-if="mapStoryStarted">
           <CreateMapStory @updated="onMapStoryUpdate" @end="onMapStoryEnd">
-            <MapStoryItem title="Vijftien minuten fietsen" :zoom="7" :center="[ 5.25672, 52.481321 ]">
-              <p>
-                Deze kaart laat zien, voor bijna elke postcode in Nederland, waar je kunt komen binnen 15 minuten fietsen.
-                Hoe geler, hoe kleiner dit gebied. En hoe paarser, hoe groter.
-              </p>
+            <MapStoryItem title="Vijftien minuten fietsen" :data="{zoom: 7, center: [5.25672, 52.481321]}">
+              Deze kaart laat zien, voor bijna elke postcode in Nederland, waar je kunt komen binnen 15 minuten fietsen.
+              Hoe geler, hoe kleiner dit gebied. En hoe paarser, hoe groter.
             </MapStoryItem>
-            <MapStoryItem title="Zonder omwegen" :zoom="9" :center="[ 5.647766, 51.498732 ]">
+            <MapStoryItem title="Zonder omwegen" :data="{zoom: 9, center: [5.647766, 51.498732]}">
               Hoe minder je hoeft om te fietsen, hoe groter het gebied is dat je kunt bereiken.
               In het westen en het noorden van Nederland belemmert water vaak de kortste route,
               terwijl je in <strong>Zuid-Nederland</strong> je vaker een directe fietsroute kunt vinden.
             </MapStoryItem>
-            <MapStoryItem title="Horst, Limburg" :zoom="12.5" :center="[6.054982, 51.457144]">
+            <MapStoryItem title="Horst, Limburg" :data="{zoom: 12.5, center: [6.054982, 51.457144]}">
               Vanuit bijvoorbeeld het centrum van <strong>Horst in Limburg</strong> kun je in elke richting
               fietsen en is een gebied van bijna 30 km² bereikbaar.
             </MapStoryItem>
-            <MapStoryItem title="Historische steden" :zoom="12.5" :center="[5.388525, 52.159117]">
+            <MapStoryItem title="Historische steden" :data="{zoom: 12.5, center: [5.388525, 52.159117]}">
               Ook vanuit het centrum van oude middeleeuwse steden zoals <strong>Amersfoort</strong> is een groot gebied bereikbaar.
               Er zijn veel wegen en fietsroutes in alle richtingen.
             </MapStoryItem>
-            <MapStoryItem title="Rivieren, kanelen en sloten" :zoom="12" :center="[ 4.885274, 52.045489 ]">
+            <MapStoryItem title="Rivieren, kanelen en sloten" :data="{zoom: 12, center: [4.885274, 52.045489]}">
               In veengebieden, in polders en langs rivieren bepalen waterlopen hoe je kunt fietsen.
               De weg tussen <strong>Linschoten en Oudewater</strong> volgt de waterloop van de <strong>Lange Linschoten</strong>.
             </MapStoryItem>
-            <MapStoryItem title="De polder" :zoom="12" :center="[5.717484, 52.6459]">
+            <MapStoryItem title="De polder" :data="{zoom: 12, center: [5.717484, 52.6459]}">
               Ook vanuit <strong>Nagele in de Noordoostpolder</strong> zijn de mogelijkheden beperkt:
               kaarsrechte polderwegen en de percelen van de grote boerderijen bepalen het landschap.
             </MapStoryItem>
-            <MapStoryItem title="Nieuwe barrières" :zoom="12.5" :center="[ 6.498637, 52.714022 ]">
+            <MapStoryItem title="Nieuwe barrières" :data="{zoom: 12.5, center: [6.498637, 52.708022]}">
               Soms worden oude doorgaande routes doorbroken voor de aanleg van nieuwe wegen of kanalen.
               De <strong>Langedijk van Hoogeveen naar Hollandscheveld</strong> was tot in de jaren 70
               een doorgaande route. Nu moeten fietsers omfietsen om verderop de verbreedde Hoogeveense Vaart en de provinciale weg (nu de A37) over te steken.

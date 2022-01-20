@@ -61,7 +61,7 @@ export default {
 
         this.$emit('updated', {
           index,
-          ...item.componentOptions.propsData
+          ...item.componentOptions.propsData.data
         })
       }
     },

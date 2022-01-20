@@ -9,11 +9,7 @@ export default {
   name: 'MapStoryItem',
   props: {
     title: String,
-    view: String,
-    field: String,
-    bounds: Array,
-    zoom: Number,
-    center: Array
+    data: Object
   }
 }
 </script>
