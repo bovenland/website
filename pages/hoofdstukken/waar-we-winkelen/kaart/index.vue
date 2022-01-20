@@ -53,28 +53,30 @@
             </MapStoryItem>
             <MapStoryItem title="Aantal inwoners in de buurt" :data="{view: 'circles', field: 'nearbyPeople',
               bounds: [[5.750275,52.210071],[6.270149,52.489543]]}">
-              Als de winkels gekleurd worden naar dezelfde eigenschap als de ligging binnen de cirkel — het aantal inwoners in de buurt —
+              Als de winkels gekleurd worden naar dezelfde eigenschap als hun ligging binnen de cirkel — het aantal inwoners in de buurt —
               zien we dat de winkels in de meest dichtbevolkte gebieden zich inderdaad in het midden van elke cirkel bevinden.
             </MapStoryItem>
 
             <MapStoryItem title="De directe omgeving" :data="{view: 'circles', field: 'vacantPercentage',
               bounds: [[6.166546,52.446688],[6.170712,52.45089]]}">
               Verder ingezoomd wordt ook de directe omgeving van de winkel zichtbaar.
+              In historische stadscentra zien we kleine winkelpanden en nauwe winkelstraten, aan de rand van steden juist grotere winkels met veel parkeerruimte.
             </MapStoryItem>
             <MapStoryItem title="Kaart van Nederland" :data="{view: 'world', field: 'vacantPercentage',
               bounds: [[5.127188,52.090543],[5.131354,52.094779]]}">
-              Door te wisselen naar de kaart van Nederland
+              Door te wisselen naar de kaart van Nederland wordt hoe de winkels en hun eigenschappen zich geografisch verhouden.
             </MapStoryItem>
             <MapStoryItem title="Verder uitgezoomd" :data="{view: 'world', field: 'vacantPercentage',
               bounds: [[3.973505,51.208521],[5.600408,52.86437]]}">
-              Uitgezoomd
+              Verder uitgezoomd worden patronen in deze eigenschappen zichtbaar.
             </MapStoryItem>
             <MapStoryItem title="Bussum" :data="{view: 'world', field: 'vacantPercentage',
               bounds: [[5.138065,52.249371],[5.182356,52.294219]]}">
-              <strong>Bussum</strong>
+              In sommige dorpen en steden is veel meer winkelleegstand dan op andere plekken.
+              In <strong>Bussum</strong> staat een groot deel van de winkelpanden leeg.
             </MapStoryItem>
 
-            <MapStoryItem title="Ontdekkingsreis door Nederland" :data="{view: 'circles', field: 'vacantPercentage',
+            <MapStoryItem title="Waar we winkelen" :data="{view: 'circles', field: 'vacantPercentage',
               bounds: [[5.986059,52.263734],[6.167655,52.447266]]}">
               Ga zelf op ontdekkingsreis en ontdek waar we winkelen!
             </MapStoryItem>
