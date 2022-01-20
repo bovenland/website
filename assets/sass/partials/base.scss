@@ -8,10 +8,23 @@ $yellow: #f0f462;
 $black: #222429;
 $white: #ffffff;
 
+// UI
+$light-gray: #f7f7fa;
+$darker-light-gray: #f7f7fd;
+$border-color: #e6e8ee;
+$label-color: #c4c4c4;
+
+// Size
+$column-width: 800px;
+
+html {
+  overflow-y: auto;
+}
+
 // Body
 body {
   color: $black;
-  background-color: $red;
+  background-color: $white;
 }
 
 // Links
@@ -21,12 +34,50 @@ a:visited {
   color: inherit;
   text-decoration: underline;
 }
-a:hover {
-  text-decoration: line-through;
-}
 
 a.nuxt-link-active,
 a.nuxt-link-active:link,
 a.nuxt-link-active:visited {
   text-decoration: underline;
+}
+
+// Svg fills
+svg {
+  path.pink {
+    fill: $pink;
+  }
+  path.blue {
+    fill: $blue;
+  }
+  path.aqua {
+    fill: $aqua;
+  }
+  path.green {
+    fill: $green;
+  }
+  path.red {
+    fill: $red;
+  }
+  path.yellow {
+    fill: $yellow;
+  }
+  path.black {
+    fill: $black;
+  }
+  path.white {
+    fill: $white;
+  }
+}
+
+// Headers
+h1 {
+  margin: 1.25rem 0;
+}
+label + h1 {
+  margin-top: 0.5rem;
+}
+
+// Column
+.column {
+  padding: 1rem 2rem;
 }

@@ -1,0 +1,114 @@
+body {
+  font-family: "Space Grotesk", sans-serif;
+  font-weight: 400;
+  font-size: 15px;
+  letter-spacing: 0.15px;
+  line-height: 21px;
+}
+
+body article {
+  font-family: "Merriweather", serif;
+  font-weight: 300;
+  font-size: 16px;
+  letter-spacing: -0.09px;
+  line-height: 26px;
+}
+
+.intro {
+  font-family: "Space Grotesk", sans-serif;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 23px;
+  letter-spacing: -0.1px;
+}
+.home-page .intro {
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 25px;
+  letter-spacing: -0.4px;
+}
+
+label {
+  font-family: "Space Mono", monospace;
+  text-transform: uppercase;
+  font-weight: 700;
+  letter-spacing: 2px;
+  font-size: 12px;
+  line-height: 10px;
+}
+
+h1 {
+  font-family: "Space Grotesk", sans-serif;
+  font-weight: 700;
+  font-size: 38px;
+  letter-spacing: -0.6px;
+  line-height: 42px;
+}
+
+h2 {
+  font-family: "Space Grotesk", sans-serif;
+  font-weight: 700;
+  font-size: 33px;
+  letter-spacing: 0;
+  line-height: 34.5px;
+}
+
+h3 {
+  font-family: "Space Grotesk", sans-serif;
+  font-weight: 700;
+  font-size: 26px;
+  letter-spacing: 0;
+  line-height: 26px;
+}
+
+h4 {
+  font-family: "Space Grotesk", sans-serif;
+  font-weight: 600;
+  font-size: 25px;
+  letter-spacing: -0.13px;
+  line-height: 32px;
+}
+
+ul.segments-menu-options {
+  font-family: "Space Grotesk", sans-serif;
+  font-weight: 700;
+  font-size: 18px;
+  letter-spacing: 0;
+  line-height: 26px;
+}
+.map-page .box button {
+  font-family: "Space Grotesk", sans-serif;
+  font-weight: 700;
+  font-size: 14px;
+  letter-spacing: 0;
+  line-height: 18px;
+}
+
+div.photos-element,
+div.video-container,
+div.minimap-container.map-bottom {
+  h3 {
+    font-size: 17px;
+    line-height: 21px;
+  }
+}
+
+figcaption,
+div.photos-element .swiper-slide p,
+div.video-container p {
+  font-size: 12px;
+  line-height: 18px;
+}
+
+.top-menu ul li,
+div.folddown-swiper {
+  h3 {
+    font-size: 21px;
+    line-height: 21px;
+  }
+}
+
+ul.profiles li h2 {
+  font-size: 16px;
+  line-height: 18px;
+}
