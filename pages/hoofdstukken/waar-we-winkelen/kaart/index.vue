@@ -14,9 +14,8 @@
           <CreateMapStory @updated="onMapStoryUpdate" @end="onMapStoryEnd">
             <MapStoryItem title="Waar we winkelen" view="circles" field="vacantPercentage"
               :bounds="bounds">
-              Er zijn meer dan 80,000 winkels in Nederland.
-              Deze kaart, OSM
-              Elke cirkel een provincie
+              Er zijn meer dan 80,000 winkels in Nederland. Op deze kaart zijn ongeveer de helft van deze winkels te bekijken, uit de database van OpenStreetMap
+              (helaas bestaat er geen open-dataset die met alle winkels in Nederland). De winkels zijn gegroepeerd per provincie.
             </MapStoryItem>
 
             <MapStoryItem title="Zuid-Holland" :data="{view: 'circles',
