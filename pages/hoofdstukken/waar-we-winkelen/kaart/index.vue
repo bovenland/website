@@ -14,8 +14,8 @@
           <CreateMapStory @updated="onMapStoryUpdate" @end="onMapStoryEnd">
             <MapStoryItem title="Waar we winkelen" view="circles" field="vacantPercentage"
               :bounds="bounds">
-              Er zijn meer dan 80,000 winkels in Nederland. Op deze kaart zijn ongeveer de helft van deze winkels te bekijken, uit de database van OpenStreetMap
-              (helaas bestaat er geen open-dataset die met alle winkels in Nederland). De winkels zijn gegroepeerd per provincie.
+              Er zijn meer dan 80,000 winkels in Nederland. Op deze kaart zijn ongeveer de helft van deze winkels te bekijken, uit de <a href="https://wiki.openstreetmap.org/wiki/Key:shop">database van OpenStreetMap</a>
+              (helaas bestaat er geen open-dataset die álle winkels van Nederland bevat). De winkels zijn gegroepeerd per provincie.
             </MapStoryItem>
 
             <MapStoryItem title="Zuid-Holland" :data="{view: 'circles',
@@ -93,6 +93,9 @@
             <p v-if="selectedFeature">
               {{ fields[currentField].title }}: <strong>{{ format(selectedFeature.properties[currentField]) }}</strong>.
             </p>
+            <p v-if="selectedFeatureShops && selectedFeatureShops.length">
+              <em>{{ selectedFeatureShops.map((shop) => shop.name).join(', ') }}</em>
+            </p>
 
             <Legend :color="color" :format="format" />
             <div>
@@ -134,7 +137,7 @@ import { scaleQuantize } from 'd3-scale'
 
 // TODO: move config from lib dir to app
 import config from '../../../../lib/waar-we-winkelen/config.js'
-import { fetchFeatureData } from '../../../../lib/waar-we-winkelen/data.js'
+import { fetchShopNamesAndTypes } from '../../../../lib/waar-we-winkelen/data.js'
 
 export default {
   transition: 'map',
@@ -224,9 +227,15 @@ export default {
           ],
           format: (d) => Math.round(d) + '%'
         }
+        // shopsPerBuilding: {
+        //   title: 'Aantal winkels per winkelpand',
+        //   extent: [
+        //     1, 25
+        //   ],
+        //   format: (d) => d
+        // }
       },
-
-      featureData: undefined,
+      shopNamesAndTypes: undefined,
       currentView: 'circles',
       currentField: 'vacantPercentage',
 
@@ -257,6 +266,16 @@ export default {
     },
     readyToCreateLayers: function () {
       return this.mapLoaded
+    },
+    selectedFeatureOsmId: function () {
+      if (this.selectedFeature) {
+        return this.selectedFeature.properties.osmId
+      }
+    },
+    selectedFeatureShops: function () {
+      if (this.shopNamesAndTypes && this.selectedFeatureOsmId) {
+        return this.shopNamesAndTypes[this.selectedFeatureOsmId]
+      }
     }
   },
   watch: {
@@ -272,9 +291,9 @@ export default {
 
       this.fitBounds(this.bounds)
 
-      map.on('moveend', () => {
-        console.log('moveend', map.getZoom(), JSON.stringify(map.getBounds().toArray().map((c) => c.map((n) => parseFloat(n.toFixed(6))))), map.getZoom())
-      })
+      // map.on('moveend', () => {
+      //   console.log('moveend', map.getZoom(), JSON.stringify(map.getBounds().toArray().map((c) => c.map((n) => parseFloat(n.toFixed(6))))), map.getZoom())
+      // })
 
       map.on('click', 'bovenland-circles-circles', this.mapClick)
       map.on('click', 'bovenland-world-buildings', this.mapClick)
@@ -344,11 +363,10 @@ export default {
         this.currentView = 'circles'
       }
     },
-    loadFeatureData: async function () {
-      const featureData = await fetchFeatureData(config)
-      Object.freeze(featureData)
-
-      this.featureData = featureData
+    loadShopNamesAndTypes: async function () {
+      const shopNamesAndTypes = await fetchShopNamesAndTypes()
+      Object.freeze(shopNamesAndTypes)
+      this.shopNamesAndTypes = shopNamesAndTypes
     },
     createLayers: function () {
       setCircleMapStyle(this.map, config, this.color)
@@ -359,7 +377,6 @@ export default {
     onMapStoryEnd: function () {
       this.mapStoryStarted = false
     },
-
     onMapStoryUpdate: function (data) {
       if (data.field) {
         this.currentField = data.field
@@ -376,7 +393,7 @@ export default {
     }
   },
   mounted: function () {
-    this.loadFeatureData()
+    this.loadShopNamesAndTypes()
   }
 }
 </script>
